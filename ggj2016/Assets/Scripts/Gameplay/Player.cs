@@ -3,8 +3,6 @@ using System.Collections;
 using Sjabloon;
 using System.Collections.Generic;
 
-public delegate void VoidDelegate();
-
 [System.Serializable]
 public class Task
 {
