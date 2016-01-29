@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[CreateAssetMenu (menuName = "GGJ16/Task Definition")]
 public class TaskDefinition : ScriptableObject
 {
     [SerializeField]

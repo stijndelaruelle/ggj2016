@@ -11,10 +11,10 @@ public class Icon : MonoBehaviour
 	private Image _image;
 
 	// Use this for initialization
-	void Start ()
-	{
-		Initialize();
-	}
+	//void Start ()
+	//{
+	//	Initialize();
+	//}
 	
 	// Update is called once per frame
 	void Update ()
@@ -23,10 +23,13 @@ public class Icon : MonoBehaviour
 			StartCoroutine(R_Fail());
 	}
 
-	void Initialize()
+	void Initialize(Sprite sprite)
 	{
 		// Initialize references
-		_image = GetComponent<Image>();
+		_image = GetComponentInChildren<Image>();
+
+		// Set properties
+		_image.sprite = sprite;
 	}
 
 	void UpdateProgress(float progress)
