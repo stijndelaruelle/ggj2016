@@ -3,6 +3,8 @@ using System.Collections;
 
 namespace Sjabloon
 {
+    public delegate void Collider2DDelegate(Collider2D collider);
+
     [RequireComponent(typeof(BoxCollider2D), typeof(Rigidbody2D))]
     public class CharacterController2D : MonoBehaviour
     {
@@ -43,6 +45,21 @@ namespace Sjabloon
         }
 
         private bool m_IsGoingUpSlope;
+
+        //Events
+        private Collider2DDelegate m_OnTriggerEnterEvent;
+        public Collider2DDelegate OnTriggerEnterEvent
+        {
+            get { return m_OnTriggerEnterEvent; }
+            set { m_OnTriggerEnterEvent = value; } 
+        }
+
+        private Collider2DDelegate m_OnTriggerExitEvent;
+        public Collider2DDelegate OnTriggerExitEvent
+        {
+            get { return m_OnTriggerExitEvent; }
+            set { m_OnTriggerExitEvent = value; }
+        }
 
         private void Start()
         {
@@ -206,6 +223,18 @@ namespace Sjabloon
                     }
                 }
             }
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (m_OnTriggerEnterEvent != null)
+                m_OnTriggerEnterEvent(other);
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (m_OnTriggerExitEvent != null)
+                m_OnTriggerExitEvent(other);
         }
     }
 }
