@@ -30,14 +30,20 @@ public class TaskObject : MonoBehaviour, InteractableObject
 			// Display the icon
 			m_CurrentPlayer.Icon.ShowSprite(m_TaskDefinition.Sprite);
 
+			// Play animation
+			m_CurrentPlayer.CharacterAnimation.Play(CharacterAnimation.AnimationType.GeneralTask);
+
 			return;
         }
 
 		// Hide icon
 		m_CurrentPlayer.Icon.Fail();
 
-        //Cancel the interaction
-        m_CurrentPlayer = null;
+		// Play animation
+		m_CurrentPlayer.CharacterAnimation.Play(CharacterAnimation.AnimationType.Idle);
+
+		//Cancel the interaction
+		m_CurrentPlayer = null;
         StopCoroutine(m_TaskRoutineHandle);
     }
 
@@ -58,6 +64,9 @@ public class TaskObject : MonoBehaviour, InteractableObject
 		// Hide icon
 		m_CurrentPlayer.Icon.Win();
 
-        player.UpdateTask(m_TaskDefinition);
+		// Play animation
+		m_CurrentPlayer.CharacterAnimation.Play(CharacterAnimation.AnimationType.Idle);
+
+		player.UpdateTask(m_TaskDefinition);
     }
 }
