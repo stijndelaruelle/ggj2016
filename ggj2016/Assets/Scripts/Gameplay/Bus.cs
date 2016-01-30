@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Bus : Vehicle
 {
@@ -12,9 +13,6 @@ public class Bus : Vehicle
     [SerializeField]
     private int m_LeaveTime;
 
-    [SerializeField]
-    private Transform m_BusStop;
-    private bool m_ReachedBusStop = false;
     private Vector3 m_OriginalPosition;
 
     protected override void Start()
@@ -36,27 +34,13 @@ public class Bus : Vehicle
         }
     }
 
-    protected override void Update()
-    {
-        base.Update();
-
-        if (m_ReachedBusStop)
-            return;
-
-        if (transform.position.x > m_BusStop.position.x)
-        {
-            m_IsDriving = false;
-            m_ReachedBusStop = true;
-        }   
-    }
-
     private void OnClockUpdated(int secondsLeft)
     {
         //Debug.Log("Time left: " + secondsLeft);
         if (m_IsDriving)
             return;
 
-        if (secondsLeft == m_ArriveTime || secondsLeft == m_LeaveTime)
+        if (secondsLeft == m_ArriveTime || secondsLeft <= m_LeaveTime)
         {
             m_IsDriving = true;
         }
@@ -68,6 +52,5 @@ public class Bus : Vehicle
 
         //Reset everything
         transform.position = m_OriginalPosition;
-        m_ReachedBusStop = false;
     }
 }

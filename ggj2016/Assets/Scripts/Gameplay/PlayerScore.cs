@@ -48,7 +48,7 @@ public class ScoreGroup
         else if (value > 1) rating = Rating.Good;
         else if(value >= 0) rating = Rating.Normal;
         else if(value > -2) rating = Rating.Bad;
-        else if(value > 4)  rating = Rating.VeryBad;
+        else if(value > -4) rating = Rating.VeryBad;
 
         SetRating(rating);
     }
@@ -171,7 +171,7 @@ public class PlayerScore : MonoBehaviour
         //Go trough all the tasks that collegues comment on and calculate the score
         List<int> scoreList = new List<int>();
         
-        for (int i = 1; i < m_ScoreGroups.Count; ++i)
+        for (int i = 0; i < m_ScoreGroups.Count; ++i)
         {
             scoreList.Add(0);
         }
@@ -184,10 +184,10 @@ public class PlayerScore : MonoBehaviour
             scoreList[(int)task.TaskDefinition.TaskCategory] += task.TaskDefinition.Weight * isDone;
         }
 
-        for (int i = 0; i < scoreList.Count; ++i)
+        for (int i = 1; i < m_ScoreGroups.Count; ++i)
         {
-            m_ScoreGroups[(int)i + 1].SetRating(scoreList[i]);
-            m_ScoreGroups[(int)i + 1].AddToTotal(scoreList[i]);
+            m_ScoreGroups[(int)i].SetRating(scoreList[i]);
+            m_ScoreGroups[(int)i].AddToTotal(scoreList[i]);
         }
     }
 

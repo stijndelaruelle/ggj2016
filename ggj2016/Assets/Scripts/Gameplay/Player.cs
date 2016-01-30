@@ -141,7 +141,7 @@ public class Player : MonoBehaviour
         InitializeControls();
 
         m_Icon.Initialize();
-		m_CharacterAnimation.Initialize();
+		//m_CharacterAnimation.Initialize();
     }
 
     private void OnDestroy()

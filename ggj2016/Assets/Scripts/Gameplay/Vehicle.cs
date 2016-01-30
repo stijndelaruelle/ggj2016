@@ -12,6 +12,10 @@ public class Vehicle : MonoBehaviour, InteractableObject
     protected float m_Speed;
 
     [SerializeField]
+    private List<Transform> m_WayPoints;
+    private int m_CurrentWayPoint = 0;
+
+    [SerializeField]
     protected List<Player> m_RequiredPlayers;
     protected List<Player> m_Passengers;
     protected bool m_IsDriving = false;
@@ -66,10 +70,21 @@ public class Vehicle : MonoBehaviour, InteractableObject
 
     protected virtual void Update()
     {
-        if (m_IsDriving == false)
+        if (m_IsDriving == false || m_CurrentWayPoint >= m_WayPoints.Count)
             return;
 
-        m_CharacterController.Move(m_Speed, 0.0f);
+        Vector2 direction = m_WayPoints[m_CurrentWayPoint].position - transform.position;
+        float sqrMagnitude = direction.sqrMagnitude;
+
+        direction.Normalize();
+
+        m_CharacterController.Move(direction.x * m_Speed, direction.y * m_Speed);
+
+        if (sqrMagnitude < 0.1f)
+        {
+            ++m_CurrentWayPoint;
+            m_IsDriving = false;
+        }
     }
 
     protected virtual bool CanDrive()
@@ -88,5 +103,6 @@ public class Vehicle : MonoBehaviour, InteractableObject
     {
         m_Passengers.Clear();
         m_IsDriving = false;
+        m_CurrentWayPoint = 0;
     }
 }
