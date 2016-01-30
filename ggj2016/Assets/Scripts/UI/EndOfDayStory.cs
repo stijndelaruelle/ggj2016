@@ -10,7 +10,8 @@ public class EndOfDayStory : MonoBehaviour
     [SerializeField]
     private Text m_Text;
     private string m_Name;
-    private string m_GenderWord; //He or she
+    private string m_HeShe;
+    private string m_HisHer;
     private string m_Employer;
     private string m_Collegue;
     private string m_JobName;
@@ -22,8 +23,16 @@ public class EndOfDayStory : MonoBehaviour
         Player player = m_PlayerScore.Player;
         m_Name = player.Name;
 
-        if (player.Gender == GenderType.Male) m_GenderWord = "he";
-        else                                  m_GenderWord = "she";
+        if (player.Gender == GenderType.Male)
+        {
+            m_HeShe = "he";
+            m_HisHer = "His";
+        }
+        else
+        {
+            m_HeShe = "she";
+            m_HisHer = "Her";
+        }
 
         if (player.PlayerType == PlayerType.Parent)
         {
@@ -68,7 +77,7 @@ public class EndOfDayStory : MonoBehaviour
 
         if (timeScore == Rating.Terrible)
         {
-            sentence += " never arrived at " + m_JobName + ", because " + m_GenderWord + " took the schoolbus!";
+            sentence += " never arrived at " + m_JobName + ", because " + m_HeShe + " took the schoolbus!";
         }
         else
         {
@@ -80,30 +89,28 @@ public class EndOfDayStory : MonoBehaviour
             switch (timeScore)
             {
                 case Rating.VeryGood:
-                    sentence += " very early";
+                    sentence += " very early at " + m_JobName + ".";
                     break;
 
                 case Rating.Good:
-                    sentence += " early";
+                    sentence += " early at " + m_JobName + ".";
                     break;
 
                 case Rating.Normal:
-                    sentence += " on time";
+                    sentence += " at " + m_JobName + " on time";
                     break;
 
                 case Rating.Bad:
-                    sentence += " late";
+                    sentence += " late at " + m_JobName + "."; ;
                     break;
 
                 case Rating.VeryBad:
-                    sentence += " very late";
+                    sentence += " very late at " + m_JobName + ".";
                     break;
 
                 default:
                     break;
             }
-
-            sentence += " at " + m_JobName + ".";
         }
 
         if ((scoreGroup.TotalScore >= 2) &&
@@ -114,7 +121,7 @@ public class EndOfDayStory : MonoBehaviour
 
         if (scoreGroup.TotalScore <= -2)
         {
-            sentence += " If this happens 1 more time " + m_GenderWord + " will be ";
+            sentence += " If this happens 1 more time " + m_HeShe + " will be ";
 
             if (m_PlayerScore.Player.PlayerType == PlayerType.Parent)
                 sentence += "fired!";
@@ -132,7 +139,27 @@ public class EndOfDayStory : MonoBehaviour
         Rating timeScore = scoreGroup.Score;
         Rating lastTimeScore = scoreGroup.LastScore;
 
-        return m_Employer + " story...";
+        string sentence = "";
+
+        switch (timeScore)
+        {
+            case Rating.VeryGood: sentence += "Very good productivity."; break;
+            case Rating.Good: sentence += "Good productivity.";          break;
+            case Rating.Normal: sentence += "Normal productivity.";      break;
+            case Rating.Bad: sentence += "Bad productivity.";            break;
+            case Rating.VeryBad: sentence += "Aweful productivity.";    break;
+
+            default:
+                break;
+        }
+
+        if ((scoreGroup.TotalScore >= 2) &&
+            (scoreGroup.TotalScore > scoreGroup.LastTotalScore))
+        {
+            sentence += " This is very much appreciated!";
+        }
+
+        return sentence;
     }
 
     private string CalculateCollegueStory()
