@@ -14,13 +14,15 @@ public class Icon : MonoBehaviour
 	private Canvas _canvas;
 	private Image _image;
 
-	public void Initialize(Sprite sprite)
+	public void Initialize()
 	{
 		// Initialize references
 		_canvas = GetComponent<Canvas>();
 		_image = GetComponentInChildren<Image>();
+	}
 
-		// Set properties
+	public void ShowSprite(Sprite sprite)
+	{
 		_canvas.enabled = true;
 		_image.sprite = sprite;
 	}
@@ -31,7 +33,7 @@ public class Icon : MonoBehaviour
 		_image.fillAmount = _progress;
 	}
 
-	void Reset()
+	public void Reset()
 	{
 		_progress = 0;
 		_canvas.enabled = false;

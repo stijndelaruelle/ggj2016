@@ -77,6 +77,9 @@ public class Player : MonoBehaviour
 
     }
 
+	[Space(15)]
+	public Icon _icon;
+
     //Functions
     private void Start()
     {
@@ -84,6 +87,10 @@ public class Player : MonoBehaviour
 
         m_CharacterController.OnTriggerEnterEvent += OnCustomTriggerEnter;
         m_CharacterController.OnTriggerExitEvent += OnCustomTriggerExit;
+
+		// Initialize icon
+		_icon = GetComponentInChildren<Icon>();
+		_icon.Initialize();
     }
 
     private void OnDestroy()
@@ -195,11 +202,18 @@ public class Player : MonoBehaviour
     {
         m_CurrentInteractableObject = other.gameObject.GetComponent<InteractableObject>();
         Debug.Log(m_CurrentInteractableObject);
-    }
+
+		// Display icon
+		Sprite sprite = other.gameObject.GetComponent<TaskObject>().ReturnSprite();
+		_icon.ShowSprite(sprite);
+	}
 
     private void OnCustomTriggerExit(Collider2D other)
     {
         m_CurrentInteractableObject = null;
         Debug.Log(m_CurrentInteractableObject);
+
+		// Reset icon
+		_icon.Reset();
     }
 }
