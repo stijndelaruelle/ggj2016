@@ -9,38 +9,38 @@ public class TaskObject : MonoBehaviour, InteractableObject
     private Player m_CurrentPlayer;
     private Coroutine m_TaskRoutineHandle;
 
-    private void Start()
-    {
-        GameManager.Instance.StartDayEvent += OnStartDay;
-    }
-
-    private void OnDestroy()
-    {
-        if (GameManager.Instance == null)
-            return;
-
-        GameManager.Instance.StartDayEvent -= OnStartDay;
-    }
+	private Icon _icon;
 
     public bool CanInteract(Player player)
     {
-        return true;
+        return (m_CurrentPlayer == null || m_CurrentPlayer == player);
     }
 
     public void Interact(Player player)
     {
         if (m_CurrentPlayer == null)
         {
-            //Start the interaction
-            m_CurrentPlayer = player;
+			// Display the icon
+			InitializeIcon();
+
+			//Start the interaction
+			m_CurrentPlayer = player;
             m_TaskRoutineHandle = StartCoroutine(TaskRoutine(player));
             return;
         }
 
-        //Cancel the interaction
-        m_CurrentPlayer = null;
-        StopCoroutine(m_TaskRoutineHandle);
-        m_TaskRoutineHandle = null;
+        if (m_CurrentPlayer == player)
+        {
+			// Hide icon
+			_icon.Fail();
+
+            //Cancel the interaction
+            m_CurrentPlayer = null;
+            StopCoroutine(m_TaskRoutineHandle);
+            return;
+        }
+
+        Debug.Log("Somebody else is already interacting");
     }
 
     private IEnumerator TaskRoutine(Player player)
@@ -49,22 +49,26 @@ public class TaskObject : MonoBehaviour, InteractableObject
 
         while (timer > 0.0f)
         {
-            //UPDATE VISUALS
+			// UPDATE VISUALS
+			float progress = (m_TaskDefinition.TimeToComplete - Mathf.FloorToInt(timer)) / m_TaskDefinition.TimeToComplete;
+			_icon.UpdateProgress(progress);
 
             timer -= Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
 
+		// Hide icon
+		_icon.Win();
+
         player.UpdateTask(m_TaskDefinition);
     }
 
-    private void OnStartDay()
-    {
-        m_CurrentPlayer = null;
+	// Icon visuals
+	private void InitializeIcon()
+	{
+		if (_icon == null)
+			_icon = GetComponentInChildren<Icon>();
 
-        if (m_TaskRoutineHandle != null)
-            StopCoroutine(m_TaskRoutineHandle);
-
-        m_TaskRoutineHandle = null;
-    }
+		_icon.Initialize(m_TaskDefinition.Sprite);
+	}
 }

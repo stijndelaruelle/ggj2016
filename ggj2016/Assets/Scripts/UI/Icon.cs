@@ -5,52 +5,80 @@ using System.Collections;
 public class Icon : MonoBehaviour
 {
 	[Header("Properties")]
+	public soIcon _properties;
+
+	[Space(15)]
 	[Range(0, 1)]public float _progress;
 
 	[Header("Components")]
+	private Canvas _canvas;
 	private Image _image;
 
-	// Use this for initialization
-	//void Start ()
-	//{
-	//	Initialize();
-	//}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-		if (Input.GetKeyUp(KeyCode.Space))
-			StartCoroutine(R_Fail());
-	}
-
-	void Initialize(Sprite sprite)
+	public void Initialize(Sprite sprite)
 	{
 		// Initialize references
+		_canvas = GetComponent<Canvas>();
 		_image = GetComponentInChildren<Image>();
 
 		// Set properties
+		_canvas.enabled = true;
 		_image.sprite = sprite;
 	}
 
-	void UpdateProgress(float progress)
+	public void UpdateProgress(float progress)
 	{
 		_progress = progress;
 		_image.fillAmount = _progress;
 	}
 
-	// Visual feedback
-	public void Succes()
+	void Reset()
 	{
+		_progress = 0;
+		_canvas.enabled = false;
+	}
 
+	// Visual feedback
+	public void Win()
+	{
+		StartCoroutine(R_Win());
+	}
+
+	IEnumerator R_Win()
+	{
+		RectTransform rectTransform = _image.GetComponent<RectTransform>();
+
+		float timer = _properties._scaleDuration;
+		float scaleUp = 1 + _properties._scaleUp;
+		float scaleCurrent = 1;
+		
+		while(timer > 0)
+		{
+			scaleCurrent = Mathf.Lerp(scaleUp, 1, timer / _properties._scaleDuration);
+			rectTransform.localScale = new Vector3(scaleCurrent, scaleCurrent, scaleCurrent);
+
+			timer -= Time.deltaTime;
+
+			yield return null;
+		}
+
+		Reset();
+	}
+
+	public void Fail()
+	{
+		StartCoroutine(R_Fail());
 	}
 
 	IEnumerator R_Fail()
 	{
-		yield return R_Flicker(.1f);
+		for(int i = 0; i < _properties._flashes; i++)
+		{
+			yield return R_Flicker(_properties._flashLength);
 
-		yield return new WaitForSeconds(.1f);
+			yield return new WaitForSeconds(_properties._flashLength);
+		}
 
-		yield return R_Flicker(.1f);
+		Reset();
 	}
 
 	IEnumerator R_Flicker(float duration)
