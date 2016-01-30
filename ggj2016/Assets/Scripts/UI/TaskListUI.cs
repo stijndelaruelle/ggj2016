@@ -11,7 +11,22 @@ public class TaskListUI : MonoBehaviour
     [SerializeField]
     private Text m_Text;
 
-    private void Start()
+	[SerializeField]
+	private List<TaskItem> m_TaskList = new List<TaskItem>();
+	public List<TaskItem> TaskList
+	{
+		get
+		{
+			return m_TaskList;
+		}
+
+		set
+		{
+			m_TaskList = value;
+		}
+	}
+
+	private void Start()
     {
         m_Player.TaskListUpdatedEvent += OnTaskListUpdated;
     }
@@ -38,4 +53,17 @@ public class TaskListUI : MonoBehaviour
 
         m_Text.text = str;
     }
+
+	public void PopulateTaskList()
+	{
+
+	}
+}
+
+public class TaskItem
+{
+	[Header("Properties")]
+	public bool _done;
+	public TaskDefinition _taskDefinition;
+	public GameManager _uiObject;
 }
