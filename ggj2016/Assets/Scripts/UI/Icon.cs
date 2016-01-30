@@ -21,6 +21,8 @@ public class Icon : MonoBehaviour
 		_canvas = GetComponent<Canvas>();
 		_image = GetComponentInChildren<Image>();
 		_rectTransform = _image.GetComponent<RectTransform>();
+
+		_canvas.enabled = false;
 	}
 
 	public void ShowSprite(Sprite sprite)
