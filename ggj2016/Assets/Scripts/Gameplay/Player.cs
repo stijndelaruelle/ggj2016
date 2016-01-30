@@ -87,7 +87,15 @@ public class Player : MonoBehaviour
         set { m_Icon = value; }
     }
 
-    private InputManager m_InputManager;
+	[SerializeField]
+	private CharacterAnimation m_CharacterAnimation;
+	public CharacterAnimation CharacterAnimation
+	{
+		get { return m_CharacterAnimation; }
+		set { m_CharacterAnimation = value; }
+	}
+
+	private InputManager m_InputManager;
     private InteractableObject m_CurrentInteractableObject;
     private Vector3 m_OriginalPosition;
 
@@ -131,7 +139,9 @@ public class Player : MonoBehaviour
         m_OriginalPosition = transform.position.Copy();
 
         InitializeControls();
+
         m_Icon.Initialize();
+		m_CharacterAnimation.Initialize();
     }
 
     private void OnDestroy()
