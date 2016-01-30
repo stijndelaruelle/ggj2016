@@ -8,9 +8,6 @@ public class TaskListUI : MonoBehaviour
     [SerializeField]
     private Player m_Player;
 
-    [SerializeField]
-    private Text m_Text;
-
 	[SerializeField]
 	private List<TaskItem> m_TaskList = new List<TaskItem>();
 	public List<TaskItem> TaskList
@@ -41,6 +38,13 @@ public class TaskListUI : MonoBehaviour
 		}
 	}
 
+	[SerializeField]
+	private Transform m_Parent;
+	public Transform Parent
+	{
+		get { return m_Parent; }
+	}
+
 	private void Start()
     {
         m_Player.TaskListUpdatedEvent += OnTaskListUpdated;
@@ -56,25 +60,13 @@ public class TaskListUI : MonoBehaviour
 
     private void OnTaskListUpdated()
     {
-        List<Task> tasks = m_Player.Tasks;
-
-        string str = "";
-        foreach(Task task in tasks)
-        {
-            if (task.IsDone) str += "(Done)";
-
-            str += task.TaskDefinition.Title + " - ";
-        }
-
-        m_Text.text = str;
+		UpdateTaskList(m_Player.Tasks);
     }
 
 	public void UpdateTaskList(List<Task> inputList)
 	{
 		ClearTaskList();
 		PopulateTaskList(inputList);
-
-		Debug.Log("Updated task list");
 	}
 
 	void ClearTaskList()
@@ -94,16 +86,13 @@ public class TaskListUI : MonoBehaviour
 			GameObject newTaskItem = Instantiate(m_TaskSpritePrefab);
 
 			// Set sprite
-			newTaskItem.GetComponent<Image>().sprite = inputList[i].TaskDefinition.Sprite;
-
-			// Set sprite as done
-			if(inputList[i].IsDone)
-			{
-
-			}
+			if (inputList[i].IsDone)
+				newTaskItem.GetComponent<Image>().sprite = inputList[i].TaskDefinition.SpriteDone;
+			else
+				newTaskItem.GetComponent<Image>().sprite = inputList[i].TaskDefinition.Sprite;
 
 			// Set transform
-			newTaskItem.transform.SetParent(transform);
+			newTaskItem.transform.SetParent(m_Parent);
 
 			// Add to tasklist
 			m_TaskList.Add(new TaskItem(inputList[i], newTaskItem));

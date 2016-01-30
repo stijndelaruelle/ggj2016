@@ -10,29 +10,36 @@ public enum TaskCategoryType
     Entertainment = 4,
 }
 
-[CreateAssetMenu (menuName = "GGJ16/Task Definition")]
+[CreateAssetMenu(menuName = "GGJ16/Task Definition")]
 public class TaskDefinition : ScriptableObject
 {
-    [SerializeField]
-    private string m_Title;
-    public string Title
-    {
-        get { return m_Title; }
-    }
+	[SerializeField]
+	private string m_Title;
+	public string Title
+	{
+		get { return m_Title; }
+	}
 
-    [SerializeField]
-    private string m_Description;
-    public string Description
-    {
-        get { return m_Description; }
-    }
+	[SerializeField]
+	private string m_Description;
+	public string Description
+	{
+		get { return m_Description; }
+	}
 
-    [SerializeField]
-    private Sprite m_Sprite;
-    public Sprite Sprite
-    {
-        get { return m_Sprite; }
-    }
+	[SerializeField]
+	private Sprite m_Sprite;
+	public Sprite Sprite
+	{
+		get { return m_Sprite; }
+	}
+
+	[SerializeField]
+	private Sprite m_SpriteDone;
+	public Sprite SpriteDone
+	{
+		get { return m_SpriteDone; }
+	}
 
     [SerializeField]
     private float m_TimeToComplete;

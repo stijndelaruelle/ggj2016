@@ -257,8 +257,6 @@ public class Player : MonoBehaviour
                 if (m_TaskListUpdatedEvent != null)
                     m_TaskListUpdatedEvent();
 
-				m_assignedTaskList.UpdateTaskList(m_Tasks);
-
 				return;
             }
         }
