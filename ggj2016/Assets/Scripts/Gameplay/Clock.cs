@@ -5,6 +5,11 @@ public class Clock : MonoBehaviour
 {
     [SerializeField]
     private float m_TimePerDay;
+	public float TimePerDay
+	{
+		get { return m_TimePerDay; }
+	}
+
     private float m_TimeLeft;
 
     private bool m_IsTicking = false;
