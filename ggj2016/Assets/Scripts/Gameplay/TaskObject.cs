@@ -13,7 +13,7 @@ public class TaskObject : MonoBehaviour, InteractableObject
 
     public bool CanInteract(Player player)
     {
-        return (m_CurrentPlayer == null || m_CurrentPlayer == player);
+        return true;
     }
 
     public void Interact(Player player)
@@ -29,18 +29,12 @@ public class TaskObject : MonoBehaviour, InteractableObject
             return;
         }
 
-        if (m_CurrentPlayer == player)
-        {
-			// Hide icon
-			_icon.Fail();
+		// Hide icon
+		_icon.Fail();
 
-            //Cancel the interaction
-            m_CurrentPlayer = null;
-            StopCoroutine(m_TaskRoutineHandle);
-            return;
-        }
-
-        Debug.Log("Somebody else is already interacting");
+        //Cancel the interaction
+        m_CurrentPlayer = null;
+        StopCoroutine(m_TaskRoutineHandle);
     }
 
     private IEnumerator TaskRoutine(Player player)
