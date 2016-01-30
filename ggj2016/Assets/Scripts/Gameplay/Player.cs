@@ -3,6 +3,12 @@ using System.Collections;
 using Sjabloon;
 using System.Collections.Generic;
 
+public enum PlayerType
+{
+    Parent = 0,
+    Child = 1
+}
+
 [System.Serializable]
 public class Task
 {
@@ -27,7 +33,18 @@ public class Player : MonoBehaviour
     private int m_PlayerID;
 
     [SerializeField]
+    private PlayerType m_PlayerType;
+    public PlayerType PlayerType
+    {
+        get { return m_PlayerType; }
+        set { m_PlayerType = value; }
+    }
+
+    [SerializeField]
     private CharacterController2D m_CharacterController;
+
+    [SerializeField]
+    private SpriteRenderer m_SpriteRenderer;
 
     [SerializeField]
     private float m_Speed;
@@ -37,13 +54,27 @@ public class Player : MonoBehaviour
 
     private InputManager m_InputManager;
     private InteractableObject m_CurrentInteractableObject;
+    private bool m_IsOnScreen = true;
+    private bool m_IsInVehicle;
+    public bool IsInVehicle
+    {
+        get { return m_IsInVehicle; }
+    }
 
     //Events
-    private VoidDelegate m_OnTaskListUpdated;
-    public VoidDelegate OnTaskListUpdated
+    private VoidDelegate m_TaskListUpdatedEvent;
+    public VoidDelegate TaskListUpdatedEvent
     {
-        get { return m_OnTaskListUpdated; }
-        set { m_OnTaskListUpdated = value; }
+        get { return m_TaskListUpdatedEvent; }
+        set { m_TaskListUpdatedEvent = value; }
+    }
+
+    private VoidDelegate m_LeftScreenEvent;
+    public VoidDelegate LeftScreenEvent
+    {
+        get { return m_LeftScreenEvent; }
+        set { m_LeftScreenEvent = value; }
+
     }
 
     //Functions
@@ -84,12 +115,28 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (!m_IsOnScreen)
+            return;
+
         UpdateMovement();
         UpdateAction();
+
+        //If we're off screen, send an event!
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
+        if (viewPos.x < 0.0f || viewPos.x > 1.0f || viewPos.y < 0.0f || viewPos.y > 1.0f)
+        {
+            m_IsOnScreen = false;
+
+            if (m_LeftScreenEvent != null)
+                m_LeftScreenEvent();
+        }
     }
 
     private void UpdateMovement()
     {
+        if (m_IsInVehicle)
+            return;
+
         //Horizontal
         float horizInput = m_InputManager.GetAxis("HorizontalAxis_" + m_PlayerID);
         float vertInput = m_InputManager.GetAxis("VerticalAxis_" + m_PlayerID);
@@ -103,7 +150,8 @@ public class Player : MonoBehaviour
 
         if (didAction && m_CurrentInteractableObject != null)
         {
-            m_CurrentInteractableObject.Interact(this);
+            if (m_CurrentInteractableObject.CanInteract(this))
+                m_CurrentInteractableObject.Interact(this);
         }
     }
 
@@ -118,13 +166,29 @@ public class Player : MonoBehaviour
 
                 Debug.Log("Task: " + taskDefinition.Title + " completed!");
 
-                if (m_OnTaskListUpdated != null)
-                    m_OnTaskListUpdated();
+                if (m_TaskListUpdatedEvent != null)
+                    m_TaskListUpdatedEvent();
 
                 return;
             }
         }
 
+    }
+
+    public void UpdateVehicle(Vehicle vehicle)
+    {
+        if (vehicle != null)
+        {
+            m_IsInVehicle = true;
+            m_SpriteRenderer.enabled = false;
+            transform.SetParent(vehicle.transform);
+        }
+        else
+        {
+            m_IsInVehicle = false;
+            m_SpriteRenderer.enabled = true;
+            transform.SetParent(null);
+        }
     }
 
     private void OnCustomTriggerEnter(Collider2D other)

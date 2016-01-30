@@ -29,7 +29,7 @@ public class Clock : MonoBehaviour
         //We only send an event every second
         if (seconds != prevSeconds)
         {
-            Debug.Log("Time left: " + seconds);
+            //Debug.Log("Time left: " + seconds);
 
             if (m_ClockUpdatedEvent != null)
                 m_ClockUpdatedEvent(seconds);
