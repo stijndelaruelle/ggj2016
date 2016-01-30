@@ -30,6 +30,13 @@ public class GameManager : Singleton<GameManager>
         set { m_EndGameEvent = value; }
     }
 
+    private VoidDelegate m_CreateDayEvent;
+    public VoidDelegate CreateDayEvent
+    {
+        get { return m_CreateDayEvent; }
+        set { m_CreateDayEvent = value; }
+    }
+
     private VoidDelegate m_StartDayEvent;
     public VoidDelegate StartDayEvent
     {
@@ -51,8 +58,6 @@ public class GameManager : Singleton<GameManager>
         {
             player.LeftScreenEvent += OnPlayerLeftScreen;
         }
-
-        StartGame();
     }
 
     protected override void OnDestroy()
@@ -73,7 +78,7 @@ public class GameManager : Singleton<GameManager>
         if (m_StartGameEvent != null)
             m_StartGameEvent();
 
-        StartDay();
+        CreateDay();
     }
 
     private void EndGame()
@@ -82,6 +87,12 @@ public class GameManager : Singleton<GameManager>
 
         if (m_EndGameEvent != null)
             m_EndGameEvent();
+    }
+
+    public void CreateDay()
+    {
+        if (m_CreateDayEvent != null)
+            m_CreateDayEvent();
     }
 
     public void StartDay()
@@ -105,6 +116,9 @@ public class GameManager : Singleton<GameManager>
     private void OnPlayerLeftScreen()
     {
         Debug.Log("PLAYER LEFT THE SCREEN!");
+
+        //TEMP TEMP TEMP TEMP TEST
+        EndDay();
 
         ++m_PlayersLeftScreen;
 

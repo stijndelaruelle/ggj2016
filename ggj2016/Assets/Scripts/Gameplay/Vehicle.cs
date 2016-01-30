@@ -18,7 +18,16 @@ public class Vehicle : MonoBehaviour, InteractableObject
 
     protected virtual void Start()
     {
+        GameManager.Instance.StartDayEvent += OnStartDay;
         m_Passengers = new List<Player>();
+    }
+
+    protected virtual void OnDestroy()
+    {
+        if (GameManager.Instance == null)
+            return;
+
+        GameManager.Instance.StartDayEvent -= OnStartDay;
     }
 
     public bool CanInteract(Player player)
@@ -68,5 +77,11 @@ public class Vehicle : MonoBehaviour, InteractableObject
         }
 
         return true;
+    }
+
+    protected virtual void OnStartDay()
+    {
+        m_Passengers.Clear();
+        m_IsDriving = false;
     }
 }

@@ -51,9 +51,16 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private List<Task> m_Tasks;
+    public List<Task> Tasks
+    {
+        get { return m_Tasks; }
+        set { m_Tasks = value; }
+    }
 
     private InputManager m_InputManager;
     private InteractableObject m_CurrentInteractableObject;
+    private Vector3 m_OriginalPosition;
+
     private bool m_IsOnScreen = true;
     private bool m_IsInVehicle;
     public bool IsInVehicle
@@ -77,29 +84,31 @@ public class Player : MonoBehaviour
 
     }
 
-	[Space(15)]
-	public Icon _icon;
-
     //Functions
     private void Start()
     {
-        InitializeControls();
+        GameManager.Instance.StartDayEvent += OnStartDay;
 
         m_CharacterController.OnTriggerEnterEvent += OnCustomTriggerEnter;
         m_CharacterController.OnTriggerExitEvent += OnCustomTriggerExit;
 
-		// Initialize icon
-		_icon = GetComponentInChildren<Icon>();
-		_icon.Initialize();
+        m_OriginalPosition = transform.position.Copy();
+
+        InitializeControls();
     }
 
     private void OnDestroy()
     {
-        if (m_CharacterController == null)
-            return;
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.StartDayEvent -= OnStartDay;
+        }
 
-        m_CharacterController.OnTriggerEnterEvent -= OnCustomTriggerEnter;
-        m_CharacterController.OnTriggerExitEvent -= OnCustomTriggerExit;
+        if (m_CharacterController == null)
+        {
+            m_CharacterController.OnTriggerEnterEvent -= OnCustomTriggerEnter;
+            m_CharacterController.OnTriggerExitEvent -= OnCustomTriggerExit;
+        }
     }
 
     private void InitializeControls()
@@ -198,22 +207,32 @@ public class Player : MonoBehaviour
         }
     }
 
+
     private void OnCustomTriggerEnter(Collider2D other)
     {
         m_CurrentInteractableObject = other.gameObject.GetComponent<InteractableObject>();
         Debug.Log(m_CurrentInteractableObject);
-
-		// Display icon
-		Sprite sprite = other.gameObject.GetComponent<TaskObject>().ReturnSprite();
-		_icon.ShowSprite(sprite);
-	}
+    }
 
     private void OnCustomTriggerExit(Collider2D other)
     {
         m_CurrentInteractableObject = null;
         Debug.Log(m_CurrentInteractableObject);
+    }
 
-		// Reset icon
-		_icon.Reset();
+
+    private void OnStartDay()
+    {
+        //Reset everything
+        UpdateVehicle(null);
+
+        transform.position = m_OriginalPosition;
+        
+        m_IsOnScreen = true;
+        m_IsInVehicle = false;
+        m_CurrentInteractableObject = null;
+
+        if (m_TaskListUpdatedEvent != null)
+            m_TaskListUpdatedEvent();
     }
 }

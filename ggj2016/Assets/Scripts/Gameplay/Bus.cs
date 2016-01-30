@@ -15,19 +15,25 @@ public class Bus : Vehicle
     [SerializeField]
     private Transform m_BusStop;
     private bool m_ReachedBusStop = false;
+    private Vector3 m_OriginalPosition;
 
     protected override void Start()
     {
         base.Start();
+
         m_Clock.ClockUpdatedEvent += OnClockUpdated;
+
+        m_OriginalPosition = transform.position.Copy();
     }
 
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
-        if (m_Clock == null)
-            return;
+        base.OnDestroy();
 
-        m_Clock.ClockUpdatedEvent -= OnClockUpdated;
+        if (m_Clock != null)
+        {
+            m_Clock.ClockUpdatedEvent -= OnClockUpdated;
+        }
     }
 
     protected override void Update()
@@ -54,5 +60,14 @@ public class Bus : Vehicle
         {
             m_IsDriving = true;
         }
+    }
+
+    protected override void OnStartDay()
+    {
+        base.OnStartDay();
+
+        //Reset everything
+        transform.position = m_OriginalPosition;
+        m_ReachedBusStop = false;
     }
 }
