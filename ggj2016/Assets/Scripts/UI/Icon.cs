@@ -41,6 +41,8 @@ public class Icon : MonoBehaviour
 
 	public void Reset()
 	{
+		StopAllCoroutines();
+
         UpdateProgress(1);
         _rectTransform.localScale = Vector3.one;
 		_canvas.enabled = false;
