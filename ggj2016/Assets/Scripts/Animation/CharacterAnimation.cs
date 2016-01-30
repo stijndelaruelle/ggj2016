@@ -7,8 +7,9 @@ public class CharacterAnimation : MonoBehaviour
 	public float _speedModifier = 1;
 
 	[Header("Components")]
-	public Animator _animator;
-	public Rigidbody2D _rigidBody;
+	private Animator _animator;
+	private Player _player;
+	private Transform _spriteTransform;
 
 	[Header("Animations")]
 	public string _parameter;
@@ -24,7 +25,8 @@ public class CharacterAnimation : MonoBehaviour
 	public void Initialize()
 	{
 		_animator = GetComponentInChildren<Animator>();
-		_rigidBody = GetComponent<Rigidbody2D>();
+		_player = GetComponent<Player>();
+		_spriteTransform = GetComponentInChildren<SpriteRenderer>().transform;
 
 		Play(AnimationType.Idle);
 	}
@@ -34,10 +36,16 @@ public class CharacterAnimation : MonoBehaviour
 		// Check if we need to update the animation
 		if(_currentAnimation == AnimationType.Idle || _currentAnimation == AnimationType.Move)
 		{
-			if (_rigidBody.velocity.magnitude > 0)
+			if (_player.Velocity.magnitude > 0)
 			{
 				Play(AnimationType.Move);
-				SetSpeed(_rigidBody.velocity.magnitude * _speedModifier);
+				SetSpeed(_player.Velocity.magnitude * _speedModifier);
+
+				// To flip or not to flip
+				if (_player.Velocity.x < 0)
+					_spriteTransform.localScale = new Vector3(-1, 1, 1);
+				else
+					_spriteTransform.localScale = Vector3.one;
 			}
 			else
 				Play(AnimationType.Idle);
