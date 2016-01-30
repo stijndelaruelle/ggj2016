@@ -12,16 +12,31 @@ public class SimpleAnimation : MonoBehaviour
 
 	[Header("Components")]
 	public Transform _targetTransform;
-	
+    private Vector3 _originalPosition;
+
+    [SerializeField]
+    private bool _isPlaying = false;
+
 	// Update is called once per frame
-	void Update ()
+    private void Start()
+    {
+        _originalPosition = transform.localPosition.Copy();
+    }
+
+    void Update ()
 	{
+        if (!_isPlaying)
+            return;
+
 		Wiggle();
 		Rotate();
 	}
 
 	void Wiggle()
 	{
+        if (_properties._wiggleFrequency == 0.0f)
+            return;
+
 		if(_wiggleTimer < _properties._wiggleFrequency)
 		{
 			_wiggleTimer += Time.deltaTime;
@@ -33,7 +48,7 @@ public class SimpleAnimation : MonoBehaviour
 			float posY = Random.Range(-_properties._wiggleOffset.y, _properties._wiggleOffset.y);
 			float posZ = Random.Range(-_properties._wiggleOffset.z, _properties._wiggleOffset.z);
 
-			_targetTransform.localPosition = new Vector3(posX, posY, posZ);
+			_targetTransform.localPosition = _originalPosition + new Vector3(posX, posY, posZ);
 
 			// Random rotation
 			float rotX = Random.Range(-_properties._wiggleRotation.x, _properties._wiggleRotation.x);
@@ -55,4 +70,9 @@ public class SimpleAnimation : MonoBehaviour
 
 		_targetTransform.localEulerAngles += new Vector3(rotSpeedX, rotSpeedY, rotSpeedZ);
 	}
+
+    public void Play(bool state)
+    {
+        _isPlaying = state;
+    }
 }
