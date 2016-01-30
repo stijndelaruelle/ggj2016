@@ -9,21 +9,6 @@ public class TaskListUI : MonoBehaviour
     private Player m_Player;
 
 	[SerializeField]
-	private List<TaskItem> m_TaskList = new List<TaskItem>();
-	public List<TaskItem> TaskList
-	{
-		get
-		{
-			return m_TaskList;
-		}
-
-		set
-		{
-			m_TaskList = value;
-		}
-	}
-
-	[SerializeField]
 	private GameObject m_TaskSpritePrefab;
 	public GameObject TaskSpritePrefab
 	{
@@ -45,7 +30,21 @@ public class TaskListUI : MonoBehaviour
 		get { return m_Parent; }
 	}
 
-	private void Start()
+    private List<TaskItem> m_TaskList = new List<TaskItem>();
+    public List<TaskItem> TaskList
+    {
+        get
+        {
+            return m_TaskList;
+        }
+
+        set
+        {
+            m_TaskList = value;
+        }
+    }
+
+    private void Start()
     {
         m_Player.TaskListUpdatedEvent += OnTaskListUpdated;
     }
