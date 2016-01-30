@@ -12,6 +12,9 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject m_PanelEndDay;
 
+    [SerializeField]
+    private GameObject m_PanelInGame;
+
     private void Start()
     {
         GameManager gameManager = GameManager.Instance;
@@ -41,6 +44,7 @@ public class UIManager : MonoBehaviour
         m_PanelMainMenu.SetActive(true);
         m_PanelStartDay.SetActive(false);
         m_PanelEndDay.SetActive(false);
+        m_PanelInGame.SetActive(false);
     }
 
     private void ShowStartDay()
@@ -48,6 +52,7 @@ public class UIManager : MonoBehaviour
         m_PanelMainMenu.SetActive(false);
         m_PanelStartDay.SetActive(true);
         m_PanelEndDay.SetActive(false);
+        m_PanelInGame.SetActive(false);
     }
 
     private void ShowEndDay()
@@ -55,13 +60,15 @@ public class UIManager : MonoBehaviour
         m_PanelMainMenu.SetActive(false);
         m_PanelStartDay.SetActive(false);
         m_PanelEndDay.SetActive(true);
+        m_PanelInGame.SetActive(false);
     }
 
-    private void HideAll()
+    private void ShowInGame()
     {
         m_PanelMainMenu.SetActive(false);
         m_PanelStartDay.SetActive(false);
         m_PanelEndDay.SetActive(false);
+        m_PanelInGame.SetActive(true);
     }
 
 
@@ -72,7 +79,7 @@ public class UIManager : MonoBehaviour
 
     private void OnStartDay()
     {
-        HideAll();
+        ShowInGame();
     }
 
     private void OnEndDay()

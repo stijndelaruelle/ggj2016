@@ -51,6 +51,11 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private List<Task> m_Tasks;
+    public List<Task> Tasks
+    {
+        get { return m_Tasks; }
+        set { m_Tasks = value; }
+    }
 
     private InputManager m_InputManager;
     private InteractableObject m_CurrentInteractableObject;
@@ -226,5 +231,8 @@ public class Player : MonoBehaviour
         m_IsOnScreen = true;
         m_IsInVehicle = false;
         m_CurrentInteractableObject = null;
+
+        if (m_TaskListUpdatedEvent != null)
+            m_TaskListUpdatedEvent();
     }
 }
