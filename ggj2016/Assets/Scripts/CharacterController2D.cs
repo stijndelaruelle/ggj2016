@@ -10,6 +10,11 @@ namespace Sjabloon
     {
         [SerializeField]
         private BoxCollider2D m_BoxCollider;
+        public BoxCollider2D BoxCollider
+        {
+            get { return m_BoxCollider; }
+        }
+
         private Bounds m_BoundsWithSkin;
 
         [SerializeField]

@@ -7,6 +7,9 @@ public class UIManager : MonoBehaviour
     private GameObject m_PanelMainMenu;
 
     [SerializeField]
+    private GameObject m_PanelEndGame;
+
+    [SerializeField]
     private GameObject m_PanelStartDay;
 
     [SerializeField]
@@ -22,8 +25,11 @@ public class UIManager : MonoBehaviour
         gameManager.CreateDayEvent += OnCreateDay;
         gameManager.StartDayEvent += OnStartDay;
         gameManager.EndDayEvent += OnEndDay;
+        gameManager.EndGameEvent += OnGameEnd;
 
+        //Lame
         m_PanelEndDay.GetComponent<UIPanel>().Initialize();
+        m_PanelEndGame.GetComponent<UIPanel>().Initialize();
 
         ShowMainMenu();
     }
@@ -38,11 +44,22 @@ public class UIManager : MonoBehaviour
         gameManager.CreateDayEvent -= OnCreateDay;
         gameManager.StartDayEvent -= OnStartDay;
         gameManager.EndDayEvent -= OnEndDay;
+        gameManager.EndGameEvent -= OnGameEnd;
     }
 
-    private void ShowMainMenu()
+    public void ShowMainMenu()
     {
         m_PanelMainMenu.SetActive(true);
+        m_PanelEndGame.SetActive(false);
+        m_PanelStartDay.SetActive(false);
+        m_PanelEndDay.SetActive(false);
+        m_PanelInGame.SetActive(false);
+    }
+
+    private void ShowEndMenu()
+    {
+        m_PanelMainMenu.SetActive(false);
+        m_PanelEndGame.SetActive(true);
         m_PanelStartDay.SetActive(false);
         m_PanelEndDay.SetActive(false);
         m_PanelInGame.SetActive(false);
@@ -51,6 +68,7 @@ public class UIManager : MonoBehaviour
     private void ShowStartDay()
     {
         m_PanelMainMenu.SetActive(false);
+        m_PanelEndGame.SetActive(false);
         m_PanelStartDay.SetActive(true);
         m_PanelEndDay.SetActive(false);
         m_PanelInGame.SetActive(false);
@@ -59,6 +77,7 @@ public class UIManager : MonoBehaviour
     private void ShowEndDay()
     {
         m_PanelMainMenu.SetActive(false);
+        m_PanelEndGame.SetActive(false);
         m_PanelStartDay.SetActive(false);
         m_PanelEndDay.SetActive(true);
         m_PanelInGame.SetActive(false);
@@ -67,6 +86,7 @@ public class UIManager : MonoBehaviour
     private void ShowInGame()
     {
         m_PanelMainMenu.SetActive(false);
+        m_PanelEndGame.SetActive(false);
         m_PanelStartDay.SetActive(false);
         m_PanelEndDay.SetActive(false);
         m_PanelInGame.SetActive(true);
@@ -86,5 +106,10 @@ public class UIManager : MonoBehaviour
     private void OnEndDay()
     {
         ShowEndDay();
+    }
+
+    private void OnGameEnd(Player player, TaskCategoryType reason, bool victory)
+    {
+        ShowEndMenu();
     }
 }

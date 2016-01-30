@@ -99,13 +99,18 @@ public class Player : MonoBehaviour
     private InteractableObject m_CurrentInteractableObject;
     private Vector3 m_OriginalPosition;
 
-    private bool m_IsInVehicle;
-    public bool IsInVehicle
+    private Vehicle m_CurrentVehicle;
+    public Vehicle CurrentVehicle
     {
-        get { return m_IsInVehicle; }
+        get { return m_CurrentVehicle; }
     }
 
     private bool m_IsOnScreen;
+    public bool IsOnScreen
+    {
+        get { return m_IsOnScreen; }
+    }
+
     private int m_TimeScreenLeft = 0; //When did we leave the screen?
     public int TimeScreenLeft
     {
@@ -183,16 +188,22 @@ public class Player : MonoBehaviour
         m_InputManager = InputManager.Instance;
 
         //Movement
-        m_InputManager.BindAxis("HorizontalAxis_" + m_PlayerID, KeyCode.RightArrow, KeyCode.LeftArrow);
+
+        //PC couldn't handle 4 controllers
+        if (m_PlayerID == 3)
+        {
+            m_InputManager.BindAxis("HorizontalAxis_" + m_PlayerID, KeyCode.RightArrow, KeyCode.LeftArrow);
+            m_InputManager.BindAxis("VerticalAxis_" + m_PlayerID, KeyCode.UpArrow, KeyCode.DownArrow);
+            m_InputManager.BindButton("Action_" + m_PlayerID, KeyCode.Z, InputManager.ButtonState.OnPress);
+        }
+            
         m_InputManager.BindAxis("HorizontalAxis_" + m_PlayerID, m_PlayerID, ControllerButtonCode.Right, ControllerButtonCode.Left);
         m_InputManager.BindAxis("HorizontalAxis_" + m_PlayerID, m_PlayerID, ControllerAxisCode.LeftStickX);
 
-        m_InputManager.BindAxis("VerticalAxis_" + m_PlayerID, KeyCode.UpArrow, KeyCode.DownArrow);
         m_InputManager.BindAxis("VerticalAxis_" + m_PlayerID, m_PlayerID, ControllerButtonCode.Up, ControllerButtonCode.Down);
         m_InputManager.BindAxis("VerticalAxis_" + m_PlayerID, m_PlayerID, ControllerAxisCode.LeftStickY);
 
         //Action
-        m_InputManager.BindButton("Action_" + m_PlayerID, KeyCode.Z, InputManager.ButtonState.OnPress);
         m_InputManager.BindButton("Action_" + m_PlayerID, m_PlayerID, ControllerButtonCode.A, InputManager.ButtonState.OnPress);
     }
 
@@ -218,7 +229,7 @@ public class Player : MonoBehaviour
 
     private void UpdateMovement()
     {
-        if (m_IsInVehicle)
+        if (IsInVehicle())
             return;
 
         //Horizontal
@@ -263,18 +274,24 @@ public class Player : MonoBehaviour
     {
         if (vehicle != null)
         {
-            m_IsInVehicle = true;
+            m_CurrentVehicle = vehicle;
             m_SpriteRenderer.enabled = false;
+            m_CharacterController.BoxCollider.enabled = false;
             transform.SetParent(vehicle.transform);
         }
         else
         {
-            m_IsInVehicle = false;
+            m_CurrentVehicle = null;
             m_SpriteRenderer.enabled = true;
+            m_CharacterController.BoxCollider.enabled = true;
             transform.SetParent(null);
         }
     }
 
+    public bool IsInVehicle()
+    {
+        return (m_CurrentVehicle != null);
+    }
 
     private void OnCustomTriggerEnter(Collider2D other)
     {
@@ -310,7 +327,7 @@ public class Player : MonoBehaviour
         m_IsOnScreen = true;
         m_TimeScreenLeft = 0;
 
-        m_IsInVehicle = false;
+        m_CurrentVehicle = null;
         m_CurrentInteractableObject = null;
 
         if (m_TaskListUpdatedEvent != null)
