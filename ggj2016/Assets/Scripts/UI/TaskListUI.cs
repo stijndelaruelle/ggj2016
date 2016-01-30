@@ -26,6 +26,20 @@ public class TaskListUI : MonoBehaviour
 		}
 	}
 
+	private GameObject m_TaskSpritePrefab;
+	public GameObject TaskSpritePrefab
+	{
+		get
+		{
+			return m_TaskSpritePrefab;
+		}
+	
+		set
+		{
+			m_TaskSpritePrefab = value;
+		}
+	}
+
 	private void Start()
     {
         m_Player.TaskListUpdatedEvent += OnTaskListUpdated;
@@ -60,6 +74,7 @@ public class TaskListUI : MonoBehaviour
 	}
 }
 
+[System.Serializable]
 public class TaskItem
 {
 	[Header("Properties")]
