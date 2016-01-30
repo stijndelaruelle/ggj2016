@@ -156,7 +156,7 @@ namespace Sjabloon
                 return;
             }
 
-            m_ButtonInputCommands.Add(name, new ButtonInputCommand(0, KeyCode.None, buttonCode, buttonState));
+            m_ButtonInputCommands.Add(name, new ButtonInputCommand(controllerIndex, KeyCode.None, buttonCode, buttonState));
         }
 
         public void BindAxis(string name, KeyCode positiveKeyCode, KeyCode negativeKeyCode)
@@ -183,7 +183,7 @@ namespace Sjabloon
                 return;
             }
 
-            m_AxisInputCommands.Add(name, new AxisInputCommand(0, KeyCode.None, KeyCode.None, ControllerAxisCode.None, positiveButtonCode, negativeButtonCode));
+            m_AxisInputCommands.Add(name, new AxisInputCommand(controllerIndex, KeyCode.None, KeyCode.None, ControllerAxisCode.None, positiveButtonCode, negativeButtonCode));
         }
 
         public void BindAxis(string name, int controllerIndex, ControllerAxisCode axisCode)
@@ -196,7 +196,7 @@ namespace Sjabloon
                 return;
             }
 
-            m_AxisInputCommands.Add(name, new AxisInputCommand(0, KeyCode.None, KeyCode.None, axisCode, ControllerButtonCode.None, ControllerButtonCode.None));
+            m_AxisInputCommands.Add(name, new AxisInputCommand(controllerIndex, KeyCode.None, KeyCode.None, axisCode, ControllerButtonCode.None, ControllerButtonCode.None));
         }
 
         public bool GetButton(string name)

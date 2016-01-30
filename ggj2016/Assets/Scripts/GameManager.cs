@@ -16,6 +16,9 @@ public class GameManager : Singleton<GameManager>
     private List<Player> m_Players;
     private int m_PlayersLeftScreen = 0;
 
+    [SerializeField]
+    private List<PlayerScore> m_PlayerScores;
+
     private int m_Day;
     public int Day
     {
@@ -33,8 +36,8 @@ public class GameManager : Singleton<GameManager>
         set { m_StartGameEvent = value; }
     }
 
-    private VoidDelegate m_EndGameEvent;
-    public VoidDelegate EndGameEvent
+    private GameEndDelegate m_EndGameEvent;
+    public GameEndDelegate EndGameEvent
     {
         get { return m_EndGameEvent; }
         set { m_EndGameEvent = value; }
@@ -68,6 +71,11 @@ public class GameManager : Singleton<GameManager>
         {
             player.LeftScreenEvent += OnPlayerLeftScreen;
         }
+
+        foreach(PlayerScore playerScore in m_PlayerScores)
+        {
+            playerScore.EndGameEvent += OnGameEnd;
+        }
     }
 
     protected override void OnDestroy()
@@ -78,6 +86,14 @@ public class GameManager : Singleton<GameManager>
         {
             if (player != null)
                 player.LeftScreenEvent -= OnPlayerLeftScreen;
+        }
+
+        foreach (PlayerScore playerScore in m_PlayerScores)
+        {
+            if (playerScore != null)
+            {
+                playerScore.EndGameEvent -= OnGameEnd;
+            }
         }
     }
 
@@ -93,12 +109,12 @@ public class GameManager : Singleton<GameManager>
         CreateDay();
     }
 
-    private void EndGame()
+    private void EndGame(Player player, TaskCategoryType reason, bool victory)
     {
         Debug.Log("END GAME!");
 
         if (m_EndGameEvent != null)
-            m_EndGameEvent();
+            m_EndGameEvent(player, reason, victory);
     }
 
     public void CreateDay()
@@ -140,13 +156,34 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    private void OnGameEnd(Player player, TaskCategoryType reason, bool victory)
+    {
+        EndGame(player, reason, victory);
+    }
+
+    //Utility
     public bool AllChildrenInVehicle()
     {
         foreach(Player player in m_Players)
         {
             if (player.PlayerType == PlayerType.Child)
             {
-                if (player.IsInVehicle == false)
+                if (player.IsInVehicle() == false && player.IsOnScreen)
+                    return false;
+            }
+        }
+
+        return true;
+    }
+
+    public bool AllChildrenOnBus()
+    {
+        foreach (Player player in m_Players)
+        {
+            if (player.PlayerType == PlayerType.Child)
+            {
+                Vehicle vehicle = player.CurrentVehicle;
+                if (vehicle != null && player.CurrentVehicle.CurrentVehicleType != Vehicle.VehicleType.Bus)
                     return false;
             }
         }

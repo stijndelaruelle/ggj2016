@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
+public delegate void GameEndDelegate(Player player, TaskCategoryType type, bool victory);
+
 public enum Rating
 {
     None = 0,
@@ -75,8 +77,15 @@ public class PlayerScore : MonoBehaviour
         get { return m_Player; }
     }
 
-    //Timescore
-    List<ScoreGroup> m_ScoreGroups;
+    private List<ScoreGroup> m_ScoreGroups;
+
+    //Events
+    private GameEndDelegate m_EndGameEvent;
+    public GameEndDelegate EndGameEvent
+    {
+        get { return m_EndGameEvent; }
+        set { m_EndGameEvent = value; }
+    }
 
     private void Start()
     {
@@ -94,14 +103,36 @@ public class PlayerScore : MonoBehaviour
         CalculateOnTimeScore();
         CalculateTaskScore();
 
-        if (m_ScoreGroups[(int)TaskCategoryType.Time].TotalScore < -3)
+        //Check for victory & gameover
+        bool victory = true;
+        TaskCategoryType bestStat = TaskCategoryType.Time;
+        int bestStatScore = -9999;
+
+        for (int i = 0; i < m_ScoreGroups.Count; ++i)
         {
-            //Ontslagen of van school getrapt
+            if (m_ScoreGroups[i].TotalScore > bestStatScore)
+                bestStat = (TaskCategoryType)i;
+
+            //To win, we need all stats at 2 or above
+            if (m_ScoreGroups[i].TotalScore < 2)
+            {
+                victory = false;
+            }
+
+            //To lose, we need 1 stat at -3 or lower
+            if (m_ScoreGroups[i].TotalScore <= -3)
+            {
+                if (m_EndGameEvent != null)
+                    m_EndGameEvent(m_Player, (TaskCategoryType)i, false);
+
+                return;
+            }
         }
 
-        if ((m_ScoreGroups[(int)TaskCategoryType.Productivity].TotalScore) < -3)
+        if (victory)
         {
-            //Boss score
+            if (m_EndGameEvent != null)
+                m_EndGameEvent(m_Player, bestStat, true);
         }
     }
 
@@ -113,7 +144,20 @@ public class PlayerScore : MonoBehaviour
         //if we're a parent, and we took the schoolbus, we never arrive!
         if (m_Player.PlayerType == PlayerType.Parent)
         {
+            Vehicle vehicle = m_Player.CurrentVehicle;
+            if (vehicle != null && vehicle.CurrentVehicleType == Vehicle.VehicleType.Bus)
+            {
+                scoreGroup.SetRating(Rating.Terrible);
+                scoreGroup.AddToTotal(-100);
+                return;
+            }
+        }
 
+        //If we're a parent, and we had to bring a kid to school, we remove some time.
+        if (m_Player.PlayerType == PlayerType.Parent &&
+            GameManager.Instance.AllChildrenOnBus() == false)
+        {
+            timeLeft -= 10;
         }
 
         //We're very early

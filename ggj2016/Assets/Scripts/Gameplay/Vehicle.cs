@@ -5,6 +5,20 @@ using Sjabloon;
 
 public class Vehicle : MonoBehaviour, InteractableObject
 {
+    public enum VehicleType
+    {
+        None = 0,
+        Car = 1,
+        Bus = 2
+    }
+
+    [SerializeField]
+    private VehicleType m_CurrentVehicleType;
+    public VehicleType CurrentVehicleType
+    {
+        get { return m_CurrentVehicleType; }
+    }
+
     [SerializeField]
     protected CharacterController2D m_CharacterController;
 
@@ -90,9 +104,9 @@ public class Vehicle : MonoBehaviour, InteractableObject
     protected virtual bool CanDrive()
     {
         //Are all the required passengers on board?
-        foreach (Player requiredPlayed in m_RequiredPlayers)
+        foreach (Player requiredPlayer in m_RequiredPlayers)
         {
-            if (!m_Passengers.Contains(requiredPlayed))
+            if (!m_Passengers.Contains(requiredPlayer) && requiredPlayer.IsOnScreen)
                 return false;
         }
 
