@@ -7,6 +7,8 @@ public class Clock : MonoBehaviour
     private float m_TimePerDay;
     private float m_TimeLeft;
 
+    private bool m_IsTicking = false;
+
     //Events
     private IntDelegate m_ClockUpdatedEvent;
     public IntDelegate ClockUpdatedEvent
@@ -17,11 +19,27 @@ public class Clock : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.StartDayEvent += OnStartDay;
+        GameManager gameManager = GameManager.Instance;
+
+        gameManager.StartDayEvent += OnStartDay;
+        gameManager.EndDayEvent += OnEndDay;
+    }
+
+    private void OnDestroy()
+    {
+        GameManager gameManager = GameManager.Instance;
+        if (gameManager == null)
+            return;
+
+        gameManager.StartDayEvent -= OnStartDay;
+        gameManager.EndDayEvent -= OnEndDay;
     }
 
     private void Update()
     {
+        if (!m_IsTicking)
+            return;
+
         int prevSeconds = TimeLeftInSeconds();
         m_TimeLeft -= Time.deltaTime;
         int seconds = TimeLeftInSeconds();
@@ -44,5 +62,11 @@ public class Clock : MonoBehaviour
     private void OnStartDay()
     {
         m_TimeLeft = m_TimePerDay;
+        m_IsTicking = true;
+    }
+
+    private void OnEndDay()
+    {
+        m_IsTicking = false;
     }
 }

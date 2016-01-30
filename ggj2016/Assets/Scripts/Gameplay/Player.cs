@@ -54,6 +54,8 @@ public class Player : MonoBehaviour
 
     private InputManager m_InputManager;
     private InteractableObject m_CurrentInteractableObject;
+    private Vector3 m_OriginalPosition;
+
     private bool m_IsOnScreen = true;
     private bool m_IsInVehicle;
     public bool IsInVehicle
@@ -80,19 +82,28 @@ public class Player : MonoBehaviour
     //Functions
     private void Start()
     {
-        InitializeControls();
+        GameManager.Instance.StartDayEvent += OnStartDay;
 
         m_CharacterController.OnTriggerEnterEvent += OnCustomTriggerEnter;
         m_CharacterController.OnTriggerExitEvent += OnCustomTriggerExit;
+
+        m_OriginalPosition = transform.position.Copy();
+
+        InitializeControls();
     }
 
     private void OnDestroy()
     {
-        if (m_CharacterController == null)
-            return;
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.StartDayEvent -= OnStartDay;
+        }
 
-        m_CharacterController.OnTriggerEnterEvent -= OnCustomTriggerEnter;
-        m_CharacterController.OnTriggerExitEvent -= OnCustomTriggerExit;
+        if (m_CharacterController == null)
+        {
+            m_CharacterController.OnTriggerEnterEvent -= OnCustomTriggerEnter;
+            m_CharacterController.OnTriggerExitEvent -= OnCustomTriggerExit;
+        }
     }
 
     private void InitializeControls()
@@ -191,6 +202,7 @@ public class Player : MonoBehaviour
         }
     }
 
+
     private void OnCustomTriggerEnter(Collider2D other)
     {
         m_CurrentInteractableObject = other.gameObject.GetComponent<InteractableObject>();
@@ -201,5 +213,18 @@ public class Player : MonoBehaviour
     {
         m_CurrentInteractableObject = null;
         Debug.Log(m_CurrentInteractableObject);
+    }
+
+
+    private void OnStartDay()
+    {
+        //Reset everything
+        UpdateVehicle(null);
+
+        transform.position = m_OriginalPosition;
+        
+        m_IsOnScreen = true;
+        m_IsInVehicle = false;
+        m_CurrentInteractableObject = null;
     }
 }

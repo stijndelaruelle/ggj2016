@@ -9,9 +9,22 @@ public class TaskObject : MonoBehaviour, InteractableObject
     private Player m_CurrentPlayer;
     private Coroutine m_TaskRoutineHandle;
 
+    private void Start()
+    {
+        GameManager.Instance.StartDayEvent += OnStartDay;
+    }
+
+    private void OnDestroy()
+    {
+        if (GameManager.Instance == null)
+            return;
+
+        GameManager.Instance.StartDayEvent -= OnStartDay;
+    }
+
     public bool CanInteract(Player player)
     {
-        return (m_CurrentPlayer == null || m_CurrentPlayer == player);
+        return true;
     }
 
     public void Interact(Player player)
@@ -24,15 +37,10 @@ public class TaskObject : MonoBehaviour, InteractableObject
             return;
         }
 
-        if (m_CurrentPlayer == player)
-        {
-            //Cancel the interaction
-            m_CurrentPlayer = null;
-            StopCoroutine(m_TaskRoutineHandle);
-            return;
-        }
-
-        Debug.Log("Somebody else is already interacting");
+        //Cancel the interaction
+        m_CurrentPlayer = null;
+        StopCoroutine(m_TaskRoutineHandle);
+        m_TaskRoutineHandle = null;
     }
 
     private IEnumerator TaskRoutine(Player player)
@@ -48,5 +56,15 @@ public class TaskObject : MonoBehaviour, InteractableObject
         }
 
         player.UpdateTask(m_TaskDefinition);
+    }
+
+    private void OnStartDay()
+    {
+        m_CurrentPlayer = null;
+
+        if (m_TaskRoutineHandle != null)
+            StopCoroutine(m_TaskRoutineHandle);
+
+        m_TaskRoutineHandle = null;
     }
 }
