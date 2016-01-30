@@ -48,7 +48,7 @@ public class ScoreGroup
         else if (value > 1) rating = Rating.Good;
         else if(value >= 0) rating = Rating.Normal;
         else if(value > -2) rating = Rating.Bad;
-        else if(value > -4) rating = Rating.VeryBad;
+        else                rating = Rating.VeryBad;
 
         SetRating(rating);
     }
@@ -80,8 +80,6 @@ public class PlayerScore : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.EndDayEvent += OnDayEnd;
-
         int num = Enum.GetNames(typeof(TaskCategoryType)).Length;
 
         m_ScoreGroups = new List<ScoreGroup>();
@@ -91,15 +89,7 @@ public class PlayerScore : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        if (GameManager.Instance == null)
-            return;
-
-        GameManager.Instance.EndDayEvent -= OnDayEnd;
-    }
-
-    private void OnDayEnd()
+    public void Calculate()
     {
         CalculateOnTimeScore();
         CalculateTaskScore();

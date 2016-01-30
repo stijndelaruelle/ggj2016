@@ -58,9 +58,17 @@ public class EndOfDayStory : MonoBehaviour
 
     private void OnDayEnd()
     {
+        m_PlayerScore.Calculate();
+
         string sentence = CalculateOnTimeStory() + "<br><br>";
-        sentence += CalculateEmployerStory() + "<br><br>";
-        sentence += CalculateCollegueStory();
+
+        //Boss
+        sentence += CalculateProductivityStory() + "<br>";
+        sentence += CalculateWardrobeStory() + "<br><br>";
+
+        //Colleagues
+        sentence += CalculateSmellStory() + "<br>";
+        sentence += CalculateEntertainmentStory() + "<br><br>";
 
         sentence = sentence.Replace("<br>", "\n");
         m_Text.text = sentence;
@@ -132,16 +140,16 @@ public class EndOfDayStory : MonoBehaviour
         return sentence;
     }
 
-    private string CalculateEmployerStory()
+    private string CalculateProductivityStory()
     {
-        ScoreGroup scoreGroup = m_PlayerScore.GetScoreGroup(TaskCategoryType.Productivity);
-
-        Rating timeScore = scoreGroup.Score;
-        Rating lastTimeScore = scoreGroup.LastScore;
-
         string sentence = "";
 
-        switch (timeScore)
+        ScoreGroup scoreGroup = m_PlayerScore.GetScoreGroup(TaskCategoryType.Productivity);
+
+        Rating score = scoreGroup.Score;
+        Rating lastScore = scoreGroup.LastScore;
+
+        switch (score)
         {
             case Rating.VeryGood: sentence += "Very good productivity."; break;
             case Rating.Good: sentence += "Good productivity.";          break;
@@ -153,14 +161,84 @@ public class EndOfDayStory : MonoBehaviour
                 break;
         }
 
-        if ((scoreGroup.TotalScore >= 2) &&
-            (scoreGroup.TotalScore > scoreGroup.LastTotalScore))
+        //if ((scoreGroup.TotalScore >= 2) &&
+        //    (scoreGroup.TotalScore > scoreGroup.LastTotalScore))
+        //{
+        //    sentence += " This is very much appreciated!";
+        //}
+
+        return sentence;
+    }
+
+    private string CalculateWardrobeStory()
+    {
+        string sentence = "";
+        ScoreGroup scoreGroup = m_PlayerScore.GetScoreGroup(TaskCategoryType.Wardrobe);
+
+        Rating score = scoreGroup.Score;
+        Rating lastScore = scoreGroup.LastScore;
+
+        switch (score)
         {
-            sentence += " This is very much appreciated!";
+            case Rating.VeryGood: sentence += "Very good wardrobe."; break;
+            case Rating.Good: sentence += "Good wardrobe."; break;
+            case Rating.Normal: sentence += "Normal wardrobe."; break;
+            case Rating.Bad: sentence += "Bad wardrobe."; break;
+            case Rating.VeryBad: sentence += "Aweful wardrobe."; break;
+
+            default:
+                break;
         }
 
         return sentence;
     }
+
+    private string CalculateSmellStory()
+    {
+        string sentence = "";
+        ScoreGroup scoreGroup = m_PlayerScore.GetScoreGroup(TaskCategoryType.Smell);
+
+        Rating score = scoreGroup.Score;
+        Rating lastScore = scoreGroup.LastScore;
+
+        switch (score)
+        {
+            case Rating.VeryGood: sentence += "Very good smell."; break;
+            case Rating.Good: sentence += "Good smell."; break;
+            case Rating.Normal: sentence += "Normal smell."; break;
+            case Rating.Bad: sentence += "Bad smell."; break;
+            case Rating.VeryBad: sentence += "Aweful smell."; break;
+
+            default:
+                break;
+        }
+
+        return sentence;
+    }
+
+    private string CalculateEntertainmentStory()
+    {
+        string sentence = "";
+        ScoreGroup scoreGroup = m_PlayerScore.GetScoreGroup(TaskCategoryType.Entertainment);
+
+        Rating score = scoreGroup.Score;
+        Rating lastScore = scoreGroup.LastScore;
+
+        switch (score)
+        {
+            case Rating.VeryGood: sentence += "Very good entertainment."; break;
+            case Rating.Good: sentence += "Good entertainment."; break;
+            case Rating.Normal: sentence += "Normal entertainment."; break;
+            case Rating.Bad: sentence += "Bad entertainment."; break;
+            case Rating.VeryBad: sentence += "Aweful entertainment."; break;
+
+            default:
+                break;
+        }
+
+        return sentence;
+    }
+
 
     private string CalculateCollegueStory()
     {

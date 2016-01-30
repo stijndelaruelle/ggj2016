@@ -147,7 +147,7 @@ public class Player : MonoBehaviour
         InitializeControls();
 
         m_Icon.Initialize();
-		m_CharacterAnimation.Initialize();
+	    m_CharacterAnimation.Initialize();
     }
 
     private void OnDestroy()
@@ -211,9 +211,7 @@ public class Player : MonoBehaviour
         float horizInput = m_InputManager.GetAxis("HorizontalAxis_" + m_PlayerID);
         float vertInput = m_InputManager.GetAxis("VerticalAxis_" + m_PlayerID);
 
-		m_Velocity = new Vector2(horizInput * m_Speed, vertInput* m_Speed);
-
-		m_CharacterController.Move(m_Velocity.x, m_Velocity.y);
+        m_Velocity = m_CharacterController.Move(horizInput * m_Speed, vertInput * m_Speed);
     }
 
     private void UpdateAction()
@@ -269,6 +267,7 @@ public class Player : MonoBehaviour
         m_CurrentInteractableObject = other.gameObject.GetComponent<InteractableObject>();
         Debug.Log(m_CurrentInteractableObject);
 
+		m_Icon.Reset();
         m_Icon.ShowSprite(m_Icon._properties._standardSprite);
     }
 
@@ -278,17 +277,12 @@ public class Player : MonoBehaviour
             m_CurrentInteractableObject.IsInteracting(this))
         {
             m_CurrentInteractableObject.Interact(null);
-			m_Icon.Fail();
         }
-		else
-		{
-			m_Icon.Reset();
-		}
 
         m_CurrentInteractableObject = null;
         Debug.Log(m_CurrentInteractableObject);
 
-       
+        m_Icon.Reset();
     }
 
 
