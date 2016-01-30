@@ -65,4 +65,5 @@ public class TaskItem
 	[Header("Properties")]
 	public bool _done;
 	public TaskDefinition _taskDefinition;
+	public GameManager _uiObject;
 }
