@@ -283,6 +283,7 @@ public class Player : MonoBehaviour
             m_CurrentVehicle = vehicle;
             m_SpriteRenderer.enabled = false;
             m_CharacterController.BoxCollider.enabled = false;
+            m_Icon.gameObject.SetActive(false);
             transform.SetParent(vehicle.transform);
         }
         else
@@ -290,6 +291,7 @@ public class Player : MonoBehaviour
             m_CurrentVehicle = null;
             m_SpriteRenderer.enabled = true;
             m_CharacterController.BoxCollider.enabled = true;
+            m_Icon.gameObject.SetActive(true);
             transform.SetParent(null);
         }
     }
@@ -319,7 +321,10 @@ public class Player : MonoBehaviour
         m_CurrentInteractableObject = null;
         Debug.Log(m_CurrentInteractableObject);
 
-        m_Icon.Reset();
+        if (m_Icon._progress < 1.0f)
+            m_Icon.Fail(true);
+        else
+            m_Icon.Hide();
     }
 
 

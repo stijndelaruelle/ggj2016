@@ -25,13 +25,25 @@ public class Icon : MonoBehaviour
 		_canvas.enabled = false;
 	}
 
-	public void ShowSprite(Sprite sprite)
-	{
-		Reset();
+    public void Show()
+    {
+        Reset();
+        _canvas.enabled = true;
+    }
 
-		_canvas.enabled = true;
-		_image.sprite = sprite;
+    public void Hide()
+    {
+        Reset();
+        _canvas.enabled = false;
+    }
+
+    public void ShowSprite(Sprite sprite)
+	{
+        Show();
+        _image.sprite = sprite;
 	}
+
+
 
 	public void UpdateProgress(float progress)
 	{
@@ -43,20 +55,22 @@ public class Icon : MonoBehaviour
 	{
 		StopAllCoroutines();
 
-        UpdateProgress(1);
+        _image.sprite = _properties._standardSprite;
         _rectTransform.localScale = Vector3.one;
-		_canvas.enabled = false;
-	}
+
+        UpdateProgress(1);
+    }
 
 	// Visual feedback
 	public void Win()
 	{
 		UpdateProgress(1);
 
-		StartCoroutine(R_Win());
+        StopAllCoroutines();
+        StartCoroutine(R_Win());
 	}
 
-	IEnumerator R_Win()
+    private IEnumerator R_Win()
 	{
 		float timer = _properties._scaleDuration;
 		float scaleUp = 1 + _properties._scaleUp;
@@ -73,14 +87,16 @@ public class Icon : MonoBehaviour
 		}
 
 		Reset();
+        Hide();
 	}
 
-	public void Fail()
+	public void Fail(bool hideAfterwards)
 	{
-		StartCoroutine(R_Fail());
+        StopAllCoroutines();
+		StartCoroutine(R_Fail(hideAfterwards));
 	}
 
-	IEnumerator R_Fail()
+	private IEnumerator R_Fail(bool hideAfterwards)
 	{
 		for(int i = 0; i < _properties._flashes; i++)
 		{
@@ -90,16 +106,19 @@ public class Icon : MonoBehaviour
 		}
 
 		Reset();
+
+        if (hideAfterwards)
+            Hide();
 	}
 
-	IEnumerator R_Flicker(float duration)
+    private IEnumerator R_Flicker(float duration)
 	{
-		// Hide the image
-		_image.enabled = false;
+        // Hide the image
+        _canvas.enabled = false;
 
 		yield return new WaitForSeconds(duration);
 
-		// Show the image again
-		_image.enabled = true;
+        // Show the image again
+        _canvas.enabled = true;
 	}
 }
