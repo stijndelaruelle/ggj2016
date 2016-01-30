@@ -73,7 +73,9 @@ public class Player : MonoBehaviour
     public List<Task> Tasks
     {
         get { return m_Tasks; }
-        set { m_Tasks = value; }
+        set {
+			m_Tasks = value;
+		}
     }
 
     [SerializeField]
@@ -123,6 +125,7 @@ public class Player : MonoBehaviour
 		get { return m_Velocity; }
 	}
 
+	[SerializeField]
 	private TaskListUI m_assignedTaskList;
 	public TaskListUI AssignedTaskList
 	{
@@ -142,7 +145,7 @@ public class Player : MonoBehaviour
     public VoidDelegate TaskListUpdatedEvent
     {
         get { return m_TaskListUpdatedEvent; }
-        set { m_TaskListUpdatedEvent = value; }
+        set { m_TaskListUpdatedEvent = value;}
     }
 
     private VoidDelegate m_LeftScreenEvent;
@@ -167,6 +170,7 @@ public class Player : MonoBehaviour
 
         m_Icon.Initialize();
 	    m_CharacterAnimation.Initialize();
+		m_assignedTaskList.UpdateTaskList(m_Tasks);
     }
 
     private void OnDestroy()
@@ -264,7 +268,9 @@ public class Player : MonoBehaviour
                 if (m_TaskListUpdatedEvent != null)
                     m_TaskListUpdatedEvent();
 
-                return;
+				m_assignedTaskList.UpdateTaskList(m_Tasks);
+
+				return;
             }
         }
 
