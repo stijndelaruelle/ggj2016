@@ -127,6 +127,11 @@ public class EndOfDayStory : MonoBehaviour
 
     private string CalculateEmployerStory()
     {
+        ScoreGroup scoreGroup = m_PlayerScore.GetScoreGroup(TaskCategoryType.Productivity);
+
+        Rating timeScore = scoreGroup.Score;
+        Rating lastTimeScore = scoreGroup.LastScore;
+
         return m_Employer + " story...";
     }
 
