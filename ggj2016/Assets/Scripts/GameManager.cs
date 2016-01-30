@@ -131,10 +131,6 @@ public class GameManager : Singleton<GameManager>
     {
         Debug.Log("PLAYER LEFT THE SCREEN!");
 
-        //TEMP TEMP TEMP TEMP TEST
-        EndDay();
-        return;
-
         ++m_PlayersLeftScreen;
 
         //When all the players left the screen, end the day

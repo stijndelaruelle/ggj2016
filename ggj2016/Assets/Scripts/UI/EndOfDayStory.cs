@@ -59,12 +59,14 @@ public class EndOfDayStory : MonoBehaviour
 
     private string CalculateOnTimeStory()
     {
-        PlayerScore.TimeScore timeScore = m_PlayerScore.CurrentTimeScore;
-        PlayerScore.TimeScore lastTimeScore = m_PlayerScore.LastTimeScore;
+        ScoreGroup scoreGroup = m_PlayerScore.GetScoreGroup(TaskCategoryType.Time);
+
+        Rating timeScore = scoreGroup.Score;
+        Rating lastTimeScore = scoreGroup.LastScore;
 
         string sentence = m_Name;
 
-        if (timeScore == PlayerScore.TimeScore.NeverArrived)
+        if (timeScore == Rating.Terrible)
         {
             sentence += " never arrived at " + m_JobName + ", because " + m_GenderWord + " took the schoolbus!";
         }
@@ -77,23 +79,23 @@ public class EndOfDayStory : MonoBehaviour
 
             switch (timeScore)
             {
-                case PlayerScore.TimeScore.VeryEarly:
+                case Rating.VeryGood:
                     sentence += " very early";
                     break;
 
-                case PlayerScore.TimeScore.Early:
+                case Rating.Good:
                     sentence += " early";
                     break;
 
-                case PlayerScore.TimeScore.OnTime:
+                case Rating.Normal:
                     sentence += " on time";
                     break;
 
-                case PlayerScore.TimeScore.Late:
+                case Rating.Bad:
                     sentence += " late";
                     break;
 
-                case PlayerScore.TimeScore.VeryLate:
+                case Rating.VeryBad:
                     sentence += " very late";
                     break;
 
@@ -104,13 +106,13 @@ public class EndOfDayStory : MonoBehaviour
             sentence += " at " + m_JobName + ".";
         }
 
-        if ((m_PlayerScore.CurrentTotalTimeScore >= 2) &&
-            (m_PlayerScore.CurrentTotalTimeScore > m_PlayerScore.LastTotalTimeScore))
+        if ((scoreGroup.TotalScore >= 2) &&
+            (scoreGroup.TotalScore > scoreGroup.LastTotalScore))
         {
             sentence += " This is very much appreciated!";
         }
 
-        if (m_PlayerScore.CurrentTotalTimeScore <= -2)
+        if (scoreGroup.TotalScore <= -2)
         {
             sentence += " If this happens 1 more time " + m_GenderWord + " will be ";
 
@@ -125,6 +127,11 @@ public class EndOfDayStory : MonoBehaviour
 
     private string CalculateEmployerStory()
     {
+        ScoreGroup scoreGroup = m_PlayerScore.GetScoreGroup(TaskCategoryType.Productivity);
+
+        Rating timeScore = scoreGroup.Score;
+        Rating lastTimeScore = scoreGroup.LastScore;
+
         return m_Employer + " story...";
     }
 

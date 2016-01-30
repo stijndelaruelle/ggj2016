@@ -1,6 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum TaskCategoryType
+{
+    Time = 0,
+    Productivity = 1,
+    Wardrobe = 2,
+    Smell = 3,
+    Entertainment = 4,
+}
+
 [CreateAssetMenu (menuName = "GGJ16/Task Definition")]
 public class TaskDefinition : ScriptableObject
 {
@@ -30,5 +39,22 @@ public class TaskDefinition : ScriptableObject
     public float TimeToComplete
     {
         get { return m_TimeToComplete; }
+    }
+
+    [Space(15)]
+    [Header("Score")]
+
+    [SerializeField]
+    private TaskCategoryType m_TaskCategory;
+    public TaskCategoryType TaskCategory
+    {
+        get { return m_TaskCategory; }
+    }
+
+    [SerializeField]
+    private int m_Weight;
+    public int Weight
+    {
+        get { return m_Weight; }
     }
 }
