@@ -26,6 +26,7 @@ public class TaskListUI : MonoBehaviour
 		}
 	}
 
+	[SerializeField]
 	private GameObject m_TaskSpritePrefab;
 	public GameObject TaskSpritePrefab
 	{
@@ -68,9 +69,46 @@ public class TaskListUI : MonoBehaviour
         m_Text.text = str;
     }
 
-	public void PopulateTaskList()
+	public void UpdateTaskList(List<Task> inputList)
 	{
+		ClearTaskList();
+		PopulateTaskList(inputList);
 
+		Debug.Log("Updated task list");
+	}
+
+	void ClearTaskList()
+	{
+		for(int i = 0; i < m_TaskList.Count; i++)
+		{
+			Destroy(m_TaskList[i]._uiObject);
+		}
+
+		m_TaskList.Clear();
+	}
+
+	void PopulateTaskList(List<Task> inputList)
+	{
+		for(int i = 0; i < inputList.Count; i++)
+		{
+			GameObject newTaskItem = Instantiate(m_TaskSpritePrefab);
+
+			// Set sprite
+			newTaskItem.GetComponent<Image>().sprite = inputList[i].TaskDefinition.Sprite;
+
+			// Set sprite as done
+			if(inputList[i].IsDone)
+			{
+
+			}
+
+			// Set transform
+			newTaskItem.transform.SetParent(transform);
+
+			// Add to tasklist
+			m_TaskList.Add(new TaskItem(inputList[i], newTaskItem));
+			
+		}
 	}
 }
 
@@ -78,7 +116,12 @@ public class TaskListUI : MonoBehaviour
 public class TaskItem
 {
 	[Header("Properties")]
-	public bool _done;
-	public TaskDefinition _taskDefinition;
-	public GameManager _uiObject;
+	public Task _task;
+	public GameObject _uiObject;
+
+	public TaskItem(Task task, GameObject uiObject)
+	{
+		_task = task;
+		_uiObject = uiObject;
+	}
 }
