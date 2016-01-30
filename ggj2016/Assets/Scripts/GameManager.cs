@@ -2,9 +2,13 @@
 using System.Collections;
 using Sjabloon;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 public delegate void VoidDelegate();
 public delegate void IntDelegate(int i);
+
+[System.Serializable]
+public class VoidEvent : UnityEvent { }
 
 public class GameManager : Singleton<GameManager>
 {
@@ -12,14 +16,14 @@ public class GameManager : Singleton<GameManager>
     private List<Player> m_Players;
     private int m_PlayersLeftScreen = 0;
 
-    [SerializeField]
-    private Clock m_Clock;
-
     private int m_Day;
     public int Day
     {
         get { return m_Day; }
     }
+
+    //Unity events
+    private VoidEvent m_StartGameUnityEvent;
 
     //Events
     private VoidDelegate m_StartGameEvent;
@@ -129,6 +133,7 @@ public class GameManager : Singleton<GameManager>
 
         //TEMP TEMP TEMP TEMP TEST
         EndDay();
+        return;
 
         ++m_PlayersLeftScreen;
 

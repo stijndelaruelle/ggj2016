@@ -23,6 +23,8 @@ public class UIManager : MonoBehaviour
         gameManager.StartDayEvent += OnStartDay;
         gameManager.EndDayEvent += OnEndDay;
 
+        m_PanelEndDay.GetComponent<UIPanel>().Initialize();
+
         ShowMainMenu();
     }
 
@@ -37,7 +39,6 @@ public class UIManager : MonoBehaviour
         gameManager.StartDayEvent -= OnStartDay;
         gameManager.EndDayEvent -= OnEndDay;
     }
-
 
     private void ShowMainMenu()
     {

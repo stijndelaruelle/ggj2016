@@ -9,6 +9,12 @@ public enum PlayerType
     Child = 1
 }
 
+public enum GenderType
+{
+    Male = 0,
+    Female = 1
+}
+
 [System.Serializable]
 public class Task
 {
@@ -33,11 +39,24 @@ public class Player : MonoBehaviour
     private int m_PlayerID;
 
     [SerializeField]
+    private string m_PlayerName;
+    public string Name
+    {
+        get { return m_PlayerName; }
+    }
+
+    [SerializeField]
     private PlayerType m_PlayerType;
     public PlayerType PlayerType
     {
         get { return m_PlayerType; }
-        set { m_PlayerType = value; }
+    }
+
+    [SerializeField]
+    private GenderType m_Gender;
+    public GenderType Gender
+    {
+        get { return m_Gender; }
     }
 
     [SerializeField]
@@ -58,6 +77,9 @@ public class Player : MonoBehaviour
     }
 
     [SerializeField]
+    private Clock m_Clock;
+
+    [SerializeField]
     private Icon m_Icon;
     public Icon Icon
     {
@@ -69,11 +91,17 @@ public class Player : MonoBehaviour
     private InteractableObject m_CurrentInteractableObject;
     private Vector3 m_OriginalPosition;
 
-    private bool m_IsOnScreen = true;
     private bool m_IsInVehicle;
     public bool IsInVehicle
     {
         get { return m_IsInVehicle; }
+    }
+
+    private bool m_IsOnScreen;
+    private int m_TimeScreenLeft = 0; //When did we leave the screen?
+    public int TimeScreenLeft
+    {
+        get { return m_TimeScreenLeft; }
     }
 
     //Events
@@ -151,6 +179,7 @@ public class Player : MonoBehaviour
         if (viewPos.x < 0.0f || viewPos.x > 1.0f || viewPos.y < 0.0f || viewPos.y > 1.0f)
         {
             m_IsOnScreen = false;
+            m_TimeScreenLeft = m_Clock.TimeLeftInSeconds();
 
             if (m_LeftScreenEvent != null)
                 m_LeftScreenEvent();
@@ -248,6 +277,8 @@ public class Player : MonoBehaviour
         transform.position = m_OriginalPosition;
         
         m_IsOnScreen = true;
+        m_TimeScreenLeft = 0;
+
         m_IsInVehicle = false;
         m_CurrentInteractableObject = null;
 
