@@ -59,7 +59,7 @@ public class Vehicle : MonoBehaviour, InteractableObject
         return false;
     }
 
-    public void Interact(Player player)
+    public virtual void Interact(Player player)
     {
         if (m_IsDriving)
             return;
