@@ -1,9 +1,33 @@
 fileFormatVersion: 2
 guid: 6d4ebae84c70f904d9a064caf84718d2
-timeCreated: 1454171205
+timeCreated: 1454186523
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: dad_walk_Side_0
+    21300002: dad_walk_Side_1
+    21300004: dad_walk_Side_2
+    21300006: dad_walk_Side_3
+    21300008: dad_walk_Side_4
+    21300010: dad_walk_Side_5
+    21300012: dad_walk_Side_6
+    21300014: dad_walk_Side_7
+    21300016: dad_walk_Side_8
+    21300018: dad_walk_Side_9
+    21300020: dad_walk_Side_10
+    21300022: dad_walk_Side_11
+    21300024: dad_walk_Side_12
+    21300026: dad_walk_Side_13
+    21300028: dad_walk_Side_14
+    21300030: dad_walk_Side_15
+    21300032: dad_walk_Side_16
+    21300034: dad_walk_Side_17
+    21300036: dad_walk_Side_18
+    21300038: dad_walk_Side_19
+    21300040: dad_walk_Side_20
+    21300042: dad_walk_Side_21
+    21300044: dad_walk_Side_22
+    21300046: dad_walk_Side_23
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +54,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,10 +62,10 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 7
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
@@ -49,7 +73,495 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: dad_walk_Side_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 408
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 132}
+        - {x: -50.5, y: 128}
+        - {x: -51.5, y: 123}
+        - {x: -51.5, y: 28}
+        - {x: -7.5, y: 6}
+        - {x: 20.5, y: 6}
+        - {x: 51.5, y: 59}
+        - {x: 51.5, y: 126}
+        - {x: 26.5, y: 132}
+    - name: dad_walk_Side_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 408
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 39.5, y: 130}
+        - {x: -6.5, y: 130}
+        - {x: -47.5, y: 114}
+        - {x: -51.5, y: 80}
+        - {x: -51.5, y: 36}
+        - {x: -7.5, y: 4}
+        - {x: 21.5, y: 4}
+        - {x: 50.5, y: 51}
+        - {x: 50.5, y: 122}
+        - {x: 49.5, y: 126}
+    - name: dad_walk_Side_2
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 408
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 36.5, y: 129}
+        - {x: -19.5, y: 129}
+        - {x: -52.5, y: 124}
+        - {x: -52.5, y: 29}
+        - {x: -3.5, y: 3}
+        - {x: 8.5, y: 3}
+        - {x: 15.5, y: 5}
+        - {x: 44.5, y: 50}
+        - {x: 49.5, y: 64}
+        - {x: 49.5, y: 99}
+    - name: dad_walk_Side_3
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 408
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.5, y: 127}
+        - {x: -44.5, y: 112}
+        - {x: -52.5, y: 94}
+        - {x: -52.5, y: 39}
+        - {x: -16.5, y: 2}
+        - {x: 18.5, y: 2}
+        - {x: 49.5, y: 60}
+        - {x: 49.5, y: 127}
+    - name: dad_walk_Side_4
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 408
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21.5, y: 125}
+        - {x: -18.5, y: 125}
+        - {x: -43.5, y: 109}
+        - {x: -48.5, y: 98}
+        - {x: -52.5, y: 73}
+        - {x: -52.5, y: 20}
+        - {x: -16.5, y: 1}
+        - {x: 21.5, y: 1}
+        - {x: 48.5, y: 52}
+        - {x: 48.5, y: 109}
+        - {x: 43.5, y: 119}
+    - name: dad_walk_Side_5
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 408
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -53.5, y: 69}
+        - {x: -53.5, y: 34}
+        - {x: -22.5, y: 0}
+        - {x: 11.5, y: 0}
+        - {x: 47.5, y: 42}
+        - {x: 47.5, y: 119}
+        - {x: 46.5, y: 121}
+        - {x: 35.5, y: 123}
+        - {x: -27.5, y: 123}
+        - {x: -46.5, y: 109}
+    - name: dad_walk_Side_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33.5, y: 121}
+        - {x: -53.5, y: 101}
+        - {x: -53.5, y: 23}
+        - {x: -22.5, y: 0}
+        - {x: 18.5, y: 0}
+        - {x: 46.5, y: 42}
+        - {x: 46.5, y: 95}
+        - {x: 32.5, y: 121}
+    - name: dad_walk_Side_7
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 272
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -46.5, y: 122}
+        - {x: -53.5, y: 116}
+        - {x: -53.5, y: 15}
+        - {x: -45.5, y: 0}
+        - {x: 13.5, y: 0}
+        - {x: 46.5, y: 42}
+        - {x: 46.5, y: 89}
+        - {x: 39.5, y: 122}
+    - name: dad_walk_Side_8
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 272
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 45.5, y: 124}
+        - {x: -12.5, y: 124}
+        - {x: -49.5, y: 104}
+        - {x: -53.5, y: 70}
+        - {x: -53.5, y: 27}
+        - {x: -16.5, y: 0}
+        - {x: 8.5, y: 0}
+        - {x: 15.5, y: 3}
+        - {x: 45.5, y: 33}
+    - name: dad_walk_Side_9
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 272
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.5, y: 126}
+        - {x: -53.5, y: 112}
+        - {x: -53.5, y: 15}
+        - {x: -42.5, y: 2}
+        - {x: 32.5, y: 2}
+        - {x: 45.5, y: 34}
+        - {x: 45.5, y: 113}
+        - {x: 33.5, y: 126}
+    - name: dad_walk_Side_10
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 272
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33.5, y: 128}
+        - {x: -53.5, y: 102}
+        - {x: -53.5, y: 5}
+        - {x: 29.5, y: 5}
+        - {x: 44.5, y: 62}
+        - {x: 44.5, y: 99}
+        - {x: 28.5, y: 128}
+    - name: dad_walk_Side_11
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 272
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.5, y: 130}
+        - {x: -52.5, y: 111}
+        - {x: -53.5, y: 103}
+        - {x: -53.5, y: 30}
+        - {x: -23.5, y: 8}
+        - {x: 28.5, y: 8}
+        - {x: 43.5, y: 47}
+        - {x: 43.5, y: 109}
+        - {x: 35.5, y: 130}
+    - name: dad_walk_Side_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 136
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37.5, y: 133}
+        - {x: -53.5, y: 124}
+        - {x: -53.5, y: 31}
+        - {x: -46.5, y: 12}
+        - {x: 30.5, y: 12}
+        - {x: 42.5, y: 44}
+        - {x: 42.5, y: 106}
+        - {x: 27.5, y: 133}
+    - name: dad_walk_Side_13
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 136
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.5, y: 133}
+        - {x: -39.5, y: 128}
+        - {x: -53.5, y: 107}
+        - {x: -53.5, y: 23}
+        - {x: -46.5, y: 12}
+        - {x: 28.5, y: 12}
+        - {x: 42.5, y: 67}
+        - {x: 42.5, y: 109}
+        - {x: 31.5, y: 133}
+    - name: dad_walk_Side_14
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 136
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.5, y: 131}
+        - {x: -40.5, y: 127}
+        - {x: -53.5, y: 122}
+        - {x: -53.5, y: 27}
+        - {x: -48.5, y: 9}
+        - {x: 25.5, y: 9}
+        - {x: 27.5, y: 13}
+        - {x: 43.5, y: 67}
+        - {x: 43.5, y: 100}
+        - {x: 36.5, y: 131}
+    - name: dad_walk_Side_15
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 136
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -53.5, y: 98}
+        - {x: -53.5, y: 22}
+        - {x: -39.5, y: 7}
+        - {x: 28.5, y: 7}
+        - {x: 43.5, y: 46}
+        - {x: 43.5, y: 111}
+        - {x: 27.5, y: 129}
+        - {x: -21.5, y: 129}
+        - {x: -52.5, y: 104}
+    - name: dad_walk_Side_16
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 136
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.5, y: 127}
+        - {x: -53.5, y: 115}
+        - {x: -53.5, y: 39}
+        - {x: -49.5, y: 35}
+        - {x: -21.5, y: 9}
+        - {x: -16.5, y: 5}
+        - {x: 36.5, y: 5}
+        - {x: 38.5, y: 6}
+        - {x: 44.5, y: 41}
+        - {x: 44.5, y: 104}
+        - {x: 31.5, y: 127}
+    - name: dad_walk_Side_17
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 136
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.5, y: 126}
+        - {x: -50.5, y: 101}
+        - {x: -53.5, y: 73}
+        - {x: -53.5, y: 33}
+        - {x: -31.5, y: 11}
+        - {x: -22.5, y: 3}
+        - {x: 28.5, y: 3}
+        - {x: 44.5, y: 41}
+        - {x: 44.5, y: 126}
+    - name: dad_walk_Side_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 124}
+        - {x: -52.5, y: 111}
+        - {x: -52.5, y: 25}
+        - {x: -24.5, y: 1}
+        - {x: 24.5, y: 1}
+        - {x: 45.5, y: 47}
+        - {x: 45.5, y: 108}
+        - {x: 29.5, y: 124}
+    - name: dad_walk_Side_19
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 0
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26.5, y: 123}
+        - {x: -24.5, y: 123}
+        - {x: -50.5, y: 107}
+        - {x: -52.5, y: 94}
+        - {x: -52.5, y: 33}
+        - {x: -49.5, y: 32}
+        - {x: -20.5, y: 0}
+        - {x: 15.5, y: 0}
+        - {x: 27.5, y: 16}
+        - {x: 46.5, y: 60}
+        - {x: 46.5, y: 84}
+        - {x: 38.5, y: 121}
+    - name: dad_walk_Side_20
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 0
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 35.5, y: 124}
+        - {x: 28.5, y: 125}
+        - {x: -23.5, y: 125}
+        - {x: -52.5, y: 109}
+        - {x: -52.5, y: 25}
+        - {x: -22.5, y: 0}
+        - {x: 16.5, y: 0}
+        - {x: 47.5, y: 55}
+        - {x: 47.5, y: 88}
+    - name: dad_walk_Side_21
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 0
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: 127}
+        - {x: -42.5, y: 108}
+        - {x: -44.5, y: 102}
+        - {x: -46.5, y: 86}
+        - {x: -52.5, y: 66}
+        - {x: -52.5, y: 21}
+        - {x: -15.5, y: 0}
+        - {x: 23.5, y: 0}
+        - {x: 48.5, y: 48}
+        - {x: 48.5, y: 111}
+        - {x: 47.5, y: 127}
+    - name: dad_walk_Side_22
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 0
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29.5, y: 129}
+        - {x: -21.5, y: 129}
+        - {x: -49.5, y: 114}
+        - {x: -52.5, y: 92}
+        - {x: -52.5, y: 26}
+        - {x: -14.5, y: 0}
+        - {x: 18.5, y: 0}
+        - {x: 49.5, y: 58}
+        - {x: 49.5, y: 117}
+        - {x: 46.5, y: 125}
+    - name: dad_walk_Side_23
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 0
+        width: 111
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28.5, y: 131}
+        - {x: -20.5, y: 131}
+        - {x: -44.5, y: 113}
+        - {x: -51.5, y: 73}
+        - {x: -51.5, y: 44}
+        - {x: -27.5, y: 5}
+        - {x: -15.5, y: 2}
+        - {x: 28.5, y: 2}
+        - {x: 50.5, y: 60}
+        - {x: 50.5, y: 110}
+        - {x: 43.5, y: 129}
     outline: []
   spritePackingTag: 
   userData: 

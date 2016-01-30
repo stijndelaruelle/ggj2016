@@ -19,7 +19,7 @@ public class TaskObject : MonoBehaviour, InteractableObject
         return (m_CurrentPlayer == player);
     }
 
-    public void Interact(Player player)
+    public virtual void Interact(Player player)
     {
         if (m_CurrentPlayer == null)
         {
@@ -37,7 +37,7 @@ public class TaskObject : MonoBehaviour, InteractableObject
         }
 
 		// Hide icon
-		m_CurrentPlayer.Icon.Fail();
+		m_CurrentPlayer.Icon.Fail(false);
 
 		// Play animation
 		m_CurrentPlayer.CharacterAnimation.Play(CharacterAnimation.AnimationType.Idle);

@@ -1,9 +1,25 @@
 fileFormatVersion: 2
 guid: e46fcf28b9f0fd84c9b54e7a82bd2d5e
-timeCreated: 1454171205
+timeCreated: 1454186502
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: dad_idle_Side_0
+    21300002: dad_idle_Side_1
+    21300004: dad_idle_Side_2
+    21300006: dad_idle_Side_3
+    21300008: dad_idle_Side_4
+    21300010: dad_idle_Side_5
+    21300012: dad_idle_Side_6
+    21300014: dad_idle_Side_7
+    21300016: dad_idle_Side_8
+    21300018: dad_idle_Side_9
+    21300020: dad_idle_Side_10
+    21300022: dad_idle_Side_11
+    21300024: dad_idle_Side_12
+    21300026: dad_idle_Side_13
+    21300028: dad_idle_Side_14
+    21300030: dad_idle_Side_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,10 +54,10 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 7
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
@@ -49,7 +65,342 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: dad_idle_Side_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 127
+        width: 95
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.5, y: 0}
+        - {x: 18.5, y: 0}
+        - {x: 47.5, y: 39}
+        - {x: 47.5, y: 127}
+        - {x: -38.5, y: 127}
+        - {x: -47.5, y: 101}
+        - {x: -47.5, y: 19}
+        - {x: -26.5, y: 7}
+        - {x: -14.5, y: 0}
+        - {x: 6.5, y: 0}
+        - {x: 6.5, y: 5}
+        - {x: 6.5, y: 2}
+    - name: dad_idle_Side_1
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 127
+        width: 95
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.5, y: 0}
+        - {x: 20.5, y: 0}
+        - {x: 47.5, y: 30}
+        - {x: 47.5, y: 98}
+        - {x: 35.5, y: 127}
+        - {x: -13.5, y: 127}
+        - {x: -47.5, y: 105}
+        - {x: -47.5, y: 31}
+        - {x: -18.5, y: 0}
+        - {x: 6.5, y: 0}
+        - {x: 6.5, y: 5}
+    - name: dad_idle_Side_2
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 127
+        width: 95
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32.5, y: 126}
+        - {x: 31.5, y: 127}
+        - {x: -31.5, y: 127}
+        - {x: -47.5, y: 105}
+        - {x: -47.5, y: 2}
+        - {x: -46.5, y: 0}
+        - {x: 20.5, y: 0}
+        - {x: 47.5, y: 63}
+        - {x: 47.5, y: 91}
+    - name: dad_idle_Side_3
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 127
+        width: 95
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.5, y: 0}
+        - {x: 19.5, y: 0}
+        - {x: 47.5, y: 55}
+        - {x: 47.5, y: 95}
+        - {x: 35.5, y: 127}
+        - {x: -28.5, y: 127}
+        - {x: -47.5, y: 99}
+        - {x: -47.5, y: 5}
+        - {x: -43.5, y: 0}
+        - {x: 6.5, y: 0}
+        - {x: 6.5, y: 5}
+    - name: dad_idle_Side_4
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 127
+        width: 95
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.5, y: 126}
+        - {x: -47.5, y: 100}
+        - {x: -47.5, y: 0}
+        - {x: 31.5, y: 0}
+        - {x: 47.5, y: 28}
+        - {x: 47.5, y: 126}
+    - name: dad_idle_Side_5
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 127
+        width: 95
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.5, y: 126}
+        - {x: -47.5, y: 105}
+        - {x: -47.5, y: 27}
+        - {x: -17.5, y: 2}
+        - {x: -14.5, y: 1}
+        - {x: -10.5, y: 0}
+        - {x: 46.5, y: 0}
+        - {x: 47.5, y: 8}
+        - {x: 47.5, y: 126}
+    - name: dad_idle_Side_6
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 127
+        width: 95
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.5, y: 125}
+        - {x: -44.5, y: 105}
+        - {x: -47.5, y: 98}
+        - {x: -47.5, y: 14}
+        - {x: -39.5, y: 0}
+        - {x: 26.5, y: 0}
+        - {x: 47.5, y: 52}
+        - {x: 47.5, y: 117}
+        - {x: 44.5, y: 125}
+    - name: dad_idle_Side_7
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 127
+        width: 95
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25.5, y: 125}
+        - {x: -11.5, y: 125}
+        - {x: -47.5, y: 99}
+        - {x: -47.5, y: 12}
+        - {x: -40.5, y: 0}
+        - {x: 23.5, y: 0}
+        - {x: 47.5, y: 46}
+        - {x: 47.5, y: 100}
+        - {x: 40.5, y: 121}
+    - name: dad_idle_Side_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 95
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 36.5, y: 124}
+        - {x: -21.5, y: 124}
+        - {x: -45.5, y: 105}
+        - {x: -47.5, y: 98}
+        - {x: -47.5, y: 14}
+        - {x: -18.5, y: 0}
+        - {x: 34.5, y: 0}
+        - {x: 47.5, y: 40}
+        - {x: 47.5, y: 113}
+        - {x: 42.5, y: 123}
+    - name: dad_idle_Side_9
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 0
+        width: 95
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30.5, y: 125}
+        - {x: -21.5, y: 125}
+        - {x: -47.5, y: 103}
+        - {x: -47.5, y: 25}
+        - {x: -14.5, y: 0}
+        - {x: 25.5, y: 0}
+        - {x: 47.5, y: 51}
+        - {x: 47.5, y: 112}
+        - {x: 42.5, y: 123}
+    - name: dad_idle_Side_10
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 0
+        width: 95
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.5, y: 125}
+        - {x: -44.5, y: 105}
+        - {x: -47.5, y: 98}
+        - {x: -47.5, y: 14}
+        - {x: -39.5, y: 0}
+        - {x: 26.5, y: 0}
+        - {x: 47.5, y: 52}
+        - {x: 47.5, y: 117}
+        - {x: 44.5, y: 125}
+    - name: dad_idle_Side_11
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 0
+        width: 95
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.5, y: 126}
+        - {x: -47.5, y: 102}
+        - {x: -47.5, y: 26}
+        - {x: -19.5, y: 0}
+        - {x: 18.5, y: 0}
+        - {x: 47.5, y: 41}
+        - {x: 47.5, y: 126}
+    - name: dad_idle_Side_12
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 0
+        width: 95
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.5, y: 126}
+        - {x: -29.5, y: 123}
+        - {x: -44.5, y: 102}
+        - {x: -47.5, y: 83}
+        - {x: -47.5, y: 31}
+        - {x: -28.5, y: 12}
+        - {x: -14.5, y: 0}
+        - {x: 28.5, y: 0}
+        - {x: 47.5, y: 54}
+        - {x: 47.5, y: 111}
+        - {x: 40.5, y: 126}
+    - name: dad_idle_Side_13
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 0
+        width: 95
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.5, y: 0}
+        - {x: 19.5, y: 0}
+        - {x: 47.5, y: 41}
+        - {x: 47.5, y: 108}
+        - {x: 37.5, y: 127}
+        - {x: -11.5, y: 127}
+        - {x: -45.5, y: 107}
+        - {x: -47.5, y: 84}
+        - {x: -47.5, y: 38}
+        - {x: -45.5, y: 37}
+        - {x: -40.5, y: 37}
+        - {x: -19.5, y: 2}
+        - {x: -9.5, y: 0}
+        - {x: 6.5, y: 0}
+        - {x: 6.5, y: 5}
+    - name: dad_idle_Side_14
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 0
+        width: 95
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.5, y: 0}
+        - {x: 19.5, y: 0}
+        - {x: 47.5, y: 37}
+        - {x: 47.5, y: 127}
+        - {x: -24.5, y: 127}
+        - {x: -47.5, y: 119}
+        - {x: -47.5, y: 19}
+        - {x: -24.5, y: 0}
+        - {x: 6.5, y: 0}
+        - {x: 6.5, y: 5}
+    - name: dad_idle_Side_15
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 0
+        width: 95
+        height: 127
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.5, y: 0}
+        - {x: 23.5, y: 0}
+        - {x: 47.5, y: 63}
+        - {x: 47.5, y: 127}
+        - {x: -34.5, y: 127}
+        - {x: -47.5, y: 105}
+        - {x: -47.5, y: 29}
+        - {x: -16.5, y: 0}
+        - {x: 5.5, y: 0}
+        - {x: 6.5, y: 1}
+        - {x: 6.5, y: 5}
+        - {x: 6.5, y: 2}
     outline: []
   spritePackingTag: 
   userData: 
