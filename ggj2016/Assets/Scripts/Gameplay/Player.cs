@@ -118,6 +118,20 @@ public class Player : MonoBehaviour
 		get { return m_Velocity; }
 	}
 
+	private TaskListUI m_assignedTaskList;
+	public TaskListUI AssignedTaskList
+	{
+		get
+		{
+			return m_assignedTaskList;
+		}
+
+		set
+		{
+			m_assignedTaskList = value;
+		}
+	}
+
 	//Events
 	private VoidDelegate m_TaskListUpdatedEvent;
     public VoidDelegate TaskListUpdatedEvent
@@ -134,8 +148,8 @@ public class Player : MonoBehaviour
 
     }
 
-    //Functions
-    private void Start()
+	//Functions
+	private void Start()
     {
         GameManager.Instance.StartDayEvent += OnStartDay;
 

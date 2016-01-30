@@ -36,7 +36,7 @@ public class CharacterAnimation : MonoBehaviour
 		// Check if we need to update the animation
 		if(_currentAnimation == AnimationType.Idle || _currentAnimation == AnimationType.Move)
 		{
-			if (_player.Velocity.magnitude > 0)
+			if (_player.Velocity.magnitude > .1f)
 			{
 				Play(AnimationType.Move);
 				SetSpeed(_player.Velocity.magnitude * _speedModifier);
@@ -44,7 +44,7 @@ public class CharacterAnimation : MonoBehaviour
 				// To flip or not to flip
 				if (_player.Velocity.x < 0)
 					_spriteTransform.localScale = new Vector3(-1, 1, 1);
-				else
+				else if(_player.Velocity.x > 0)
 					_spriteTransform.localScale = Vector3.one;
 			}
 			else
