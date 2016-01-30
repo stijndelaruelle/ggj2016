@@ -15,6 +15,12 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private Clock m_Clock;
 
+    private int m_Day;
+    public int Day
+    {
+        get { return m_Day; }
+    }
+
     //Events
     private VoidDelegate m_StartGameEvent;
     public VoidDelegate StartGameEvent
@@ -75,6 +81,8 @@ public class GameManager : Singleton<GameManager>
     {
         Debug.Log("START GAME!");
 
+        m_Day = 0;
+
         if (m_StartGameEvent != null)
             m_StartGameEvent();
 
@@ -91,6 +99,8 @@ public class GameManager : Singleton<GameManager>
 
     public void CreateDay()
     {
+        ++m_Day;
+
         if (m_CreateDayEvent != null)
             m_CreateDayEvent();
     }

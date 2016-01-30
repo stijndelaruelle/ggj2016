@@ -36,6 +36,11 @@ public class Vehicle : MonoBehaviour, InteractableObject
         return (!m_IsDriving);
     }
 
+    public bool IsInteracting(Player player)
+    {
+        return false;
+    }
+
     public void Interact(Player player)
     {
         if (m_IsDriving)

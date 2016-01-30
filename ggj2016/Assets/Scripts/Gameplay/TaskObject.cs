@@ -14,6 +14,11 @@ public class TaskObject : MonoBehaviour, InteractableObject
         return true;
     }
 
+    public bool IsInteracting(Player player)
+    {
+        return (m_CurrentPlayer == player);
+    }
+
     public void Interact(Player player)
     {
         if (m_CurrentPlayer == null)
@@ -23,13 +28,13 @@ public class TaskObject : MonoBehaviour, InteractableObject
             m_TaskRoutineHandle = StartCoroutine(TaskRoutine(player));
 
 			// Display the icon
-			m_CurrentPlayer._icon.ShowSprite(m_TaskDefinition.Sprite);
+			m_CurrentPlayer.Icon.ShowSprite(m_TaskDefinition.Sprite);
 
 			return;
         }
 
 		// Hide icon
-		m_CurrentPlayer._icon.Fail();
+		m_CurrentPlayer.Icon.Fail();
 
         //Cancel the interaction
         m_CurrentPlayer = null;
@@ -44,14 +49,14 @@ public class TaskObject : MonoBehaviour, InteractableObject
         {
 			// UPDATE VISUALS
 			float progress = (m_TaskDefinition.TimeToComplete - timer) / m_TaskDefinition.TimeToComplete;
-			m_CurrentPlayer._icon.UpdateProgress(progress);
+			m_CurrentPlayer.Icon.UpdateProgress(progress);
 
             timer -= Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
 
 		// Hide icon
-		m_CurrentPlayer._icon.Win();
+		m_CurrentPlayer.Icon.Win();
 
         player.UpdateTask(m_TaskDefinition);
     }

@@ -57,6 +57,14 @@ public class Player : MonoBehaviour
         set { m_Tasks = value; }
     }
 
+    [SerializeField]
+    private Icon m_Icon;
+    public Icon Icon
+    {
+        get { return m_Icon; }
+        set { m_Icon = value; }
+    }
+
     private InputManager m_InputManager;
     private InteractableObject m_CurrentInteractableObject;
     private Vector3 m_OriginalPosition;
@@ -84,9 +92,6 @@ public class Player : MonoBehaviour
 
     }
 
-	// Icon component
-	public Icon _icon;
-
     //Functions
     private void Start()
     {
@@ -98,10 +103,7 @@ public class Player : MonoBehaviour
         m_OriginalPosition = transform.position.Copy();
 
         InitializeControls();
-
-		// Initialize icon
-		_icon = GetComponentInChildren<Icon>();
-		_icon.Initialize();
+        m_Icon.Initialize();
     }
 
     private void OnDestroy()
@@ -220,15 +222,21 @@ public class Player : MonoBehaviour
         m_CurrentInteractableObject = other.gameObject.GetComponent<InteractableObject>();
         Debug.Log(m_CurrentInteractableObject);
 
-		_icon.ShowSprite(_icon._properties._standardSprite);
+        m_Icon.ShowSprite(m_Icon._properties._standardSprite);
     }
 
     private void OnCustomTriggerExit(Collider2D other)
     {
+        if (m_CurrentInteractableObject != null &&
+            m_CurrentInteractableObject.IsInteracting(this))
+        {
+            m_CurrentInteractableObject.Interact(null);
+        }
+
         m_CurrentInteractableObject = null;
         Debug.Log(m_CurrentInteractableObject);
 
-		_icon.Reset();
+        m_Icon.Reset();
     }
 
 

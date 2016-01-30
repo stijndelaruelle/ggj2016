@@ -52,7 +52,7 @@ public class Bus : Vehicle
 
     private void OnClockUpdated(int secondsLeft)
     {
-        Debug.Log("Time left: " + secondsLeft);
+        //Debug.Log("Time left: " + secondsLeft);
         if (m_IsDriving)
             return;
 
