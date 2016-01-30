@@ -84,6 +84,9 @@ public class Player : MonoBehaviour
 
     }
 
+	// Icon component
+	public Icon _icon;
+
     //Functions
     private void Start()
     {
@@ -95,6 +98,10 @@ public class Player : MonoBehaviour
         m_OriginalPosition = transform.position.Copy();
 
         InitializeControls();
+
+		// Initialize icon
+		_icon = GetComponentInChildren<Icon>();
+		_icon.Initialize();
     }
 
     private void OnDestroy()
@@ -212,12 +219,16 @@ public class Player : MonoBehaviour
     {
         m_CurrentInteractableObject = other.gameObject.GetComponent<InteractableObject>();
         Debug.Log(m_CurrentInteractableObject);
+
+		_icon.ShowSprite(_icon._properties._standardSprite);
     }
 
     private void OnCustomTriggerExit(Collider2D other)
     {
         m_CurrentInteractableObject = null;
         Debug.Log(m_CurrentInteractableObject);
+
+		_icon.Reset();
     }
 
 

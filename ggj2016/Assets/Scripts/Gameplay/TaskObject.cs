@@ -9,8 +9,6 @@ public class TaskObject : MonoBehaviour, InteractableObject
     private Player m_CurrentPlayer;
     private Coroutine m_TaskRoutineHandle;
 
-	private Icon _icon;
-
     public bool CanInteract(Player player)
     {
         return true;
@@ -20,17 +18,18 @@ public class TaskObject : MonoBehaviour, InteractableObject
     {
         if (m_CurrentPlayer == null)
         {
-			// Display the icon
-			InitializeIcon();
-
 			//Start the interaction
 			m_CurrentPlayer = player;
             m_TaskRoutineHandle = StartCoroutine(TaskRoutine(player));
-            return;
+
+			// Display the icon
+			m_CurrentPlayer._icon.ShowSprite(m_TaskDefinition.Sprite);
+
+			return;
         }
 
 		// Hide icon
-		_icon.Fail();
+		m_CurrentPlayer._icon.Fail();
 
         //Cancel the interaction
         m_CurrentPlayer = null;
@@ -44,25 +43,16 @@ public class TaskObject : MonoBehaviour, InteractableObject
         while (timer > 0.0f)
         {
 			// UPDATE VISUALS
-			float progress = (m_TaskDefinition.TimeToComplete - Mathf.FloorToInt(timer)) / m_TaskDefinition.TimeToComplete;
-			_icon.UpdateProgress(progress);
+			float progress = (m_TaskDefinition.TimeToComplete - timer) / m_TaskDefinition.TimeToComplete;
+			m_CurrentPlayer._icon.UpdateProgress(progress);
 
             timer -= Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
 
 		// Hide icon
-		_icon.Win();
+		m_CurrentPlayer._icon.Win();
 
         player.UpdateTask(m_TaskDefinition);
     }
-
-	// Icon visuals
-	private void InitializeIcon()
-	{
-		if (_icon == null)
-			_icon = GetComponentInChildren<Icon>();
-
-		_icon.Initialize(m_TaskDefinition.Sprite);
-	}
 }

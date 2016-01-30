@@ -13,16 +13,20 @@ public class Icon : MonoBehaviour
 	[Header("Components")]
 	private Canvas _canvas;
 	private Image _image;
+	private RectTransform _rectTransform;
 
 	public void Initialize()
 	{
 		// Initialize references
 		_canvas = GetComponent<Canvas>();
 		_image = GetComponentInChildren<Image>();
+		_rectTransform = _image.GetComponent<RectTransform>();
 	}
 
 	public void ShowSprite(Sprite sprite)
 	{
+		Reset();
+
 		_canvas.enabled = true;
 		_image.sprite = sprite;
 	}
@@ -36,19 +40,20 @@ public class Icon : MonoBehaviour
 	public void Reset()
 	{
 		_progress = 0;
+		_rectTransform.localScale = Vector3.one;
 		_canvas.enabled = false;
 	}
 
 	// Visual feedback
 	public void Win()
 	{
+		UpdateProgress(1);
+
 		StartCoroutine(R_Win());
 	}
 
 	IEnumerator R_Win()
 	{
-		RectTransform rectTransform = _image.GetComponent<RectTransform>();
-
 		float timer = _properties._scaleDuration;
 		float scaleUp = 1 + _properties._scaleUp;
 		float scaleCurrent = 1;
@@ -56,7 +61,7 @@ public class Icon : MonoBehaviour
 		while(timer > 0)
 		{
 			scaleCurrent = Mathf.Lerp(scaleUp, 1, timer / _properties._scaleDuration);
-			rectTransform.localScale = new Vector3(scaleCurrent, scaleCurrent, scaleCurrent);
+			_rectTransform.localScale = new Vector3(scaleCurrent, scaleCurrent, scaleCurrent);
 
 			timer -= Time.deltaTime;
 
