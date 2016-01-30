@@ -12,7 +12,19 @@ public class CoffeeMachine : TaskObject
     }
 
     [SerializeField]
+    private SpriteRenderer m_SpriteRenderer;
+
+    [SerializeField]
+    private Sprite m_EmptySprite;
+
+    [SerializeField]
+    private Sprite m_FullSprite;
+
+    [SerializeField]
     private float m_TimeToMakeCoffee;
+
+    [SerializeField]
+    private float m_SpeedBoost;
     private bool m_HasCoffee = false;
     private Coroutine m_RoutineHandle;
 
@@ -47,12 +59,19 @@ public class CoffeeMachine : TaskObject
         if (m_HasCoffee)
         {
             base.Interact(player);
-            m_HasCoffee = false;
+            SetCoffee(false);
             return;
         }
 
         m_RoutineHandle = StartCoroutine(CreateCoffeeRoutine());
     }
+
+    protected override void EndInteraction(bool finished)
+    {
+        if (finished)
+            m_CurrentPlayer.ModifySpeed(m_SpeedBoost);
+    }
+
 
     private IEnumerator CreateCoffeeRoutine()
     {
@@ -72,8 +91,18 @@ public class CoffeeMachine : TaskObject
 
         // Hide icon
         m_Icon.Win();
-        m_HasCoffee = true;
+        SetCoffee(true);
         m_RoutineHandle = null;
+    }
+
+    private void SetCoffee(bool value)
+    {
+        m_HasCoffee = value;
+
+        if (value)
+            m_SpriteRenderer.sprite = m_FullSprite;
+        else
+            m_SpriteRenderer.sprite = m_EmptySprite;
     }
 
     private void OnDayStart()
@@ -82,6 +111,6 @@ public class CoffeeMachine : TaskObject
             StopCoroutine(m_RoutineHandle);
 
         m_RoutineHandle = null;
-        m_HasCoffee = false;
+        SetCoffee(false);
     }
 }
