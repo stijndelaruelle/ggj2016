@@ -112,8 +112,14 @@ public class Player : MonoBehaviour
         get { return m_TimeScreenLeft; }
     }
 
-    //Events
-    private VoidDelegate m_TaskListUpdatedEvent;
+	private Vector2 m_Velocity = Vector2.zero; 
+	public Vector2 Velocity
+	{
+		get { return m_Velocity; }
+	}
+
+	//Events
+	private VoidDelegate m_TaskListUpdatedEvent;
     public VoidDelegate TaskListUpdatedEvent
     {
         get { return m_TaskListUpdatedEvent; }
@@ -205,7 +211,9 @@ public class Player : MonoBehaviour
         float horizInput = m_InputManager.GetAxis("HorizontalAxis_" + m_PlayerID);
         float vertInput = m_InputManager.GetAxis("VerticalAxis_" + m_PlayerID);
 
-        m_CharacterController.Move(horizInput * m_Speed, vertInput * m_Speed);
+		m_Velocity = new Vector2(horizInput * m_Speed, vertInput* m_Speed);
+
+		m_CharacterController.Move(m_Velocity.x, m_Velocity.y);
     }
 
     private void UpdateAction()
@@ -261,6 +269,7 @@ public class Player : MonoBehaviour
         m_CurrentInteractableObject = other.gameObject.GetComponent<InteractableObject>();
         Debug.Log(m_CurrentInteractableObject);
 
+		m_Icon.Reset();
         m_Icon.ShowSprite(m_Icon._properties._standardSprite);
     }
 
