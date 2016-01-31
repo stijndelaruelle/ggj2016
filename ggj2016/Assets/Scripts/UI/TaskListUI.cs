@@ -85,10 +85,9 @@ public class TaskListUI : MonoBehaviour
 			GameObject newTaskItem = Instantiate(m_TaskSpritePrefab);
 
 			// Set sprite
+			newTaskItem.GetComponent<TaskSprite>()._taskSprite.sprite = inputList[i].TaskDefinition.Sprite;
 			if (inputList[i].IsDone)
-				newTaskItem.GetComponent<Image>().sprite = inputList[i].TaskDefinition.SpriteDone;
-			else
-				newTaskItem.GetComponent<Image>().sprite = inputList[i].TaskDefinition.Sprite;
+				newTaskItem.GetComponent<TaskSprite>()._taskCheck.enabled = true;
 
 			// Set transform
 			newTaskItem.transform.SetParent(m_Parent);
