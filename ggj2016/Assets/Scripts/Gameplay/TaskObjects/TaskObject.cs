@@ -37,15 +37,15 @@ public class TaskObject : MonoBehaviour, InteractableObject
         {
             if (IsInteracting(player) == false)
             {
-                //Start the interaction
-                m_CurrentPlayers.Add(player);
-                m_TaskRoutineHandle = StartCoroutine(TaskRoutine(player));
-
                 // Display the icon
                 player.Icon.ShowSprite(m_TaskDefinition.Sprite);
 
                 // Play animation
                 player.CharacterAnimation.Play(CharacterAnimation.AnimationType.GeneralTask);
+
+                //Start the interaction
+                m_CurrentPlayers.Add(player);
+                m_TaskRoutineHandle = StartCoroutine(TaskRoutine(player));
             }
 
             return;
@@ -76,7 +76,7 @@ public class TaskObject : MonoBehaviour, InteractableObject
     {
         float timer = m_TaskDefinition.TimeToComplete;
 
-        while (timer > 0.0f)
+        while (timer > 0.0f && player.Icon.IsUsingDefaultSprite() == false)
         {
 			// UPDATE VISUALS
 			float progress = (m_TaskDefinition.TimeToComplete - timer) / m_TaskDefinition.TimeToComplete;

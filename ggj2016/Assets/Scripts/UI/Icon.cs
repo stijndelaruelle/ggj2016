@@ -43,7 +43,10 @@ public class Icon : MonoBehaviour
         _image.sprite = sprite;
 	}
 
-
+    public bool IsUsingDefaultSprite()
+    {
+        return (_image.sprite == _properties._standardSprite);
+    }
 
 	public void UpdateProgress(float progress)
 	{
