@@ -238,6 +238,7 @@ MonoBehaviour:
   - m_TaskDefinition: {fileID: 11400000, guid: 3afb421fb75374741bf14c50ebc95316, type: 2}
   - m_TaskDefinition: {fileID: 11400000, guid: 838ab5d20acea324f90cb23038c92af7, type: 2}
   - m_TaskDefinition: {fileID: 11400000, guid: 5cb84c39927487444909acfcda3b9a88, type: 2}
+  - m_TaskDefinition: {fileID: 11400000, guid: 1bbdd2040f4688e41a3b0de63201d34a, type: 2}
   - m_TaskDefinition: {fileID: 11400000, guid: cb2a1ba7c2871d64d8eaa72a38d67125, type: 2}
   - m_TaskDefinition: {fileID: 11400000, guid: 4444f4bfc04e2524b90aa52790ec57bf, type: 2}
   m_Clock: {fileID: 0}
