@@ -37,6 +37,11 @@ public class AudioController : MonoBehaviour
 		_currentClip = audioToPlay;
 	}
 
+	public void Stop()
+	{
+		_source.Stop();
+	}
+
 	// Set the properties of the audiosource
 	void UpdateProperties(soAudio audio)
 	{
