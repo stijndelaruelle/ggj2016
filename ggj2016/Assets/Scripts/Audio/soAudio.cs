@@ -9,5 +9,4 @@ public class soAudio : ScriptableObject
 
 	[Space(15)]
 	public bool _loop;
-	public bool _playOnAwake;
 }

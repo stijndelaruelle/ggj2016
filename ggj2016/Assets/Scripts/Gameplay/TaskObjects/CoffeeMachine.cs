@@ -28,10 +28,18 @@ public class CoffeeMachine : TaskObject
     private bool m_HasCoffee = false;
     private Coroutine m_RoutineHandle;
 
+	[Header("Audio Clips")]
+	public soAudio _audioCoffeeBrewing;
+	public soAudio _audioCofeeDrinking;
+
+	[Header("Components")]
+	private AudioController _audio;
+
     private void Start()
     {
         GameManager.Instance.StartDayEvent += OnDayStart;
         m_Icon.Initialize();
+		_audio = GetComponent<AudioController>();
     }
 
     private void OnDestroy()
@@ -86,6 +94,9 @@ public class CoffeeMachine : TaskObject
 
         while (timer > 0.0f)
         {
+			// Play audio
+			_audio.Play(_audioCoffeeBrewing);
+
             // UPDATE VISUALS
             float progress = (m_TimeToMakeCoffee - timer) / m_TimeToMakeCoffee;
             m_Icon.UpdateProgress(progress);
