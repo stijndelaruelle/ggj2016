@@ -22,9 +22,12 @@ public class TieTie : TaskObject
 
     public override bool CanInteract(Player player)
     {
-        return (player.PlayerType == PlayerType.Parent &&
-                player.Gender == GenderType.Female &&
-                !m_IsTied);
+        bool success = (player.PlayerType == PlayerType.Parent && player.Gender == GenderType.Female && !m_IsTied);
+
+        if (success)
+            return base.CanInteract(player);
+        else
+            return false;
     }
 
     protected override void EndInteraction(bool finished)

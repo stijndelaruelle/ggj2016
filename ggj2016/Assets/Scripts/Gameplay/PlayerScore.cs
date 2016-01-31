@@ -212,10 +212,14 @@ public class PlayerScore : MonoBehaviour
 
         foreach (Task task in m_Player.Tasks)
         {
-            int isDone = -1;
-            if (task.IsDone) isDone = 1;
+            //Only count if it's unlocked
+            if (GameManager.Instance.Day >= task.TaskDefinition.UnlockDay)
+            {
+                int isDone = -1;
+                if (task.IsDone) isDone = 1;
 
-            scoreList[(int)task.TaskDefinition.TaskCategory] += task.TaskDefinition.Weight * isDone;
+                scoreList[(int)task.TaskDefinition.TaskCategory] += task.TaskDefinition.Weight * isDone;
+            }
         }
 
         for (int i = 1; i < m_ScoreGroups.Count; ++i)

@@ -16,5 +16,6 @@ MonoBehaviour:
   m_Sprite: {fileID: 21300000, guid: e7d97922834cbe3498b3be7b61c7e412, type: 3}
   m_SpriteDone: {fileID: 0}
   m_TimeToComplete: 2
+  m_UnlockDay: 2
   m_TaskCategory: 2
   m_Weight: 1

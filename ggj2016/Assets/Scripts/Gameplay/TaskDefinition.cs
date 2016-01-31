@@ -48,6 +48,13 @@ public class TaskDefinition : ScriptableObject
         get { return m_TimeToComplete; }
     }
 
+    [SerializeField]
+    private int m_UnlockDay;
+    public int UnlockDay
+    {
+        get { return m_UnlockDay; }
+    }
+
     [Space(15)]
     [Header("Score")]
 
