@@ -34,10 +34,14 @@ public class Vehicle : MonoBehaviour, InteractableObject
     protected List<Player> m_Passengers;
     protected bool m_IsDriving = false;
 
+    private Vector3 m_OriginalPosition;
+
     protected virtual void Start()
     {
         GameManager.Instance.StartDayEvent += OnStartDay;
         m_Passengers = new List<Player>();
+
+        m_OriginalPosition = transform.position.Copy();
     }
 
     protected virtual void OnDestroy()
@@ -118,5 +122,7 @@ public class Vehicle : MonoBehaviour, InteractableObject
         m_Passengers.Clear();
         m_IsDriving = false;
         m_CurrentWayPoint = 0;
+
+        transform.position = m_OriginalPosition;
     }
 }

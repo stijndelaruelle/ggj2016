@@ -273,8 +273,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   m_Clock: {fileID: 0}
-  m_ArriveTime: 55
-  m_LeaveTime: 30
+  m_ArriveTime: 25
+  m_LeaveTime: 5
 --- !u!114 &11468740
 MonoBehaviour:
   m_ObjectHideFlags: 1

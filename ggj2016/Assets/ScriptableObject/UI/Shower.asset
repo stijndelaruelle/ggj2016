@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c50f7c91d19456d4cafa3260c2737024, type: 3}
-  m_Name: Standard
+  m_Name: Shower
   m_EditorClassIdentifier: 
-  _standardSprite: {fileID: 21300000, guid: c83592b293459584d8e25ba65d5e8ad4, type: 3}
+  _standardSprite: {fileID: 21300000, guid: 0f1c47222bad9344ba3da94a4387bff4, type: 3}
   _scaleUp: 0.5
   _scaleDuration: 0.2
-  _flashes: 5
-  _flashLength: 0.1
+  _flashes: 0
+  _flashLength: 0

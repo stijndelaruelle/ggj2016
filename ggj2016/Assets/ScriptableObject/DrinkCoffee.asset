@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Title: Drink Coffee
   m_Description: 
-  m_Sprite: {fileID: 21300000, guid: 720345f4549c705448c28efc69346e62, type: 3}
-  m_SpriteDone: {fileID: 0}
-  m_TimeToComplete: 3
+  m_Sprite: {fileID: 21300000, guid: 8a93a8b2b7e9cbe46babb3f236b68111, type: 3}
+  m_SpriteDone: {fileID: 21300000, guid: f2cee2ff902e9784dbad7b79a2ac8a72, type: 3}
+  m_TimeToComplete: 2.5
   m_TaskCategory: 1
   m_Weight: 1

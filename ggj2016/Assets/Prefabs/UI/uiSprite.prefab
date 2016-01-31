@@ -10,6 +10,7 @@ GameObject:
   - 224: {fileID: 22464548}
   - 222: {fileID: 22232400}
   - 114: {fileID: 11410938}
+  - 114: {fileID: 11415908}
   - 114: {fileID: 11428692}
   m_Layer: 5
   m_Name: uiSprite
@@ -62,6 +63,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11415908
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a8db57db601bcc4aa0d78214c394d42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _taskSprite: {fileID: 11410938}
+  _taskCheck: {fileID: 11456390}
 --- !u!114 &11428692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,11 +84,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 130612}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10b001e126c435941a1ae2ef9157b54c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c59deb78fe2c40448a603a8973797fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _taskSprite: {fileID: 11410938}
-  _taskCheck: {fileID: 11456390}
+  m_Title: 
+  m_Description: 
+  m_Sprite: {fileID: 0}
+  m_SpriteDone: {fileID: 0}
+  m_TimeToComplete: 0
+  m_TaskCategory: 0
+  m_Weight: 0
 --- !u!114 &11456390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,7 +113,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 74a565b121f7bb04f876b874b1e370c7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f2cee2ff902e9784dbad7b79a2ac8a72, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -166,16 +185,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_SizeDelta.x
-      value: 1
+      value: 47
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_SizeDelta.y
-      value: 1
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5044750e6c274104691d5ffb87844f66,
+      objectReference: {fileID: 21300000, guid: f2cee2ff902e9784dbad7b79a2ac8a72,
         type: 3}
     - target: {fileID: 0}
       propertyPath: m_AnchorMin.x
@@ -187,12 +206,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _taskSprite
+      value: 
+      objectReference: {fileID: 11410938}
+    - target: {fileID: 0}
+      propertyPath: _taskCheck
+      value: 
+      objectReference: {fileID: 11456390}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 130612}
