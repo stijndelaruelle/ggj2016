@@ -6,10 +6,17 @@ public class Newspaper : TaskObject
     [SerializeField]
     private Animator m_Animator;
 
-    private void Start()
+	[Header("Audio Clips")]
+	public soAudio _audioNewspaper;
+
+	[Header("Components")]
+	private AudioController _audio;
+
+	private void Start()
     {
         GameManager.Instance.StartDayEvent += OnDayStart;
-    }
+		_audio = GetComponentInChildren<AudioController>();
+	}
 
     private void OnDestroy()
     {
@@ -22,7 +29,8 @@ public class Newspaper : TaskObject
     public override void Interact(Player player)
     {
         Read(true);
-        base.Interact(player);
+		player.PlayerAudio.Play(_audioNewspaper);
+		base.Interact(player);
     }
 
     protected override void EndInteraction(bool finished)
