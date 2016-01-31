@@ -22,7 +22,12 @@ public class TieShoes : TaskObject
 
     public override bool CanInteract(Player player)
     {
-        return (player.PlayerType == PlayerType.Parent && !m_AreTied);
+        bool success = (player.PlayerType == PlayerType.Parent && !m_AreTied);
+
+        if (success)
+            return base.CanInteract(player);
+        else
+            return false;
     }
 
     protected override void EndInteraction(bool finished)

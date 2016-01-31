@@ -20,7 +20,7 @@ public class TaskObject : MonoBehaviour, InteractableObject
 
     public virtual bool CanInteract(Player player)
     {
-        return true;
+        return (GameManager.Instance.Day >= m_TaskDefinition.UnlockDay);
     }
 
     public bool IsInteracting(Player player)

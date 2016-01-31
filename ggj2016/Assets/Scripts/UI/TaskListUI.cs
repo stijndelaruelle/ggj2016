@@ -82,19 +82,22 @@ public class TaskListUI : MonoBehaviour
 	{
 		for(int i = 0; i < inputList.Count; i++)
 		{
-			GameObject newTaskItem = Instantiate(m_TaskSpritePrefab);
+            if (GameManager.Instance.Day >= inputList[i].TaskDefinition.UnlockDay)
+            {
+                GameObject newTaskItem = Instantiate(m_TaskSpritePrefab);
 
-			// Set sprite
-			newTaskItem.GetComponent<TaskSprite>()._taskSprite.sprite = inputList[i].TaskDefinition.Sprite;
-			if (inputList[i].IsDone)
-				newTaskItem.GetComponent<TaskSprite>()._taskCheck.enabled = true;
+                // Set sprite
+                newTaskItem.GetComponent<TaskSprite>()._taskSprite.sprite = inputList[i].TaskDefinition.Sprite;
+                if (inputList[i].IsDone)
+                    newTaskItem.GetComponent<TaskSprite>()._taskCheck.enabled = true;
 
-			// Set transform
-			newTaskItem.transform.SetParent(m_Parent);
-            newTaskItem.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+                // Set transform
+                newTaskItem.transform.SetParent(m_Parent);
+                newTaskItem.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
-            // Add to tasklist
-            m_TaskList.Add(new TaskItem(inputList[i], newTaskItem));
+                // Add to tasklist
+                m_TaskList.Add(new TaskItem(inputList[i], newTaskItem));
+            }
 		}
 	}
 }
