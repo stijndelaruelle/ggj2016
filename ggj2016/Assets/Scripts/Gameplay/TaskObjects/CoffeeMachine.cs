@@ -30,7 +30,7 @@ public class CoffeeMachine : TaskObject
 
 	[Header("Audio Clips")]
 	public soAudio _audioCoffeeBrewing;
-	public soAudio _audioCofeeDrinking;
+	public soAudio _audioCoffeeDrinking;
 
 	[Header("Components")]
 	private AudioController _audio;
@@ -39,7 +39,7 @@ public class CoffeeMachine : TaskObject
     {
         GameManager.Instance.StartDayEvent += OnDayStart;
         m_Icon.Initialize();
-		_audio = GetComponent<AudioController>();
+		_audio = GetComponentInChildren<AudioController>();
     }
 
     private void OnDestroy()
@@ -67,6 +67,7 @@ public class CoffeeMachine : TaskObject
         if (m_HasCoffee)
         {
             base.Interact(player);
+			player.PlayerAudio.Play(_audioCoffeeDrinking);
             SetCoffee(false);
             return;
         }
@@ -107,6 +108,9 @@ public class CoffeeMachine : TaskObject
 
         // Hide icon
         m_Icon.Win();
+		// Stop audio
+		_audio.Stop();
+
         SetCoffee(true);
         m_RoutineHandle = null;
     }
