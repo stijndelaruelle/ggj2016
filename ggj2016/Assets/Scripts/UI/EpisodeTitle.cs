@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class EpisodeTitle : MonoBehaviour, UIPanel
 {
     [SerializeField]
     private Text m_Text;
 
+    [SerializeField]
+    private List<string> m_EpisodeTitles;
 
     public void Initialize()
     {
@@ -23,6 +26,7 @@ public class EpisodeTitle : MonoBehaviour, UIPanel
 
     private void OnCreateDay()
     {
-        m_Text.text = "Episode " + GameManager.Instance.Day;
+        int rand = Random.Range(0, m_EpisodeTitles.Count - 1);
+        m_Text.text = "Episode " + GameManager.Instance.Day + ": " + m_EpisodeTitles[rand];
     }
 }

@@ -275,6 +275,9 @@ MonoBehaviour:
   m_Clock: {fileID: 0}
   m_ArriveTime: 25
   m_LeaveTime: 5
+  _audioEngineRunning: {fileID: 11400000, guid: 5425f4bf2a962234da44506c13b06cfa,
+    type: 2}
+  _audioHorn: {fileID: 11400000, guid: 873e8020c33637e4989b3b63c5a3c0b1, type: 2}
 --- !u!114 &11468740
 MonoBehaviour:
   m_ObjectHideFlags: 1

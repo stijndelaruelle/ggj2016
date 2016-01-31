@@ -183,7 +183,7 @@ public class Player : MonoBehaviour
         m_Icon.Initialize();
 	    m_CharacterAnimation.Initialize();
 		m_assignedTaskList.UpdateTaskList(m_Tasks);
-		m_PlayerAudio = GetComponent<AudioController>();
+		m_PlayerAudio = GetComponentInChildren<AudioController>();
     }
 
     private void OnDestroy()

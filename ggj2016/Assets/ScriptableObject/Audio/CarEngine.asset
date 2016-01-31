@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b6387c4666e8f4f9b40a199eab56ae, type: 3}
   m_Name: CarEngine
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: 099954de7e0c35f4da8d809cf9616926, type: 3}
+  _audioClip: {fileID: 0}
   _loop: 1

@@ -21,25 +21,25 @@ public class AudioController : MonoBehaviour
 
 	public void Play(soAudio audioToPlay)
 	{
-		if (_source == null)
-			Initialize();
+		//if (_source == null)
+		//	Initialize();
 
-		if (_source.isPlaying && _currentClip != audioToPlay)
-		{
-			_source.Stop();
-		}
+		//if (_source.isPlaying && _currentClip != audioToPlay)
+		//{
+		//	_source.Stop();
+		//}
 
-		UpdateProperties(audioToPlay);
+		//UpdateProperties(audioToPlay);
 
-		if (!_source.isPlaying)
-			_source.Play();
+		//if (!_source.isPlaying)
+		//	_source.Play();
 
-		_currentClip = audioToPlay;
+		//_currentClip = audioToPlay;
 	}
 
 	public void Stop()
 	{
-		_source.Stop();
+		//_source.Stop();
 	}
 
 	// Set the properties of the audiosource

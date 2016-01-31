@@ -25,7 +25,7 @@ public class Bus : Vehicle
         base.Start();
 
 		_audio = GetComponentInChildren<AudioController>();
-		_audio.Play(_audioEngineRunning);
+		//_audio.Play(_audioEngineRunning);
 
 		m_Clock.ClockUpdatedEvent += OnClockUpdated;
     }
