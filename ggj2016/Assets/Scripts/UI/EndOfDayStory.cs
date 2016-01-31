@@ -11,9 +11,12 @@ public class EndOfDayStory : MonoBehaviour
     private Text m_Text;
     private string m_Name;
     private string m_HeShe;
-    private string m_HisHer;
+	private string m_HeSheCap;
+	private string m_HisHer;
+	private string m_HimHer;
 	private string m_Royalty;
 	private string m_Gender;
+	private string m_GenderDesignation;
 
     private string m_Employer;
     private string m_Collegue;
@@ -29,16 +32,22 @@ public class EndOfDayStory : MonoBehaviour
         if (player.Gender == GenderType.Male)
         {
             m_HeShe = "he";
-            m_HisHer = "His";
+			m_HeSheCap = "He";
+			m_HisHer = "his";
+			m_HimHer = "him";
 			m_Royalty = "King";
 			m_Gender = "man";
+			m_GenderDesignation = "Boy";
 		}
         else
         {
             m_HeShe = "she";
-            m_HisHer = "Her";
+			m_HeSheCap = "She";
+			m_HisHer = "her";
+			m_HimHer = "her";
 			m_Royalty = "Queen";
 			m_Gender = "woman";
+			m_GenderDesignation = "Girl";
 		}
 
         if (player.PlayerType == PlayerType.Parent)
@@ -131,12 +140,12 @@ public class EndOfDayStory : MonoBehaviour
         if ((scoreGroup.TotalScore >= 2) &&
             (scoreGroup.TotalScore > scoreGroup.LastTotalScore))
         {
-            sentence += " This is very much appreciated!";
+            sentence += m_Name + " " + m_HisHer + " " + m_Collegue + " know they can count on " + m_HisHer +" schedule!";
         }
 
         if (scoreGroup.TotalScore <= -2)
         {
-            sentence += " If this happens 1 more time " + m_HeShe + " will be ";
+            sentence += m_Name + " still has one chance left or " + m_HeShe + " will be ";
 
             if (m_PlayerScore.Player.PlayerType == PlayerType.Parent)
                 sentence += "fired!";
@@ -158,11 +167,11 @@ public class EndOfDayStory : MonoBehaviour
 
         switch (score)
         {
-            case Rating.VeryGood: sentence += "A real eager beaver!";				break;
-            case Rating.Good: sentence += "Almost broke a sweat today.";			break;
-            case Rating.Normal: sentence += "Made no impression at all.";			break;
-            case Rating.Bad: sentence += "Studying to be a La-Z-Boy.";				break;
-            case Rating.VeryBad: sentence += "Master slacker!";						break;
+            case Rating.VeryGood: sentence += m_Name + " is a real eager beaver!"; break;
+            case Rating.Good: sentence += m_Name + " almost broke a sweat today."; break;
+            case Rating.Normal: sentence += m_Name + " made no impression at all.";	break;
+            case Rating.Bad: sentence += m_Name + " is studying to be a La-Z-" + m_GenderDesignation + ".";	break;
+            case Rating.VeryBad: sentence += m_Name + " is a master slacker!"; break;
 
             default:
                 break;
@@ -187,11 +196,11 @@ public class EndOfDayStory : MonoBehaviour
 
         switch (score)
         {
-            case Rating.VeryGood: sentence += "Dressed like the " + m_Royalty + ", fabulous!"; break;
+            case Rating.VeryGood: sentence += m_Employer + " thinks " + m_Name + " is dressed like the " + m_Royalty + ", fabulous!"; break;
             case Rating.Good: sentence += "Clothes make the " + m_Gender + " they say."; break;
             case Rating.Normal: sentence += "Shirt & pants, check."; break;
-            case Rating.Bad: sentence += "Even a starved moth wouldn't touch this wardrobe."; break;
-            case Rating.VeryBad: sentence += "The coalmines called, they want their clothes back!"; break;
+            case Rating.Bad: sentence += m_Employer + " thinks that even a starved moth wouldn't touch " + m_Name + " " + m_HisHer + " wardrobe."; break;
+            case Rating.VeryBad: sentence += m_Employer +  " says that the coalmines called, they want their clothes back!"; break;
 
             default:
                 break;
@@ -210,11 +219,14 @@ public class EndOfDayStory : MonoBehaviour
 
         switch (score)
         {
-            case Rating.VeryGood: sentence += "They sell your sweat as the most exquisite perfume!"; break;
-            case Rating.Good: sentence += "A flowery garden scent."; break;
-            case Rating.Normal: sentence += "A most ordinary scent."; break;
-            case Rating.Bad: sentence += "Your stench preceeds you."; break;
-            case Rating.VeryBad: sentence += "What's that smell? Dungbell!"; break;
+            case Rating.VeryGood:
+				sentence += m_Name + " smells so great that " + m_HisHer + " " + m_Collegue + "want to sell " + m_HisHer + " sweat as a perfume!"; break;
+            case Rating.Good:
+				sentence += "'" + m_HeSheCap + " smells like a flowery garden. - One of " + m_Name + "'s " + m_Collegue + "."; break;
+            case Rating.Normal: sentence += m_Name + " has a most ordinary scent."; break;
+            case Rating.Bad:
+				sentence += m_Name + " " + m_HisHer + " stench preceeds" + m_HimHer + "."; break;
+            case Rating.VeryBad: sentence += "'What's that smell? Dungbell!' " + m_Name + " has a new nickname."; break;
 
             default:
                 break;
@@ -235,9 +247,9 @@ public class EndOfDayStory : MonoBehaviour
         {
             case Rating.VeryGood: sentence += "Excited! Excited! Excited!"; break;
             case Rating.Good: sentence += "No day like a fun day."; break;
-            case Rating.Normal: sentence += "Not bored, not amused, meh."; break;
+            case Rating.Normal: sentence += m_Name + " is feeling neither bored, nor amused, meh."; break;
             case Rating.Bad: sentence += "Such a dull " + m_Gender + "."; break;
-            case Rating.VeryBad: sentence += "All work and no play makes me go *@#*€%#!"; break;
+            case Rating.VeryBad: sentence += "All work and no play makes " + m_Name + " go *@#*€%#!"; break;
 
             default:
                 break;

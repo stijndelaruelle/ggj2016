@@ -35,64 +35,64 @@ public class Task
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    private int m_PlayerID;
+	[SerializeField]
+	private int m_PlayerID;
 
-    [SerializeField]
-    private string m_PlayerName;
-    public string Name
-    {
-        get { return m_PlayerName; }
-    }
+	[SerializeField]
+	private string m_PlayerName;
+	public string Name
+	{
+		get { return m_PlayerName; }
+	}
 
-    [SerializeField]
-    private PlayerType m_PlayerType;
-    public PlayerType PlayerType
-    {
-        get { return m_PlayerType; }
-    }
+	[SerializeField]
+	private PlayerType m_PlayerType;
+	public PlayerType PlayerType
+	{
+		get { return m_PlayerType; }
+	}
 
-    [SerializeField]
-    private GenderType m_Gender;
-    public GenderType Gender
-    {
-        get { return m_Gender; }
-    }
+	[SerializeField]
+	private GenderType m_Gender;
+	public GenderType Gender
+	{
+		get { return m_Gender; }
+	}
 
-    [SerializeField]
-    private CharacterController2D m_CharacterController;
+	[SerializeField]
+	private CharacterController2D m_CharacterController;
 
-    [SerializeField]
-    private SpriteRenderer m_SpriteRenderer;
+	[SerializeField]
+	private SpriteRenderer m_SpriteRenderer;
 
-    [SerializeField]
-    private float m_Speed;
+	[SerializeField]
+	private float m_Speed;
 
-    [SerializeField]
-    private float m_MaxSpeed;
+	[SerializeField]
+	private float m_MaxSpeed;
 
-    private float m_OriginalSpeed;
+	private float m_OriginalSpeed;
 
-    [SerializeField]
-    private List<Task> m_Tasks;
-    public List<Task> Tasks
-    {
-        get { return m_Tasks; }
-        set {
+	[SerializeField]
+	private List<Task> m_Tasks;
+	public List<Task> Tasks
+	{
+		get { return m_Tasks; }
+		set {
 			m_Tasks = value;
 		}
-    }
+	}
 
-    [SerializeField]
-    private Clock m_Clock;
+	[SerializeField]
+	private Clock m_Clock;
 
-    [SerializeField]
-    private Icon m_Icon;
-    public Icon Icon
-    {
-        get { return m_Icon; }
-        set { m_Icon = value; }
-    }
+	[SerializeField]
+	private Icon m_Icon;
+	public Icon Icon
+	{
+		get { return m_Icon; }
+		set { m_Icon = value; }
+	}
 
 	[SerializeField]
 	private CharacterAnimation m_CharacterAnimation;
@@ -103,28 +103,28 @@ public class Player : MonoBehaviour
 	}
 
 	private InputManager m_InputManager;
-    private InteractableObject m_CurrentInteractableObject;
-    private Vector3 m_OriginalPosition;
+	private InteractableObject m_CurrentInteractableObject;
+	private Vector3 m_OriginalPosition;
 
-    private Vehicle m_CurrentVehicle;
-    public Vehicle CurrentVehicle
-    {
-        get { return m_CurrentVehicle; }
-    }
+	private Vehicle m_CurrentVehicle;
+	public Vehicle CurrentVehicle
+	{
+		get { return m_CurrentVehicle; }
+	}
 
-    private bool m_IsOnScreen;
-    public bool IsOnScreen
-    {
-        get { return m_IsOnScreen; }
-    }
+	private bool m_IsOnScreen;
+	public bool IsOnScreen
+	{
+		get { return m_IsOnScreen; }
+	}
 
-    private int m_TimeScreenLeft = 0; //When did we leave the screen?
-    public int TimeScreenLeft
-    {
-        get { return m_TimeScreenLeft; }
-    }
+	private int m_TimeScreenLeft = 0; //When did we leave the screen?
+	public int TimeScreenLeft
+	{
+		get { return m_TimeScreenLeft; }
+	}
 
-	private Vector2 m_Velocity = Vector2.zero; 
+	private Vector2 m_Velocity = Vector2.zero;
 	public Vector2 Velocity
 	{
 		get { return m_Velocity; }
@@ -146,6 +146,10 @@ public class Player : MonoBehaviour
 	}
 
 	private AudioController m_PlayerAudio;
+	public AudioController PlayerAudio
+	{
+		get { return m_PlayerAudio; }
+	}
 
 	//Events
 	private VoidDelegate m_TaskListUpdatedEvent;

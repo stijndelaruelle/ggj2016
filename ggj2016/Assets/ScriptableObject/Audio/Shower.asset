@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47b6387c4666e8f4f9b40a199eab56ae, type: 3}
-  m_Name: CoffeeBrewing
+  m_Name: Shower
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: 64c54d31f55cedf438e4de9d5f03afff, type: 3}
-  _loop: 1
+  _audioClip: {fileID: 0}
+  _loop: 0
