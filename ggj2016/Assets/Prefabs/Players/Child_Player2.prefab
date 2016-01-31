@@ -35,6 +35,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &174534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 463380}
+  - 114: {fileID: 11490440}
+  - 61: {fileID: 6110884}
+  m_Layer: 12
+  m_Name: LooseShoes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &182764
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,6 +104,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 494762}
   m_RootOrder: 0
+--- !u!4 &463380
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174534}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 494762}
+  m_RootOrder: 2
 --- !u!4 &494762
 Transform:
   m_ObjectHideFlags: 1
@@ -99,6 +128,7 @@ Transform:
   m_Children:
   - {fileID: 458886}
   - {fileID: 22461152}
+  - {fileID: 463380}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!50 &5060320
@@ -118,6 +148,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &6110884
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174534}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.15, y: 0.17}
+  serializedVersion: 2
+  m_Size: {x: 0.77, y: 0.59}
 --- !u!61 &6180596
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -195,6 +239,7 @@ MonoBehaviour:
   - m_TaskDefinition: {fileID: 11400000, guid: 515dd1d38cd8cdb47a888e2cdf698a4b, type: 2}
   - m_TaskDefinition: {fileID: 11400000, guid: 3afb421fb75374741bf14c50ebc95316, type: 2}
   - m_TaskDefinition: {fileID: 11400000, guid: 46f99401254409c44859f6ca38de7b8d, type: 2}
+  - m_TaskDefinition: {fileID: 11400000, guid: 4444f4bfc04e2524b90aa52790ec57bf, type: 2}
   m_Clock: {fileID: 0}
   m_Icon: {fileID: 11449520}
   m_CharacterAnimation: {fileID: 11433796}
@@ -273,6 +318,20 @@ MonoBehaviour:
   m_TotalVerticalRays: 4
   m_SlopeLimit: 30
   m_SkinWidth: 0.02
+--- !u!114 &11490440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49e936835b2f3747aec85f0d2fddb69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TaskDefinition: {fileID: 11400000, guid: 4444f4bfc04e2524b90aa52790ec57bf, type: 2}
+  m_AllowMultipleUsers: 0
+  m_Owner: {fileID: 11418438}
 --- !u!114 &11495228
 MonoBehaviour:
   m_ObjectHideFlags: 1

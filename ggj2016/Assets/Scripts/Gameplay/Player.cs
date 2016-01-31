@@ -321,11 +321,19 @@ public class Player : MonoBehaviour
 
     private void OnCustomTriggerEnter(Collider2D other)
     {
-        m_CurrentInteractableObject = other.gameObject.GetComponent<InteractableObject>();
+        InteractableObject temp = other.gameObject.GetComponent<InteractableObject>();
         Debug.Log(m_CurrentInteractableObject);
 
-		m_Icon.Reset();
-        m_Icon.ShowSprite(m_Icon._properties._standardSprite);
+        if (temp == null)
+            return;
+
+        if (temp.CanInteract(this))
+        {
+            m_CurrentInteractableObject = temp;
+
+            m_Icon.Reset();
+            m_Icon.ShowSprite(m_Icon._properties._standardSprite);
+        }
     }
 
     private void OnCustomTriggerExit(Collider2D other)

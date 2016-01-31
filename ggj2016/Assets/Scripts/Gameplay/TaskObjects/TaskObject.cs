@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class TaskObject : MonoBehaviour, InteractableObject
 {
     [SerializeField]
-    private TaskDefinition m_TaskDefinition;
+    protected TaskDefinition m_TaskDefinition;
 
     [SerializeField]
     private bool m_AllowMultipleUsers = false;
@@ -18,7 +18,7 @@ public class TaskObject : MonoBehaviour, InteractableObject
         m_CurrentPlayers = new List<Player>();
     }
 
-    public bool CanInteract(Player player)
+    public virtual bool CanInteract(Player player)
     {
         return true;
     }

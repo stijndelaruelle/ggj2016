@@ -91,10 +91,10 @@ public class TaskListUI : MonoBehaviour
 
 			// Set transform
 			newTaskItem.transform.SetParent(m_Parent);
+            newTaskItem.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
-			// Add to tasklist
-			m_TaskList.Add(new TaskItem(inputList[i], newTaskItem));
-			
+            // Add to tasklist
+            m_TaskList.Add(new TaskItem(inputList[i], newTaskItem));
 		}
 	}
 }

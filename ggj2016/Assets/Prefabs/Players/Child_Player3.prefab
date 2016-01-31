@@ -174,6 +174,7 @@ MonoBehaviour:
   - m_TaskDefinition: {fileID: 11400000, guid: 3afb421fb75374741bf14c50ebc95316, type: 2}
   - m_TaskDefinition: {fileID: 11400000, guid: 46f99401254409c44859f6ca38de7b8d, type: 2}
   - m_TaskDefinition: {fileID: 11400000, guid: 838ab5d20acea324f90cb23038c92af7, type: 2}
+  - m_TaskDefinition: {fileID: 11400000, guid: 4444f4bfc04e2524b90aa52790ec57bf, type: 2}
   m_Clock: {fileID: 0}
   m_Icon: {fileID: 11455360}
   m_CharacterAnimation: {fileID: 11467088}

@@ -120,7 +120,7 @@ public class PlayerScore : MonoBehaviour
             }
 
             //To lose, we need 1 stat at -3 or lower
-            if (m_ScoreGroups[i].TotalScore <= -3)
+            if (m_ScoreGroups[i].TotalScore <= -10) //-3
             {
                 if (m_EndGameEvent != null)
                     m_EndGameEvent(m_Player, (TaskCategoryType)i, false);
