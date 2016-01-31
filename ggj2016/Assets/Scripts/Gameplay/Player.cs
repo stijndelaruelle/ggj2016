@@ -346,6 +346,11 @@ public class Player : MonoBehaviour
         m_TimeScreenLeft = 0;
         m_CurrentInteractableObject = null;
 
+        foreach(Task task in m_Tasks)
+        {
+            task.IsDone = false;
+        }
+
         if (m_TaskListUpdatedEvent != null)
             m_TaskListUpdatedEvent();
     }

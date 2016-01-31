@@ -231,6 +231,7 @@ MonoBehaviour:
   m_EmptySprite: {fileID: 21300000, guid: 3a9f3412d42cd1e43a46fa96f4bdc8eb, type: 3}
   m_FullSprite: {fileID: 21300000, guid: 20322066b8cd2034b9a6920ecb13fb92, type: 3}
   m_TimeToMakeCoffee: 3
+  m_SpeedBoost: 2
 --- !u!212 &21205050
 SpriteRenderer:
   m_ObjectHideFlags: 1
