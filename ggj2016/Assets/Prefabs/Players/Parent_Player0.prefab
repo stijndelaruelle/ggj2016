@@ -51,6 +51,7 @@ GameObject:
   - 61: {fileID: 6148982}
   - 50: {fileID: 5093840}
   - 114: {fileID: 11445274}
+  - 114: {fileID: 11452324}
   m_Layer: 8
   m_Name: Parent_Player0
   m_TagString: Untagged
@@ -225,6 +226,19 @@ MonoBehaviour:
   _speedModifier: 2
   _parameter: Animation
   _currentAnimation: 1
+--- !u!114 &11452324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1c0266727b30a48b1e0436a2093276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _win: {fileID: 8300000, guid: d898e136de944d2488fe5867e4a20473, type: 3}
+  _fail: {fileID: 8300000, guid: ae989df7b966404449d0b10c9e869f49, type: 3}
 --- !u!114 &11464120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -412,6 +426,26 @@ Prefab:
       propertyPath: m_PlayerName
       value: 'Stijn '
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _win
+      value: 
+      objectReference: {fileID: 8300000, guid: d898e136de944d2488fe5867e4a20473, type: 3}
+    - target: {fileID: 0}
+      propertyPath: _fail
+      value: 
+      objectReference: {fileID: 8300000, guid: ae989df7b966404449d0b10c9e869f49, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 146932}

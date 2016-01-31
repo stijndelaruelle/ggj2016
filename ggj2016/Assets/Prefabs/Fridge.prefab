@@ -154,14 +154,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 162116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18c5023604d26d6478eebb72ac4935d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 96760171b2d48e44ca87bf76b42d95ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_TaskDefinition: {fileID: 11400000, guid: 515dd1d38cd8cdb47a888e2cdf698a4b, type: 2}
   m_SpriteRenderer: {fileID: 21299756}
   m_DoorSpriteRenderer: {fileID: 21219444}
-  m_ClosedSprite: {fileID: 21300000, guid: ddaeab789bbeb2941a4090a5b4ea6219, type: 3}
-  m_OpenSprite: {fileID: 21300000, guid: 3487360611d8d2f48a2d0236f99086b0, type: 3}
+  m_ClosedSprite: {fileID: 21300000, guid: 692338286e93adc4db6f693c48b65eb9, type: 3}
+  m_OpenSprite: {fileID: 21300000, guid: 585bc29865852d54c817f7a7137a8eb4, type: 3}
 --- !u!114 &11438278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -242,7 +242,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: -397
-  m_Sprite: {fileID: 21300000, guid: 3487360611d8d2f48a2d0236f99086b0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 692338286e93adc4db6f693c48b65eb9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -252,7 +252,35 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_SpriteRenderer
+      value: 
+      objectReference: {fileID: 21299756}
+    - target: {fileID: 0}
+      propertyPath: m_DoorSpriteRenderer
+      value: 
+      objectReference: {fileID: 21219444}
+    - target: {fileID: 0}
+      propertyPath: m_TaskDefinition
+      value: 
+      objectReference: {fileID: 11400000, guid: 515dd1d38cd8cdb47a888e2cdf698a4b,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_ClosedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 692338286e93adc4db6f693c48b65eb9,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_OpenSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 585bc29865852d54c817f7a7137a8eb4,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 692338286e93adc4db6f693c48b65eb9,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 162116}

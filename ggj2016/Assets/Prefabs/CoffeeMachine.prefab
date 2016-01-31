@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2d145e9255d0074c905b469dbe202bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _properties: {fileID: 11400000, guid: 55d048edecfc19b46b2d12af9ffd8fce, type: 2}
+  _properties: {fileID: 0}
   _progress: 0
 --- !u!114 &11483614
 MonoBehaviour:
@@ -222,16 +222,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 197686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6473d86f3721e54583e8cb4d12c6a5a, type: 3}
+  m_Script: {fileID: 11500000, guid: c11755c2acac29646b2d94a1026ee0d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TaskDefinition: {fileID: 11400000, guid: 5f5d8d3812aa77d4ea77a5a1012403fa, type: 2}
-  m_Icon: {fileID: 11438912}
-  m_SpriteRenderer: {fileID: 21205050}
-  m_EmptySprite: {fileID: 21300000, guid: 3a9f3412d42cd1e43a46fa96f4bdc8eb, type: 3}
-  m_FullSprite: {fileID: 21300000, guid: 20322066b8cd2034b9a6920ecb13fb92, type: 3}
-  m_TimeToMakeCoffee: 3
-  m_SpeedBoost: 2
+  m_TaskDefinition: {fileID: 0}
+  m_Icon: {fileID: 0}
+  m_SpriteRenderer: {fileID: 0}
+  m_EmptySprite: {fileID: 0}
+  m_FullSprite: {fileID: 0}
+  m_TimeToMakeCoffee: 0
+  m_SpeedBoost: 0
 --- !u!212 &21205050
 SpriteRenderer:
   m_ObjectHideFlags: 1

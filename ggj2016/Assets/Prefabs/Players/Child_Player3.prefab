@@ -412,6 +412,26 @@ Prefab:
       propertyPath: m_PlayerName
       value: Davey
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _win
+      value: 
+      objectReference: {fileID: 8300000, guid: d898e136de944d2488fe5867e4a20473, type: 3}
+    - target: {fileID: 0}
+      propertyPath: _fail
+      value: 
+      objectReference: {fileID: 8300000, guid: ae989df7b966404449d0b10c9e869f49, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 101304}

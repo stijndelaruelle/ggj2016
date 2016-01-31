@@ -141,6 +141,8 @@ public class Player : MonoBehaviour
 		}
 	}
 
+	private PlayerAudio m_PlayerAudio;
+
 	//Events
 	private VoidDelegate m_TaskListUpdatedEvent;
     public VoidDelegate TaskListUpdatedEvent
@@ -173,6 +175,7 @@ public class Player : MonoBehaviour
         m_Icon.Initialize();
 	    m_CharacterAnimation.Initialize();
 		m_assignedTaskList.UpdateTaskList(m_Tasks);
+		m_PlayerAudio = GetComponent<PlayerAudio>();
     }
 
     private void OnDestroy()
@@ -264,6 +267,9 @@ public class Player : MonoBehaviour
                 task.IsDone == false)
             {
                 task.IsDone = true;
+
+				// Play audio
+				//m_PlayerAudio.Play(m_PlayerAudio._win);
 
                 Debug.Log("Task: " + taskDefinition.Title + " completed!");
 
