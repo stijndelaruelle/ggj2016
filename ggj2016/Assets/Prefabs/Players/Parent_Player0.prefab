@@ -206,7 +206,9 @@ MonoBehaviour:
   m_Speed: 2
   m_Tasks:
   - m_TaskDefinition: {fileID: 11400000, guid: 515dd1d38cd8cdb47a888e2cdf698a4b, type: 2}
-  - m_TaskDefinition: {fileID: 11400000, guid: 515dd1d38cd8cdb47a888e2cdf698a4b, type: 2}
+  - m_TaskDefinition: {fileID: 11400000, guid: 5f5d8d3812aa77d4ea77a5a1012403fa, type: 2}
+  - m_TaskDefinition: {fileID: 11400000, guid: 3afb421fb75374741bf14c50ebc95316, type: 2}
+  - m_TaskDefinition: {fileID: 11400000, guid: 838ab5d20acea324f90cb23038c92af7, type: 2}
   m_Clock: {fileID: 0}
   m_Icon: {fileID: 11475020}
   m_CharacterAnimation: {fileID: 11445274}
@@ -307,7 +309,7 @@ MonoBehaviour:
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 2
 --- !u!212 &21248238
 SpriteRenderer:
   m_ObjectHideFlags: 1
