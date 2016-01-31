@@ -320,7 +320,7 @@ public class Player : MonoBehaviour
         if (m_CurrentInteractableObject != null &&
             m_CurrentInteractableObject.IsInteracting(this))
         {
-            m_CurrentInteractableObject.Interact(null);
+            m_CurrentInteractableObject.Interact(this);
         }
 
         m_CurrentInteractableObject = null;

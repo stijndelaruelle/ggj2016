@@ -1,13 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class TaskObject : MonoBehaviour, InteractableObject
 {
     [SerializeField]
     private TaskDefinition m_TaskDefinition;
 
-    protected Player m_CurrentPlayer;
+    [SerializeField]
+    private bool m_AllowMultipleUsers = false;
+
+    protected List<Player> m_CurrentPlayers;
     private Coroutine m_TaskRoutineHandle;
+
+    private void Awake()
+    {
+        m_CurrentPlayers = new List<Player>();
+    }
 
     public bool CanInteract(Player player)
     {
@@ -16,35 +25,43 @@ public class TaskObject : MonoBehaviour, InteractableObject
 
     public bool IsInteracting(Player player)
     {
-        return (m_CurrentPlayer == player);
+        if (m_CurrentPlayers == null)
+            return false;
+
+        return (m_CurrentPlayers.Contains(player));
     }
 
     public virtual void Interact(Player player)
     {
-        if (m_CurrentPlayer == null)
+        if (m_CurrentPlayers.Count == 0 || m_AllowMultipleUsers == true)
         {
-			//Start the interaction
-			m_CurrentPlayer = player;
-            m_TaskRoutineHandle = StartCoroutine(TaskRoutine(player));
+            if (IsInteracting(player) == false)
+            {
+                //Start the interaction
+                m_CurrentPlayers.Add(player);
+                m_TaskRoutineHandle = StartCoroutine(TaskRoutine(player));
 
-			// Display the icon
-			m_CurrentPlayer.Icon.ShowSprite(m_TaskDefinition.Sprite);
+                // Display the icon
+                player.Icon.ShowSprite(m_TaskDefinition.Sprite);
 
-			// Play animation
-			m_CurrentPlayer.CharacterAnimation.Play(CharacterAnimation.AnimationType.GeneralTask);
+                // Play animation
+                player.CharacterAnimation.Play(CharacterAnimation.AnimationType.GeneralTask);
 
-			return;
+                return;
+            }
         }
 
-		// Hide icon
-		m_CurrentPlayer.Icon.Fail(false);
+        // Hide icon
+        player.Icon.Fail(false);
 
-		// Play animation
-		m_CurrentPlayer.CharacterAnimation.Play(CharacterAnimation.AnimationType.Idle);
+        // Play animation
+        player.CharacterAnimation.Play(CharacterAnimation.AnimationType.Idle);
 
         //Cancel the interaction
         EndInteraction(false);
-        m_CurrentPlayer = null;
+
+        if (m_CurrentPlayers.Contains(player))
+            m_CurrentPlayers.Remove(player);
 
         StopCoroutine(m_TaskRoutineHandle);
     }
@@ -62,21 +79,21 @@ public class TaskObject : MonoBehaviour, InteractableObject
         {
 			// UPDATE VISUALS
 			float progress = (m_TaskDefinition.TimeToComplete - timer) / m_TaskDefinition.TimeToComplete;
-			m_CurrentPlayer.Icon.UpdateProgress(progress);
+            player.Icon.UpdateProgress(progress);
 
             timer -= Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
 
-		// Hide icon
-		m_CurrentPlayer.Icon.Win();
+        // Hide icon
+        player.Icon.Win();
 
-		// Play animation
-		m_CurrentPlayer.CharacterAnimation.Play(CharacterAnimation.AnimationType.Idle);
+        // Play animation
+        player.CharacterAnimation.Play(CharacterAnimation.AnimationType.Idle);
 
 		player.UpdateTask(m_TaskDefinition);
 
         EndInteraction(true);
-        m_CurrentPlayer = null;
+        m_CurrentPlayers.Remove(player);
     }
 }

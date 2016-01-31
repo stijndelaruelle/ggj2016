@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 436138}
   - 212: {fileID: 21282432}
+  - 95: {fileID: 9580378}
   - 114: {fileID: 11497854}
   m_Layer: 0
   m_Name: Visuals
@@ -27,7 +28,6 @@ GameObject:
   - 4: {fileID: 471798}
   - 114: {fileID: 11481604}
   - 61: {fileID: 6101316}
-  - 95: {fileID: 9513470}
   m_Layer: 12
   m_Name: Newspaper
   m_TagString: Untagged
@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4, y: 2.74, z: 0}
+  m_LocalPosition: {x: -5.61, y: 0.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 436138}
@@ -71,16 +71,16 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.21, y: -0.16}
   serializedVersion: 2
   m_Size: {x: 1.25, y: 1.25}
---- !u!95 &9513470
+--- !u!95 &9580378
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 188258}
+  m_GameObject: {fileID: 173362}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7d1e02befdb7de14286a4a2dca67a991, type: 2}
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TaskDefinition: {fileID: 11400000, guid: 46f99401254409c44859f6ca38de7b8d, type: 2}
-  m_Animator: {fileID: 9513470}
+  m_Animator: {fileID: 9580378}
 --- !u!114 &11497854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,7 +141,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: -274
+  m_SortingOrder: -56
   m_Sprite: {fileID: 21300000, guid: 2ac7ff0dfa55d2a4f8da88fa2993234f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -28,7 +28,7 @@ GameObject:
   - 4: {fileID: 429390}
   - 114: {fileID: 11413850}
   - 61: {fileID: 6137898}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Television
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,9 +100,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -0.12, y: 0}
+  m_Offset: {x: -0.12, y: -0.45}
   serializedVersion: 2
-  m_Size: {x: 1.72, y: 0.88}
+  m_Size: {x: 2.84, y: 2.36}
 --- !u!61 &6176942
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -145,7 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55cb1ba668fc7c54296ec74cb1ed2fa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TaskDefinition: {fileID: 0}
+  m_TaskDefinition: {fileID: 11400000, guid: cb2a1ba7c2871d64d8eaa72a38d67125, type: 2}
+  m_AllowMultipleUsers: 1
   m_Animator: {fileID: 9554642}
 --- !u!114 &11486682
 MonoBehaviour:

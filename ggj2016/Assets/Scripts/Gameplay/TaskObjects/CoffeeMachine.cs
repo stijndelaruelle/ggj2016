@@ -69,7 +69,12 @@ public class CoffeeMachine : TaskObject
     protected override void EndInteraction(bool finished)
     {
         if (finished)
-            m_CurrentPlayer.ModifySpeed(m_SpeedBoost);
+        {
+            foreach(Player player in m_CurrentPlayers)
+            {
+                player.ModifySpeed(m_SpeedBoost);
+            }
+        }
     }
 
 
