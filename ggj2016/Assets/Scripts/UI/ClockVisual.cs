@@ -34,8 +34,6 @@ public class ClockVisual : MonoBehaviour
 			CountUp();
 
 		SwingHanger();
-
-		Debug.Log(_clock.TimeLeftInSeconds());
 	}
 
 	void Initialize()
