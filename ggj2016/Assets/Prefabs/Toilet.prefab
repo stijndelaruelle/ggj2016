@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d15dbd17ae3ed5749a63dbf591e3d481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TaskDefinition: {fileID: 11400000, guid: 1bbdd2040f4688e41a3b0de63201d34a, type: 2}
+  m_TaskDefinition: {fileID: 11400000, guid: 3afb421fb75374741bf14c50ebc95316, type: 2}
   m_AllowMultipleUsers: 0
 --- !u!114 &11450138
 MonoBehaviour:
@@ -177,7 +177,12 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TaskDefinition
+      value: 
+      objectReference: {fileID: 11400000, guid: 3afb421fb75374741bf14c50ebc95316,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 190656}

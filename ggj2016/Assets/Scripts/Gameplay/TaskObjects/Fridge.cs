@@ -15,7 +15,10 @@ public class Fridge : TaskObject
     [SerializeField]
     private Sprite m_OpenSprite;
 
-    private void Start()
+	[Header("Audio Clips")]
+	public soAudio _audioEating;
+
+	private void Start()
     {
         Open(false);
     }
@@ -23,7 +26,8 @@ public class Fridge : TaskObject
     public override void Interact(Player player)
     {
         Open(true);
-        base.Interact(player);
+		player.PlayerAudio.Play(_audioEating);
+		base.Interact(player);
     }
 
     protected override void EndInteraction(bool finished)

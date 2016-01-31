@@ -92,11 +92,11 @@ public class CoffeeMachine : TaskObject
 
         m_Icon.Show();
 
-        while (timer > 0.0f)
-        {
-			// Play audio
-			_audio.Play(_audioCoffeeBrewing);
+		// Play audio
+		_audio.Play(_audioCoffeeBrewing);
 
+		while (timer > 0.0f)
+        {
             // UPDATE VISUALS
             float progress = (m_TimeToMakeCoffee - timer) / m_TimeToMakeCoffee;
             m_Icon.UpdateProgress(progress);

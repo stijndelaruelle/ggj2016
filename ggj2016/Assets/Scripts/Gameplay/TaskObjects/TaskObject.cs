@@ -58,6 +58,9 @@ public class TaskObject : MonoBehaviour, InteractableObject
 
             // Play animation
             m_CurrentPlayers[i].CharacterAnimation.Play(CharacterAnimation.AnimationType.Idle);
+
+			// Stop audio player
+			m_CurrentPlayers[i].PlayerAudio.Stop();
         }
 
         //Cancel the interaction

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Title: 
   m_Description: 
-  m_Sprite: {fileID: 21300000, guid: 2ebf2202bae09014a8e0e5182f6c7782, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c0beea0007ce374992fa4424f8e49b5, type: 3}
   m_SpriteDone: {fileID: 0}
   m_TimeToComplete: 2
   m_UnlockDay: 0
