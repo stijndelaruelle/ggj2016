@@ -7,6 +7,9 @@ public class Door : MonoBehaviour
     private SpriteRenderer m_SpriteRenderer;
 
     [SerializeField]
+    private SpriteRenderer m_OpenSpriteRenderer;
+
+    [SerializeField]
     private Sprite m_ClosedDoor;
 
     [SerializeField]
@@ -16,7 +19,7 @@ public class Door : MonoBehaviour
 
     private void Start()
     {
-        m_SpriteRenderer.sprite = m_ClosedDoor;
+        Open(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -24,7 +27,7 @@ public class Door : MonoBehaviour
         ++m_NumberOfPlayersInDoor;
 
         if (m_NumberOfPlayersInDoor > 0)
-            m_SpriteRenderer.sprite = m_OpenDoor;
+            Open(true);
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -32,6 +35,24 @@ public class Door : MonoBehaviour
         --m_NumberOfPlayersInDoor;
 
         if (m_NumberOfPlayersInDoor <= 0)
+            Open(false);
+    }
+
+    private void Open(bool state)
+    {
+        if (state)
+        {
+            m_SpriteRenderer.sprite = m_OpenDoor;
+
+            if (m_OpenSpriteRenderer != null)
+                m_OpenSpriteRenderer.enabled = true;
+        }
+        else
+        {
             m_SpriteRenderer.sprite = m_ClosedDoor;
+
+            if (m_OpenSpriteRenderer != null)
+                m_OpenSpriteRenderer.enabled = false;
+        }
     }
 }
