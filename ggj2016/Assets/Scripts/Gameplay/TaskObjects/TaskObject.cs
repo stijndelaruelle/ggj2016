@@ -13,7 +13,10 @@ public class TaskObject : MonoBehaviour, InteractableObject
     protected List<Player> m_CurrentPlayers;
     private Coroutine m_TaskRoutineHandle;
 
-    private void Awake()
+	[Header("Audio Clip")]
+	public soAudio _audioDefault;
+
+	private void Awake()
     {
         m_CurrentPlayers = new List<Player>();
     }
@@ -42,6 +45,12 @@ public class TaskObject : MonoBehaviour, InteractableObject
 
                 // Play animation
                 player.CharacterAnimation.Play(CharacterAnimation.AnimationType.GeneralTask);
+
+				// Play the audio (if any)
+				if(_audioDefault != null)
+				{
+					player.PlayerAudio.Play(_audioDefault);
+				}
 
                 //Start the interaction
                 m_CurrentPlayers.Add(player);
