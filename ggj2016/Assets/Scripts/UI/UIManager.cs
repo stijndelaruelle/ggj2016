@@ -28,6 +28,7 @@ public class UIManager : MonoBehaviour
         gameManager.EndGameEvent += OnGameEnd;
 
         //Lame
+        m_PanelStartDay.GetComponent<UIPanel>().Initialize();
         m_PanelEndDay.GetComponent<UIPanel>().Initialize();
         m_PanelEndGame.GetComponent<UIPanel>().Initialize();
 
