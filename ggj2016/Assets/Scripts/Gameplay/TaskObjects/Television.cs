@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Newspaper : TaskObject
+public class Television : TaskObject
 {
     [SerializeField]
     private Animator m_Animator;
@@ -21,22 +21,21 @@ public class Newspaper : TaskObject
 
     public override void Interact(Player player)
     {
-        Read(true);
+        int channelID = 0;
+        if (player.PlayerType == PlayerType.Parent) { channelID = 1; }
+        if (player.PlayerType == PlayerType.Child)  { channelID = 2; }
+
+        SetChannel(channelID);
         base.Interact(player);
     }
 
-    protected override void EndInteraction(bool finished)
+    private void SetChannel(int channel)
     {
-        Read(false);
-    }
-
-    private void Read(bool state)
-    {
-        m_Animator.SetBool("isReading", state);
+        m_Animator.SetInteger("channelID", channel);
     }
 
     private void OnDayStart()
     {
-        Read(false);
+        SetChannel(0);
     }
 }

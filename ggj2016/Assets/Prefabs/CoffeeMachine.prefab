@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e9464f74a4b784cafcd0817921eb4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SpriteRenderer: {fileID: 0}
+  m_SpriteRenderer: {fileID: 21267366}
 --- !u!114 &11430256
 MonoBehaviour:
   m_ObjectHideFlags: 1
