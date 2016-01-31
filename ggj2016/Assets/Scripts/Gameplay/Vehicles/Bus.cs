@@ -13,11 +13,20 @@ public class Bus : Vehicle
     [SerializeField]
     private int m_LeaveTime;
 
-    protected override void Start()
+	[Header("Audio Clips")]
+	public soAudio _audioEngineRunning;
+	public soAudio _audioHorn;
+
+	[Header("Components")]
+	private AudioController _audio;
+
+	protected override void Start()
     {
         base.Start();
 
-        m_Clock.ClockUpdatedEvent += OnClockUpdated;
+		//_audio = GetComponentInChildren<AudioController>();
+
+		m_Clock.ClockUpdatedEvent += OnClockUpdated;
     }
 
     protected override void OnDestroy()
