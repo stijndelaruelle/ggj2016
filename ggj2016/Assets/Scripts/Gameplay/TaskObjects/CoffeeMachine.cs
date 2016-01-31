@@ -86,7 +86,6 @@ public class CoffeeMachine : TaskObject
         }
     }
 
-
     private IEnumerator CreateCoffeeRoutine()
     {
         float timer = m_TimeToMakeCoffee;
