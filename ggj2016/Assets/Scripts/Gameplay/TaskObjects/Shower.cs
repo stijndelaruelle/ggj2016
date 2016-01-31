@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CoffeeMachine : TaskObject
+public class Shower : TaskObject
 {
     [SerializeField]
     private Icon m_Icon;
@@ -12,8 +12,12 @@ public class CoffeeMachine : TaskObject
     }
 
     [SerializeField]
-    private float m_TimeToMakeCoffee;
-    private bool m_HasCoffee = false;
+    private float m_TimeToFillBath;
+    private bool m_IsFilled = false;
+
+    [SerializeField]
+    private Animator m_Animator;
+
     private Coroutine m_RoutineHandle;
 
     private void Start()
@@ -44,26 +48,33 @@ public class CoffeeMachine : TaskObject
         if (m_RoutineHandle != null)
             return;
 
-        if (m_HasCoffee)
+        if (m_IsFilled)
         {
+            m_Animator.SetBool("showerEnabled", true);
             base.Interact(player);
-            m_HasCoffee = false;
             return;
         }
 
-        m_RoutineHandle = StartCoroutine(CreateCoffeeRoutine());
+        //Fill the bath if it hasn't already
+        m_RoutineHandle = StartCoroutine(FillBathRoutine());
     }
 
-    private IEnumerator CreateCoffeeRoutine()
+    protected override void EndInteraction(bool finished)
     {
-        float timer = m_TimeToMakeCoffee;
+        //Stop shower
+        m_Animator.SetBool("showerEnabled", false);
+    }
+
+    private IEnumerator FillBathRoutine()
+    {
+        float timer = m_TimeToFillBath;
 
         m_Icon.Show();
 
         while (timer > 0.0f)
         {
             // UPDATE VISUALS
-            float progress = (m_TimeToMakeCoffee - timer) / m_TimeToMakeCoffee;
+            float progress = (m_TimeToFillBath - timer) / m_TimeToFillBath;
             m_Icon.UpdateProgress(progress);
 
             timer -= Time.deltaTime;
@@ -72,8 +83,14 @@ public class CoffeeMachine : TaskObject
 
         // Hide icon
         m_Icon.Win();
-        m_HasCoffee = true;
+        FillBath(true);
         m_RoutineHandle = null;
+    }
+
+    private void FillBath(bool value)
+    {
+        m_IsFilled = value;
+        m_Animator.SetBool("isFilled", value);
     }
 
     private void OnDayStart()
@@ -82,6 +99,6 @@ public class CoffeeMachine : TaskObject
             StopCoroutine(m_RoutineHandle);
 
         m_RoutineHandle = null;
-        m_HasCoffee = false;
+        FillBath(false);
     }
 }

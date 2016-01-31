@@ -78,7 +78,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.77, y: 1.09, z: 0}
+  m_LocalPosition: {x: -6.51, y: 2.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 486554}
@@ -122,9 +122,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -0.02}
+  m_Offset: {x: 0.36, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.5}
+  m_Size: {x: 1.02, y: 0.83}
 --- !u!114 &11423132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,7 +227,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TaskDefinition: {fileID: 11400000, guid: 5f5d8d3812aa77d4ea77a5a1012403fa, type: 2}
   m_Icon: {fileID: 11438912}
+  m_SpriteRenderer: {fileID: 21205050}
+  m_EmptySprite: {fileID: 21300000, guid: 3a9f3412d42cd1e43a46fa96f4bdc8eb, type: 3}
+  m_FullSprite: {fileID: 21300000, guid: 20322066b8cd2034b9a6920ecb13fb92, type: 3}
   m_TimeToMakeCoffee: 3
+  m_SpeedBoost: 2
 --- !u!212 &21205050
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -253,8 +257,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: -109
-  m_Sprite: {fileID: 21300000, guid: 720345f4549c705448c28efc69346e62, type: 3}
+  m_SortingOrder: -264
+  m_Sprite: {fileID: 21300000, guid: 3a9f3412d42cd1e43a46fa96f4bdc8eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

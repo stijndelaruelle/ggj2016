@@ -6,7 +6,7 @@ public class TaskObject : MonoBehaviour, InteractableObject
     [SerializeField]
     private TaskDefinition m_TaskDefinition;
 
-    private Player m_CurrentPlayer;
+    protected Player m_CurrentPlayer;
     private Coroutine m_TaskRoutineHandle;
 
     public bool CanInteract(Player player)
@@ -42,9 +42,16 @@ public class TaskObject : MonoBehaviour, InteractableObject
 		// Play animation
 		m_CurrentPlayer.CharacterAnimation.Play(CharacterAnimation.AnimationType.Idle);
 
-		//Cancel the interaction
-		m_CurrentPlayer = null;
+        //Cancel the interaction
+        EndInteraction(false);
+        m_CurrentPlayer = null;
+
         StopCoroutine(m_TaskRoutineHandle);
+    }
+
+    protected virtual void EndInteraction(bool finished)
+    {
+
     }
 
     private IEnumerator TaskRoutine(Player player)
@@ -68,5 +75,8 @@ public class TaskObject : MonoBehaviour, InteractableObject
 		m_CurrentPlayer.CharacterAnimation.Play(CharacterAnimation.AnimationType.Idle);
 
 		player.UpdateTask(m_TaskDefinition);
+
+        EndInteraction(true);
+        m_CurrentPlayer = null;
     }
 }

@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private float m_Speed;
+    private float m_OriginalSpeed;
 
     [SerializeField]
     private List<Task> m_Tasks;
@@ -165,6 +166,7 @@ public class Player : MonoBehaviour
         m_CharacterController.OnTriggerExitEvent += OnCustomTriggerExit;
 
         m_OriginalPosition = transform.position.Copy();
+        m_OriginalSpeed = m_Speed;
 
         InitializeControls();
 
@@ -299,6 +301,11 @@ public class Player : MonoBehaviour
         return (m_CurrentVehicle != null);
     }
 
+    public void ModifySpeed(float modifier)
+    {
+        m_Speed += modifier;
+    }
+
     private void OnCustomTriggerEnter(Collider2D other)
     {
         m_CurrentInteractableObject = other.gameObject.GetComponent<InteractableObject>();
@@ -330,14 +337,19 @@ public class Player : MonoBehaviour
     {
         //Reset everything
         UpdateVehicle(null);
+        m_Icon.Hide();
 
         transform.position = m_OriginalPosition;
-        
+        m_Speed = m_OriginalSpeed;
+
         m_IsOnScreen = true;
         m_TimeScreenLeft = 0;
-
-        m_CurrentVehicle = null;
         m_CurrentInteractableObject = null;
+
+        foreach(Task task in m_Tasks)
+        {
+            task.IsDone = false;
+        }
 
         if (m_TaskListUpdatedEvent != null)
             m_TaskListUpdatedEvent();
