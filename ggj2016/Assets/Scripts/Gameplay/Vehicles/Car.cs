@@ -29,4 +29,14 @@ public class Car : Vehicle
             simpleAnimation.Play(activateMotor);
         }
     }
+
+    protected override void OnStartDay()
+    {
+        base.OnStartDay();
+
+        foreach (SimpleAnimation simpleAnimation in m_SimpleAnimations)
+        {
+            simpleAnimation.Play(false);
+        }
+    }
 }

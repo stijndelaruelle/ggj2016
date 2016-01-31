@@ -14,7 +14,7 @@ MonoBehaviour:
   m_Title: Take a shower
   m_Description: 
   m_Sprite: {fileID: 21300000, guid: 5044750e6c274104691d5ffb87844f66, type: 3}
-  m_SpriteDone: {fileID: 0}
-  m_TimeToComplete: 5
+  m_SpriteDone: {fileID: 21300000, guid: f2cee2ff902e9784dbad7b79a2ac8a72, type: 3}
+  m_TimeToComplete: 3
   m_TaskCategory: 3
   m_Weight: 1
