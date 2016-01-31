@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b6387c4666e8f4f9b40a199eab56ae, type: 3}
   m_Name: BusHorn
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: df7a4f6c1f7bef44d92f8cbf9d8ecd72, type: 3}
+  _audioClip: {fileID: 0}
   _loop: 0

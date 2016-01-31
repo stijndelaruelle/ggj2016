@@ -162,6 +162,7 @@ MonoBehaviour:
   m_DoorSpriteRenderer: {fileID: 21219444}
   m_ClosedSprite: {fileID: 21300000, guid: ddaeab789bbeb2941a4090a5b4ea6219, type: 3}
   m_OpenSprite: {fileID: 21300000, guid: 3487360611d8d2f48a2d0236f99086b0, type: 3}
+  _audioEating: {fileID: 11400000, guid: a1719acc87b3c694486fae68eb2d046e, type: 2}
 --- !u!114 &11438278
 MonoBehaviour:
   m_ObjectHideFlags: 1

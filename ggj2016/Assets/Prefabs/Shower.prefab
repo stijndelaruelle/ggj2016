@@ -150,9 +150,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0.13, y: -0.59}
+  m_Offset: {x: 0, y: -0.93}
   serializedVersion: 2
-  m_Size: {x: 1.96, y: 1.28}
+  m_Size: {x: 1.57, y: 1.27}
 --- !u!95 &9527754
 Animator:
   serializedVersion: 3
@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Icon: {fileID: 11441140}
   m_TimeToFillBath: 5
   m_Animator: {fileID: 9527754}
+  _audioShower: {fileID: 11400000, guid: b8449549c27c98e42878d328ef891edd, type: 2}
 --- !u!114 &11456112
 MonoBehaviour:
   m_ObjectHideFlags: 1

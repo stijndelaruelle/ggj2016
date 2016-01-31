@@ -442,7 +442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &132790
 GameObject:
   m_ObjectHideFlags: 1
@@ -2168,7 +2168,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5e55f67f83055154c9dd1e7037b95a9f, type: 3}
-    m_FontSize: 150
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -2179,7 +2179,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Episode 1
+  m_Text: 'Episode 1: Pajama slamma'
 --- !u!114 &11403812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3404,6 +3404,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Text: {fileID: 11403748}
+  m_EpisodeTitles:
+  - No fancy pants
+  - Schoolrush
+  - Tieknotter
+  - Tie and the pie
+  - Pajama slamma
+  - Struggle is real
+  - Bus to work
+  - All nighter
+  - Expresso
+  - Straight to the flush
+  - Startbucks
+  - Wake up call
+  - Good morning, juan
+  - The booze snooze
+  - Poozers everywhere
+  - Snoozer cruiser
+  - Global sleepover
+  - We're out of jam
 --- !u!114 &11459378
 MonoBehaviour:
   m_ObjectHideFlags: 1

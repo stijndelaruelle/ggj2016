@@ -337,7 +337,8 @@ MonoBehaviour:
   m_SpeedBoost: 2
   _audioCoffeeBrewing: {fileID: 11400000, guid: 0e95ecbb7a2aa3945847398b87458af2,
     type: 2}
-  _audioCofeeDrinking: {fileID: 0}
+  _audioCoffeeDrinking: {fileID: 11400000, guid: f2b7acd67ca644f4aaf03abcafb712d3,
+    type: 2}
 --- !u!212 &21267366
 SpriteRenderer:
   m_ObjectHideFlags: 1
