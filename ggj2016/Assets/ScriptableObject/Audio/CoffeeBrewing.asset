@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b6387c4666e8f4f9b40a199eab56ae, type: 3}
   m_Name: CoffeeBrewing
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 0}
-  _loop: 0
+  _audioClip: {fileID: 8300000, guid: 06cc050903a13d741a0f00460aa3c36c, type: 3}
+  _loop: 1
