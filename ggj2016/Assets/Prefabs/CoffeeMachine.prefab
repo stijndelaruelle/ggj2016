@@ -78,7 +78,6 @@ GameObject:
   - 4: {fileID: 407150}
   - 61: {fileID: 6167144}
   - 114: {fileID: 11485462}
-  - 114: {fileID: 11429660}
   m_Layer: 12
   m_Name: CoffeeMachine
   m_TagString: Untagged
@@ -93,7 +92,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.51, y: 2.64, z: 0}
+  m_LocalPosition: {x: -6.51, y: 2.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 420800}
@@ -150,9 +149,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0.36, y: 0}
+  m_Offset: {x: 0.36, y: -0.36}
   serializedVersion: 2
-  m_Size: {x: 1.02, y: 0.83}
+  m_Size: {x: 1.02, y: 1.26}
 --- !u!114 &11423132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -169,18 +168,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &11429660
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 197686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28e9464f74a4b784cafcd0817921eb4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SpriteRenderer: {fileID: 21267366}
 --- !u!114 &11430256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -254,6 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TaskDefinition: {fileID: 11400000, guid: 5f5d8d3812aa77d4ea77a5a1012403fa, type: 2}
+  m_AllowMultipleUsers: 0
   m_Icon: {fileID: 11438912}
   m_SpriteRenderer: {fileID: 21267366}
   m_EmptySprite: {fileID: 21300000, guid: 3a9f3412d42cd1e43a46fa96f4bdc8eb, type: 3}
@@ -285,7 +273,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: -264
+  m_SortingOrder: -70
   m_Sprite: {fileID: 21300000, guid: 3a9f3412d42cd1e43a46fa96f4bdc8eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
