@@ -2,13 +2,13 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class EpisodeTitle : MonoBehaviour
+public class EpisodeTitle : MonoBehaviour, UIPanel
 {
     [SerializeField]
     private Text m_Text;
 
 
-    private void Start()
+    public void Initialize()
     {
         GameManager.Instance.CreateDayEvent += OnCreateDay;
     }

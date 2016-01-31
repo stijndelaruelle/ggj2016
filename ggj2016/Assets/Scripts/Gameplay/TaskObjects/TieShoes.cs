@@ -22,7 +22,10 @@ public class TieShoes : TaskObject
 
     public override bool CanInteract(Player player)
     {
-        bool success = (player.PlayerType == PlayerType.Parent && !m_AreTied);
+        bool success = (m_Owner.IsInVehicle() == false &&
+                        player.IsInVehicle() == false &&
+                        player.PlayerType == PlayerType.Parent &&
+                        !m_AreTied);
 
         if (success)
             return base.CanInteract(player);
