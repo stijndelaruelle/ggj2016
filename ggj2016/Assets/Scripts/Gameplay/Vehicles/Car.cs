@@ -9,13 +9,24 @@ public class Car : Vehicle
     [SerializeField]
     private List<SimpleAnimation> m_SimpleAnimations;
 
-    protected override bool CanDrive()
+	[Header("Audio Clips")]
+	public soAudio _audioEngineRunning;
+	public soAudio _audioHorn;
+
+	[Header("Components")]
+	private AudioController _audio;
+
+	protected override bool CanDrive()
     {
         //Are all the children in a vehicle? (bus or car)
         if (!GameManager.Instance.AllChildrenInVehicle())
             return false;
 
-        return base.CanDrive();
+		// Play the car horn
+		if(base.CanDrive())
+			_audio.Play(_audioHorn);
+
+		return base.CanDrive();
     }
 
     public override void Interact(Player player)
@@ -24,7 +35,13 @@ public class Car : Vehicle
 
         bool activateMotor = (m_Passengers.Count > 0);
 
-        foreach(SimpleAnimation simpleAnimation in m_SimpleAnimations)
+		// Play audio
+		if(_audio == null)
+			_audio = GetComponentInChildren<AudioController>();
+
+		_audio.Play(_audioEngineRunning);
+
+		foreach (SimpleAnimation simpleAnimation in m_SimpleAnimations)
         {
             simpleAnimation.Play(activateMotor);
         }

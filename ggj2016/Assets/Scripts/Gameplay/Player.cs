@@ -276,8 +276,8 @@ public class Player : MonoBehaviour
             {
                 task.IsDone = true;
 
-				// Play audio
-				//m_PlayerAudio.Play(m_PlayerAudio._win);
+				// Stop playing audio
+				m_PlayerAudio.Stop();
 
                 Debug.Log("Task: " + taskDefinition.Title + " completed!");
 

@@ -20,10 +20,17 @@ public class Shower : TaskObject
 
     private Coroutine m_RoutineHandle;
 
-    private void Start()
+	[Header("Audio Clips")]
+	public soAudio _audioShower;
+
+	[Header("Components")]
+	private AudioController _audio;
+
+	private void Start()
     {
         GameManager.Instance.StartDayEvent += OnDayStart;
         m_Icon.Initialize();
+		_audio = GetComponentInChildren<AudioController>();
     }
 
     private void OnDestroy()
@@ -51,7 +58,10 @@ public class Shower : TaskObject
         if (m_IsFilled)
         {
             m_Animator.SetBool("showerEnabled", true);
-            base.Interact(player);
+			// Play audio
+			player.PlayerAudio.Play(_audioShower);
+
+			base.Interact(player);
             return;
         }
 
@@ -71,7 +81,7 @@ public class Shower : TaskObject
 
         m_Icon.Show();
 
-        while (timer > 0.0f)
+		while (timer > 0.0f)
         {
             // UPDATE VISUALS
             float progress = (m_TimeToFillBath - timer) / m_TimeToFillBath;
@@ -83,7 +93,7 @@ public class Shower : TaskObject
 
         // Hide icon
         m_Icon.Win();
-        FillBath(true);
+		FillBath(true);
         m_RoutineHandle = null;
     }
 
