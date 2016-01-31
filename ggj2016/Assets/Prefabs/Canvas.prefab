@@ -183,7 +183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &121480
 GameObject:
   m_ObjectHideFlags: 1
@@ -349,7 +349,6 @@ GameObject:
   m_Component:
   - 224: {fileID: 22450224}
   - 222: {fileID: 22227058}
-  - 114: {fileID: 11467202}
   - 114: {fileID: 11487776}
   m_Layer: 5
   m_Name: Title
@@ -1801,18 +1800,20 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 4
     m_MaxSize: 50
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Veters strikken stikken uitleg...
+    m_LineSpacing: 1.25
+  m_Text: "Bruises and scratches! School has let you know that the kinds tend to fall
+    on their face quite a lot.\r\n\nThey suggested to start with tying their shoe
+    laces in the morning.\r\n\r\nBut who will teach the kids that?"
 --- !u!114 &11409316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1971,7 +1972,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Episode 1
+  m_Text: 'Episode 2: Tiebreaker'
 --- !u!114 &11415430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2505,18 +2506,21 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 4
     m_MaxSize: 50
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: The entire family.... bla bla tutorial
+    m_LineSpacing: 1.25
+  m_Text: "Well rested? Because it's time to go to school and work!\nEverybody has
+    his own morning ritual. Check yours under your portrait.\r\n\r\nComplete them
+    in any order and get to your destination as quick as possible.\r But beware there
+    are consequences..."
 --- !u!114 &11453972
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2836,18 +2840,6 @@ MonoBehaviour:
 
 
     One more of these actions and Stijn will be kicked from school!'
---- !u!114 &11467202
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 132866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efc8892ddb872ba44a07e6f8255edbfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Text: {fileID: 11487776}
 --- !u!114 &11467474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2986,9 +2978,6 @@ MonoBehaviour:
   - {fileID: 177374}
   - {fileID: 131272}
   m_EpisodeTitles:
-  - {fileID: 11467202}
-  - {fileID: 11468210}
-  - {fileID: 11494300}
   - {fileID: 11458328}
 --- !u!114 &11473832
 MonoBehaviour:
@@ -3250,7 +3239,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 150
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -3261,7 +3250,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Episode 1
+  m_Text: 'Episode 1: Good morning family!'
 --- !u!114 &11488190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3443,7 +3432,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Episode 1
+  m_Text: 'Episode 3: All laced up!'
 --- !u!114 &11493484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3540,18 +3529,20 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 4
     m_MaxSize: 50
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Das stikken uitleg...
+    m_LineSpacing: 1.25
+  m_Text: "Dad's boss has asked him to wear a tie everyday. \r\nTime to get that old
+    thing out of the closet and somehow get it propertly around his neck!\r\n\r\nHe
+    might need some help tying it though..."
 --- !u!114 &11496038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4063,7 +4054,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -802, y: 191.00003}
+  m_AnchoredPosition: {x: -802, y: 158}
   m_SizeDelta: {x: 95, y: 127}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22401680
@@ -4183,10 +4174,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22486962}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 326}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -144}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22418230
 RectTransform:
@@ -4274,10 +4265,10 @@ RectTransform:
   m_LocalScale: {x: -1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 22481306}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 603, y: 223}
+  m_AnchoredPosition: {x: 481, y: 527}
   m_SizeDelta: {x: 98, y: 132}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22420652
@@ -4291,7 +4282,7 @@ RectTransform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 22481306}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 784, y: 229.19998}
@@ -4343,10 +4334,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22486962}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00005833091, y: 0.000015258789}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 35}
+  m_SizeDelta: {x: 800, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22427380
 RectTransform:
@@ -4469,10 +4460,10 @@ RectTransform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 22481306}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 469, y: 166}
+  m_AnchoredPosition: {x: 314, y: 565}
   m_SizeDelta: {x: 114, y: 159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22437266
@@ -4525,10 +4516,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22492288}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00005833091, y: 0.000015258789}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 35}
+  m_SizeDelta: {x: 800, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22442910
 RectTransform:
@@ -4628,7 +4619,7 @@ RectTransform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 22481306}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 313.40002, y: 229.2}
@@ -4663,10 +4654,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22477386}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 326}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -144}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22450342
 RectTransform:
@@ -4807,7 +4798,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -183, y: 210}
+  m_AnchoredPosition: {x: -183, y: 177}
   m_SizeDelta: {x: 141, y: 156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22464468
@@ -4822,10 +4813,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22477386}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 35}
+  m_SizeDelta: {x: 800, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22466306
 RectTransform:
@@ -4839,10 +4830,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22492288}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 326}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -144}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22470314
 RectTransform:
@@ -5071,16 +5062,16 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 22420140}
+  - {fileID: 22434310}
   - {fileID: 22448882}
   - {fileID: 22420652}
   - {fileID: 22496518}
-  - {fileID: 22420140}
-  - {fileID: 22434310}
   m_Father: {fileID: 22477386}
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -30, y: -164}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22481982
@@ -5114,7 +5105,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 173}
+  m_AnchoredPosition: {x: 0, y: 140}
   m_SizeDelta: {x: 46, y: 53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22483998
@@ -5291,7 +5282,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 16, y: -22}
+  m_AnchoredPosition: {x: 165, y: -75}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22493072
@@ -5322,7 +5313,7 @@ RectTransform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 22481306}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 545, y: 336}
