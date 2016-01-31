@@ -46,23 +46,24 @@ public class TaskObject : MonoBehaviour, InteractableObject
 
                 // Play animation
                 player.CharacterAnimation.Play(CharacterAnimation.AnimationType.GeneralTask);
-
-                return;
             }
+
+            return;
         }
 
         // Hide icon
-        player.Icon.Fail(false);
+        for (int i = 0; i < m_CurrentPlayers.Count; ++i)
+        {
+            m_CurrentPlayers[i].Icon.Fail(false);
 
-        // Play animation
-        player.CharacterAnimation.Play(CharacterAnimation.AnimationType.Idle);
+            // Play animation
+            m_CurrentPlayers[i].CharacterAnimation.Play(CharacterAnimation.AnimationType.Idle);
+        }
 
         //Cancel the interaction
         EndInteraction(false);
 
-        if (m_CurrentPlayers.Contains(player))
-            m_CurrentPlayers.Remove(player);
-
+        m_CurrentPlayers.Clear();
         StopCoroutine(m_TaskRoutineHandle);
     }
 

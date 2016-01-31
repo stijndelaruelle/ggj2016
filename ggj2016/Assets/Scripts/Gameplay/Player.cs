@@ -67,6 +67,10 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private float m_Speed;
+
+    [SerializeField]
+    private float m_MaxSpeed;
+
     private float m_OriginalSpeed;
 
     [SerializeField]
@@ -310,6 +314,9 @@ public class Player : MonoBehaviour
     public void ModifySpeed(float modifier)
     {
         m_Speed += modifier;
+
+        if (m_Speed > m_MaxSpeed)
+            m_Speed = m_MaxSpeed;
     }
 
     private void OnCustomTriggerEnter(Collider2D other)

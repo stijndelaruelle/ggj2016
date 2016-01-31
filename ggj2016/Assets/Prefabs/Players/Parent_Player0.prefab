@@ -205,6 +205,7 @@ MonoBehaviour:
   m_CharacterController: {fileID: 11464120}
   m_SpriteRenderer: {fileID: 21248238}
   m_Speed: 2
+  m_MaxSpeed: 8
   m_Tasks:
   - m_TaskDefinition: {fileID: 11400000, guid: 515dd1d38cd8cdb47a888e2cdf698a4b, type: 2}
   - m_TaskDefinition: {fileID: 11400000, guid: 5f5d8d3812aa77d4ea77a5a1012403fa, type: 2}

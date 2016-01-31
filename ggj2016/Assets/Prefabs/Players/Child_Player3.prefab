@@ -94,7 +94,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.35, y: -2.1, z: 0}
+  m_LocalPosition: {x: -1.61, y: 2.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 457354}
@@ -167,9 +167,13 @@ MonoBehaviour:
   m_CharacterController: {fileID: 11447402}
   m_SpriteRenderer: {fileID: 21250482}
   m_Speed: 3
+  m_MaxSpeed: 9
   m_Tasks:
+  - m_TaskDefinition: {fileID: 11400000, guid: 5cb84c39927487444909acfcda3b9a88, type: 2}
   - m_TaskDefinition: {fileID: 11400000, guid: 515dd1d38cd8cdb47a888e2cdf698a4b, type: 2}
-  - m_TaskDefinition: {fileID: 11400000, guid: 515dd1d38cd8cdb47a888e2cdf698a4b, type: 2}
+  - m_TaskDefinition: {fileID: 11400000, guid: 3afb421fb75374741bf14c50ebc95316, type: 2}
+  - m_TaskDefinition: {fileID: 11400000, guid: 46f99401254409c44859f6ca38de7b8d, type: 2}
+  - m_TaskDefinition: {fileID: 11400000, guid: 838ab5d20acea324f90cb23038c92af7, type: 2}
   m_Clock: {fileID: 0}
   m_Icon: {fileID: 11455360}
   m_CharacterAnimation: {fileID: 11467088}
@@ -333,7 +337,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 209
+  m_SortingOrder: -220
   m_Sprite: {fileID: 21300000, guid: 307dc0d0c6e9e744db4beefaf5e91c09, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
