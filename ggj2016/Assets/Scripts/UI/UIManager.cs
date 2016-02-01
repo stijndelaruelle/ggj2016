@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Sjabloon;
 
 public class UIManager : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class UIManager : MonoBehaviour
         m_PanelEndDay.GetComponent<UIPanel>().Initialize();
         m_PanelEndGame.GetComponent<UIPanel>().Initialize();
 
+        InitializeControls();
         ShowMainMenu();
     }
 
@@ -46,6 +48,27 @@ public class UIManager : MonoBehaviour
         gameManager.StartDayEvent -= OnStartDay;
         gameManager.EndDayEvent -= OnEndDay;
         gameManager.EndGameEvent -= OnGameEnd;
+    }
+
+    private void InitializeControls()
+    {
+        //Quit game
+        for (int i = 0; i < 4; ++i)
+        {
+            InputManager.Instance.BindButton("Quit_" + i, KeyCode.Escape, InputManager.ButtonState.OnPress);
+            InputManager.Instance.BindButton("Quit_" + i, i, ControllerButtonCode.Start, InputManager.ButtonState.OnPress);
+        }
+    }
+
+    private void Update()
+    {
+        for (int i = 0; i < 4; ++i)
+        {
+            if (InputManager.Instance.GetButton("Quit_" + i))
+            {
+                Application.Quit();
+            }
+        }
     }
 
     public void ShowMainMenu()

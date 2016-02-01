@@ -11,7 +11,6 @@ public class TaskObject : MonoBehaviour, InteractableObject
     private bool m_AllowMultipleUsers = false;
 
     protected List<Player> m_CurrentPlayers;
-    private Coroutine m_TaskRoutineHandle;
 
 	[Header("Audio Clip")]
 	public soAudio _audioDefault;
@@ -21,9 +20,22 @@ public class TaskObject : MonoBehaviour, InteractableObject
         m_CurrentPlayers = new List<Player>();
     }
 
-    public virtual bool CanInteract(Player player)
+    public bool IsUnlocked()
     {
         return (GameManager.Instance.Day >= m_TaskDefinition.UnlockDay);
+    }
+
+    public virtual bool CanInteract(Player player)
+    {
+        if (m_CurrentPlayers.Count == 0 || m_AllowMultipleUsers == true)
+        {
+            if (IsInteracting(player) == false)
+            {
+                return IsUnlocked();
+            }
+        }
+
+        return false;
     }
 
     public bool IsInteracting(Player player)
@@ -36,47 +48,38 @@ public class TaskObject : MonoBehaviour, InteractableObject
 
     public virtual void Interact(Player player)
     {
-        if (m_CurrentPlayers.Count == 0 || m_AllowMultipleUsers == true)
+        if (CanInteract(player))
         {
-            if (IsInteracting(player) == false)
-            {
-                // Display the icon
-                player.Icon.ShowSprite(m_TaskDefinition.Sprite);
-
-                // Play animation
-                player.CharacterAnimation.Play(CharacterAnimation.AnimationType.GeneralTask);
-
-				// Play the audio (if any)
-				if(_audioDefault != null)
-				{
-					player.PlayerAudio.Play(_audioDefault);
-				}
-
-                //Start the interaction
-                m_CurrentPlayers.Add(player);
-                m_TaskRoutineHandle = StartCoroutine(TaskRoutine(player));
-            }
-
-            return;
-        }
-
-        // Hide icon
-        for (int i = 0; i < m_CurrentPlayers.Count; ++i)
-        {
-            m_CurrentPlayers[i].Icon.Fail(false);
+            // Display the icon
+            player.Icon.ShowSprite(m_TaskDefinition.Sprite);
 
             // Play animation
-            m_CurrentPlayers[i].CharacterAnimation.Play(CharacterAnimation.AnimationType.Idle);
+            player.CharacterAnimation.Play(CharacterAnimation.AnimationType.GeneralTask);
 
-			// Stop audio player
-			m_CurrentPlayers[i].PlayerAudio.Stop();
+			// Play the audio (if any)
+			if(_audioDefault != null)
+			{
+				player.PlayerAudio.Play(_audioDefault);
+			}
+
+            //Start the interaction
+            m_CurrentPlayers.Add(player);
+            StartCoroutine(TaskRoutine(player));
         }
+    }
+
+    public void CancelInteraction(Player player)
+    {
+        // Play animation
+        player.CharacterAnimation.Play(CharacterAnimation.AnimationType.Idle);
+
+        // Stop audio player
+        player.PlayerAudio.Stop();
 
         //Cancel the interaction
         EndInteraction(false);
 
-        m_CurrentPlayers.Clear();
-        StopCoroutine(m_TaskRoutineHandle);
+        m_CurrentPlayers.Remove(player);
     }
 
     protected virtual void EndInteraction(bool finished)
@@ -90,6 +93,11 @@ public class TaskObject : MonoBehaviour, InteractableObject
 
         while (timer > 0.0f && player.Icon.IsUsingDefaultSprite() == false)
         {
+            if (!m_CurrentPlayers.Contains(player))
+            {
+                timer = 0.0f;
+            }
+
 			// UPDATE VISUALS
 			float progress = (m_TaskDefinition.TimeToComplete - timer) / m_TaskDefinition.TimeToComplete;
             player.Icon.UpdateProgress(progress);

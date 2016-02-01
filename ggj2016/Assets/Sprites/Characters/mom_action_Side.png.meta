@@ -1,0 +1,404 @@
+fileFormatVersion: 2
+guid: 93ee0d6ef763a85418d2fc407cb34205
+timeCreated: 1454242505
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: mom_action_Side_0
+    21300002: mom_action_Side_1
+    21300004: mom_action_Side_2
+    21300006: mom_action_Side_3
+    21300008: mom_action_Side_4
+    21300010: mom_action_Side_5
+    21300012: mom_action_Side_6
+    21300014: mom_action_Side_7
+    21300016: mom_action_Side_8
+    21300018: mom_action_Side_9
+    21300020: mom_action_Side_10
+    21300022: mom_action_Side_11
+    21300024: mom_action_Side_12
+    21300026: mom_action_Side_13
+    21300028: mom_action_Side_14
+    21300030: mom_action_Side_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: mom_action_Side_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 156
+        width: 141
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -65.5, y: 151}
+        - {x: -65.5, y: 17}
+        - {x: -41.5, y: 0}
+        - {x: 30.5, y: 0}
+        - {x: 55.5, y: 40}
+        - {x: 55.5, y: 145}
+        - {x: 52.5, y: 151}
+    - name: mom_action_Side_1
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 156
+        width: 141
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 150}
+        - {x: -43.5, y: 150}
+        - {x: -64.5, y: 115}
+        - {x: -64.5, y: 33}
+        - {x: -38.5, y: 0}
+        - {x: 1.5, y: 0}
+        - {x: 56.5, y: 28}
+        - {x: 56.5, y: 124}
+        - {x: 27.5, y: 143}
+    - name: mom_action_Side_2
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 156
+        width: 141
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.5, y: 150}
+        - {x: -35.5, y: 150}
+        - {x: -59.5, y: 136}
+        - {x: -64.5, y: 110}
+        - {x: -64.5, y: 33}
+        - {x: -40.5, y: 0}
+        - {x: 13.5, y: 0}
+        - {x: 56.5, y: 15}
+        - {x: 56.5, y: 114}
+        - {x: 29.5, y: 136}
+    - name: mom_action_Side_3
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 156
+        width: 141
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45.5, y: 149}
+        - {x: -61.5, y: 138}
+        - {x: -65.5, y: 114}
+        - {x: -65.5, y: 47}
+        - {x: -26.5, y: 0}
+        - {x: 37.5, y: 0}
+        - {x: 56.5, y: 19}
+        - {x: 56.5, y: 120}
+        - {x: 30.5, y: 149}
+    - name: mom_action_Side_4
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 156
+        width: 141
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.5, y: 148}
+        - {x: -40.5, y: 148}
+        - {x: -57.5, y: 132}
+        - {x: -64.5, y: 93}
+        - {x: -64.5, y: 41}
+        - {x: -39.5, y: 0}
+        - {x: 11.5, y: 0}
+        - {x: 57.5, y: 17}
+        - {x: 57.5, y: 112}
+        - {x: 36.5, y: 141}
+    - name: mom_action_Side_5
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 156
+        width: 141
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11.5, y: 147}
+        - {x: -41.5, y: 147}
+        - {x: -64.5, y: 105}
+        - {x: -64.5, y: 15}
+        - {x: -43.5, y: 0}
+        - {x: 36.5, y: 0}
+        - {x: 50.5, y: 13}
+        - {x: 57.5, y: 40}
+        - {x: 57.5, y: 118}
+    - name: mom_action_Side_6
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 156
+        width: 141
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32.5, y: 131}
+        - {x: -3.5, y: 146}
+        - {x: -40.5, y: 146}
+        - {x: -64.5, y: 126}
+        - {x: -64.5, y: 32}
+        - {x: -61.5, y: 23}
+        - {x: -30.5, y: 0}
+        - {x: 36.5, y: 0}
+        - {x: 50.5, y: 2}
+        - {x: 57.5, y: 32}
+        - {x: 57.5, y: 116}
+    - name: mom_action_Side_7
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 156
+        width: 141
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.5, y: 32}
+        - {x: 19.5, y: 25}
+        - {x: 28.5, y: 21}
+        - {x: 39.5, y: 19}
+        - {x: 57.5, y: 47}
+        - {x: 57.5, y: 113}
+        - {x: 44.5, y: 147}
+        - {x: -48.5, y: 147}
+        - {x: -64.5, y: 134}
+        - {x: -64.5, y: 0}
+        - {x: 1.5, y: 0}
+        - {x: 21.5, y: 21}
+        - {x: 17.5, y: 28}
+        - {x: 15.5, y: 30}
+    - name: mom_action_Side_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 141
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 147}
+        - {x: -58.5, y: 134}
+        - {x: -64.5, y: 91}
+        - {x: -64.5, y: 47}
+        - {x: -36.5, y: 0}
+        - {x: 10.5, y: 0}
+        - {x: 53.5, y: 14}
+        - {x: 57.5, y: 41}
+        - {x: 57.5, y: 114}
+        - {x: 18.5, y: 147}
+    - name: mom_action_Side_9
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 0
+        width: 141
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40.5, y: 147}
+        - {x: -64.5, y: 111}
+        - {x: -64.5, y: 44}
+        - {x: -31.5, y: 0}
+        - {x: 4.5, y: 0}
+        - {x: 56.5, y: 13}
+        - {x: 58.5, y: 21}
+        - {x: 58.5, y: 121}
+        - {x: 15.5, y: 147}
+    - name: mom_action_Side_10
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 0
+        width: 141
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25.5, y: 148}
+        - {x: -36.5, y: 148}
+        - {x: -55.5, y: 138}
+        - {x: -64.5, y: 89}
+        - {x: -64.5, y: 39}
+        - {x: -36.5, y: 0}
+        - {x: 15.5, y: 0}
+        - {x: 51.5, y: 17}
+        - {x: 57.5, y: 38}
+        - {x: 57.5, y: 116}
+    - name: mom_action_Side_11
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 0
+        width: 141
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36.5, y: 148}
+        - {x: -38.5, y: 146}
+        - {x: -61.5, y: 99}
+        - {x: -64.5, y: 81}
+        - {x: -64.5, y: 45}
+        - {x: -39.5, y: 0}
+        - {x: 13.5, y: 0}
+        - {x: 52.5, y: 14}
+        - {x: 57.5, y: 22}
+        - {x: 57.5, y: 117}
+        - {x: 29.5, y: 148}
+    - name: mom_action_Side_12
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 0
+        width: 141
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.5, y: 149}
+        - {x: -52.5, y: 149}
+        - {x: -64.5, y: 130}
+        - {x: -64.5, y: 48}
+        - {x: -43.5, y: 0}
+        - {x: 16.5, y: 0}
+        - {x: 51.5, y: 16}
+        - {x: 57.5, y: 47}
+        - {x: 57.5, y: 119}
+        - {x: 42.5, y: 143}
+    - name: mom_action_Side_13
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 0
+        width: 141
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -51.5, y: 149}
+        - {x: -64.5, y: 113}
+        - {x: -64.5, y: 42}
+        - {x: -27.5, y: 0}
+        - {x: 29.5, y: 0}
+        - {x: 57.5, y: 30}
+        - {x: 57.5, y: 131}
+        - {x: 38.5, y: 149}
+    - name: mom_action_Side_14
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 0
+        width: 141
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35.5, y: 150}
+        - {x: -60.5, y: 142}
+        - {x: -65.5, y: 115}
+        - {x: -65.5, y: 47}
+        - {x: -25.5, y: 0}
+        - {x: 10.5, y: 0}
+        - {x: 56.5, y: 21}
+        - {x: 56.5, y: 119}
+        - {x: 12.5, y: 150}
+    - name: mom_action_Side_15
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 0
+        width: 141
+        height: 156
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40.5, y: 150}
+        - {x: -62.5, y: 137}
+        - {x: -65.5, y: 120}
+        - {x: -65.5, y: 31}
+        - {x: -41.5, y: 0}
+        - {x: 29.5, y: 0}
+        - {x: 56.5, y: 38}
+        - {x: 56.5, y: 116}
+        - {x: 14.5, y: 150}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -52,6 +52,11 @@ public class Vehicle : MonoBehaviour, InteractableObject
         GameManager.Instance.StartDayEvent -= OnStartDay;
     }
 
+    public bool IsUnlocked()
+    {
+        return true;
+    }
+
     public bool CanInteract(Player player)
     {
         //We can interact as long as we're not driving
@@ -68,12 +73,7 @@ public class Vehicle : MonoBehaviour, InteractableObject
         if (m_IsDriving)
             return;
 
-        if (m_Passengers.Contains(player))
-        {
-            m_Passengers.Remove(player);
-            player.UpdateVehicle(null);
-        }
-        else
+        if (!m_Passengers.Contains(player))
         {
             m_Passengers.Add(player);
             player.UpdateVehicle(this);
@@ -83,6 +83,15 @@ public class Vehicle : MonoBehaviour, InteractableObject
             {
                 m_IsDriving = true;
             }
+        }
+    }
+
+    public void CancelInteraction(Player player)
+    {
+        if (m_Passengers.Contains(player))
+        {
+            m_Passengers.Remove(player);
+            player.UpdateVehicle(null);
         }
     }
 

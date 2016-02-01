@@ -36,8 +36,11 @@ public class TieTie : TaskObject
 
     protected override void EndInteraction(bool finished)
     {
-        m_Owner.UpdateTask(m_TaskDefinition);
-        m_IsTied = true;
+        if (finished)
+        {
+            m_Owner.UpdateTask(m_TaskDefinition);
+            m_IsTied = true;
+        }
     }
 
     private void OnDayStart()

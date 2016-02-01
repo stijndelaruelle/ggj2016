@@ -66,6 +66,14 @@ namespace Sjabloon
             set { m_OnTriggerExitEvent = value; }
         }
 
+        private Collider2DDelegate m_OnTriggerStayEvent;
+        public Collider2DDelegate OnTriggerStayEvent
+        {
+            get { return m_OnTriggerStayEvent; }
+            set { m_OnTriggerStayEvent = value; }
+        }
+
+
         private void Start()
         {
             //Horizontal
@@ -240,6 +248,12 @@ namespace Sjabloon
         {
             if (m_OnTriggerExitEvent != null)
                 m_OnTriggerExitEvent(other);
+        }
+
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            if (m_OnTriggerStayEvent != null)
+                m_OnTriggerStayEvent(other);
         }
     }
 }

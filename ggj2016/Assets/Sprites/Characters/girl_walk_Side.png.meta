@@ -1,0 +1,583 @@
+fileFormatVersion: 2
+guid: c4739384dd7f0da40811803522a005a7
+timeCreated: 1454243688
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: girl_walk_Side_0
+    21300002: girl_walk_Side_1
+    21300004: girl_walk_Side_2
+    21300006: girl_walk_Side_3
+    21300008: girl_walk_Side_4
+    21300010: girl_walk_Side_5
+    21300012: girl_walk_Side_6
+    21300014: girl_walk_Side_7
+    21300016: girl_walk_Side_8
+    21300018: girl_walk_Side_9
+    21300020: girl_walk_Side_10
+    21300022: girl_walk_Side_11
+    21300024: girl_walk_Side_12
+    21300026: girl_walk_Side_13
+    21300028: girl_walk_Side_14
+    21300030: girl_walk_Side_15
+    21300032: girl_walk_Side_16
+    21300034: girl_walk_Side_17
+    21300036: girl_walk_Side_18
+    21300038: girl_walk_Side_19
+    21300040: girl_walk_Side_20
+    21300042: girl_walk_Side_21
+    21300044: girl_walk_Side_22
+    21300046: girl_walk_Side_23
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: girl_walk_Side_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 501
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 164}
+        - {x: -44, y: 158}
+        - {x: -54, y: 104}
+        - {x: -56, y: 77}
+        - {x: -56, y: 50}
+        - {x: -15, y: 6}
+        - {x: -6, y: 4}
+        - {x: 14, y: 4}
+        - {x: 57, y: 44}
+        - {x: 57, y: 122}
+        - {x: 16, y: 164}
+    - name: girl_walk_Side_1
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 501
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42, y: 162}
+        - {x: -56, y: 114}
+        - {x: -56, y: 41}
+        - {x: -16, y: 3}
+        - {x: 10, y: 3}
+        - {x: 57, y: 29}
+        - {x: 57, y: 104}
+        - {x: 35, y: 162}
+    - name: girl_walk_Side_2
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 501
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38, y: 160}
+        - {x: -46, y: 148}
+        - {x: -56, y: 104}
+        - {x: -56, y: 45}
+        - {x: -8, y: 2}
+        - {x: 8, y: 2}
+        - {x: 49, y: 18}
+        - {x: 57, y: 33}
+        - {x: 57, y: 135}
+        - {x: 31, y: 160}
+    - name: girl_walk_Side_3
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 501
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18, y: 157}
+        - {x: -25, y: 157}
+        - {x: -42, y: 155}
+        - {x: -56, y: 131}
+        - {x: -56, y: 33}
+        - {x: -24, y: 1}
+        - {x: 12, y: 1}
+        - {x: 56, y: 37}
+        - {x: 56, y: 98}
+        - {x: 52, y: 110}
+    - name: girl_walk_Side_4
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 501
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50, y: 155}
+        - {x: -57, y: 124}
+        - {x: -57, y: 27}
+        - {x: -54, y: 24}
+        - {x: -13, y: 0}
+        - {x: 19, y: 0}
+        - {x: 56, y: 29}
+        - {x: 56, y: 102}
+        - {x: 40, y: 155}
+    - name: girl_walk_Side_5
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 501
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 31, y: 153}
+        - {x: -43, y: 153}
+        - {x: -57, y: 146}
+        - {x: -57, y: 26}
+        - {x: -56, y: 19}
+        - {x: -12, y: 0}
+        - {x: 15, y: 0}
+        - {x: 52, y: 19}
+        - {x: 56, y: 24}
+        - {x: 56, y: 98}
+    - name: girl_walk_Side_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 334
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 151}
+        - {x: -44, y: 144}
+        - {x: -50, y: 134}
+        - {x: -57, y: 104}
+        - {x: -57, y: 23}
+        - {x: -40, y: 0}
+        - {x: 55, y: 0}
+        - {x: 55, y: 132}
+        - {x: 19, y: 151}
+    - name: girl_walk_Side_7
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 334
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 151}
+        - {x: -31, y: 151}
+        - {x: -40, y: 150}
+        - {x: -57, y: 134}
+        - {x: -57, y: 31}
+        - {x: -24, y: 0}
+        - {x: 13, y: 0}
+        - {x: 55, y: 32}
+        - {x: 55, y: 91}
+        - {x: 52, y: 111}
+    - name: girl_walk_Side_8
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 334
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 55, y: 18}
+        - {x: 55, y: 105}
+        - {x: 54, y: 111}
+        - {x: 23, y: 153}
+        - {x: -40, y: 153}
+        - {x: -58, y: 149}
+        - {x: -58, y: 35}
+        - {x: -26, y: 4}
+        - {x: -16, y: 0}
+        - {x: -9, y: 0}
+        - {x: -8, y: 3}
+        - {x: -5, y: 0}
+        - {x: 25, y: 0}
+    - name: girl_walk_Side_9
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 334
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 25}
+        - {x: 40, y: 34}
+        - {x: 55, y: 43}
+        - {x: 55, y: 92}
+        - {x: 51, y: 114}
+        - {x: 12, y: 155}
+        - {x: -34, y: 155}
+        - {x: -59, y: 150}
+        - {x: -59, y: 41}
+        - {x: -54, y: 36}
+        - {x: -47, y: 32}
+        - {x: -31, y: 33}
+        - {x: -24, y: 39}
+        - {x: -26, y: 12}
+        - {x: -24, y: 3}
+        - {x: -20, y: 2}
+        - {x: 2, y: 2}
+        - {x: 9, y: 3}
+        - {x: 15, y: 9}
+    - name: girl_walk_Side_10
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 334
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 42, y: 158}
+        - {x: -59, y: 158}
+        - {x: -60, y: 155}
+        - {x: -60, y: 19}
+        - {x: -38, y: 5}
+        - {x: 47, y: 5}
+        - {x: 54, y: 21}
+        - {x: 54, y: 157}
+    - name: girl_walk_Side_11
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 334
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -62, y: 161}
+        - {x: -62, y: 24}
+        - {x: -55, y: 8}
+        - {x: 54, y: 8}
+        - {x: 54, y: 142}
+        - {x: 14, y: 161}
+    - name: girl_walk_Side_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 167
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38, y: 163}
+        - {x: -63, y: 149}
+        - {x: -63, y: 28}
+        - {x: -51, y: 11}
+        - {x: 39, y: 11}
+        - {x: 53, y: 25}
+        - {x: 53, y: 109}
+        - {x: 46, y: 137}
+        - {x: 0, y: 163}
+    - name: girl_walk_Side_13
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 167
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -64, y: 35}
+        - {x: -41, y: 12}
+        - {x: 40, y: 12}
+        - {x: 53, y: 26}
+        - {x: 53, y: 114}
+        - {x: 22, y: 164}
+        - {x: -48, y: 164}
+        - {x: -64, y: 150}
+    - name: girl_walk_Side_14
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 167
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -63, y: 144}
+        - {x: -63, y: 15}
+        - {x: -57, y: 10}
+        - {x: 40, y: 10}
+        - {x: 53, y: 24}
+        - {x: 53, y: 96}
+        - {x: 47, y: 125}
+        - {x: 4, y: 162}
+        - {x: -37, y: 162}
+        - {x: -52, y: 159}
+    - name: girl_walk_Side_15
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 167
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -46, y: 161}
+        - {x: -62, y: 149}
+        - {x: -62, y: 70}
+        - {x: -58, y: 47}
+        - {x: -53, y: 40}
+        - {x: -46, y: 35}
+        - {x: -32, y: 17}
+        - {x: -27, y: 11}
+        - {x: -17, y: 7}
+        - {x: 44, y: 7}
+        - {x: 54, y: 35}
+        - {x: 54, y: 135}
+        - {x: 21, y: 161}
+    - name: girl_walk_Side_16
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 167
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43, y: 159}
+        - {x: -61, y: 152}
+        - {x: -61, y: 47}
+        - {x: -59, y: 28}
+        - {x: -40, y: 5}
+        - {x: 33, y: 5}
+        - {x: 54, y: 35}
+        - {x: 54, y: 116}
+        - {x: 15, y: 159}
+    - name: girl_walk_Side_17
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 167
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -54, y: 157}
+        - {x: -59, y: 143}
+        - {x: -60, y: 130}
+        - {x: -60, y: 42}
+        - {x: -47, y: 29}
+        - {x: -31, y: 35}
+        - {x: -31, y: 10}
+        - {x: -22, y: 3}
+        - {x: 38, y: 3}
+        - {x: 55, y: 17}
+        - {x: 55, y: 109}
+        - {x: 37, y: 157}
+    - name: girl_walk_Side_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -54, y: 156}
+        - {x: -58, y: 142}
+        - {x: -58, y: 17}
+        - {x: -40, y: 2}
+        - {x: 27, y: 2}
+        - {x: 55, y: 30}
+        - {x: 55, y: 101}
+        - {x: 24, y: 156}
+    - name: girl_walk_Side_19
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 0
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50, y: 155}
+        - {x: -58, y: 133}
+        - {x: -58, y: 16}
+        - {x: -35, y: 1}
+        - {x: 25, y: 1}
+        - {x: 56, y: 43}
+        - {x: 56, y: 86}
+        - {x: 54, y: 103}
+        - {x: 13, y: 155}
+    - name: girl_walk_Side_20
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 0
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: 157}
+        - {x: -26, y: 157}
+        - {x: -39, y: 155}
+        - {x: -57, y: 149}
+        - {x: -57, y: 29}
+        - {x: -47, y: 0}
+        - {x: 26, y: 0}
+        - {x: 56, y: 27}
+        - {x: 56, y: 100}
+        - {x: 45, y: 114}
+    - name: girl_walk_Side_21
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 0
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43, y: 159}
+        - {x: -52, y: 140}
+        - {x: -56, y: 119}
+        - {x: -56, y: 42}
+        - {x: -21, y: 0}
+        - {x: 28, y: 0}
+        - {x: 56, y: 25}
+        - {x: 56, y: 110}
+        - {x: 31, y: 159}
+    - name: girl_walk_Side_22
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 0
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30, y: 161}
+        - {x: -48, y: 161}
+        - {x: -56, y: 121}
+        - {x: -56, y: 38}
+        - {x: -12, y: 0}
+        - {x: 17, y: 0}
+        - {x: 55, y: 31}
+        - {x: 57, y: 40}
+        - {x: 57, y: 116}
+    - name: girl_walk_Side_23
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 0
+        width: 134
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -40, y: 163}
+        - {x: -50, y: 146}
+        - {x: -56, y: 96}
+        - {x: -56, y: 39}
+        - {x: -10, y: 1}
+        - {x: 24, y: 1}
+        - {x: 57, y: 44}
+        - {x: 57, y: 101}
+        - {x: 34, y: 163}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

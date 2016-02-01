@@ -35,128 +35,134 @@ public class Task
 
 public class Player : MonoBehaviour
 {
-	[SerializeField]
-	private int m_PlayerID;
+    [SerializeField]
+    private int m_PlayerID;
+    public int PlayerID
+    {
+        get { return m_PlayerID; }
+    }
 
-	[SerializeField]
-	private string m_PlayerName;
-	public string Name
-	{
-		get { return m_PlayerName; }
-	}
+    [SerializeField]
+    private string m_PlayerName;
+    public string Name
+    {
+        get { return m_PlayerName; }
+    }
 
-	[SerializeField]
-	private PlayerType m_PlayerType;
-	public PlayerType PlayerType
-	{
-		get { return m_PlayerType; }
-	}
+    [SerializeField]
+    private PlayerType m_PlayerType;
+    public PlayerType PlayerType
+    {
+        get { return m_PlayerType; }
+    }
 
-	[SerializeField]
-	private GenderType m_Gender;
-	public GenderType Gender
-	{
-		get { return m_Gender; }
-	}
+    [SerializeField]
+    private GenderType m_Gender;
+    public GenderType Gender
+    {
+        get { return m_Gender; }
+    }
 
-	[SerializeField]
-	private CharacterController2D m_CharacterController;
+    [SerializeField]
+    private CharacterController2D m_CharacterController;
 
-	[SerializeField]
-	private SpriteRenderer m_SpriteRenderer;
+    [SerializeField]
+    private SpriteRenderer m_SpriteRenderer;
 
-	[SerializeField]
-	private float m_Speed;
+    [SerializeField]
+    private float m_Speed;
 
-	[SerializeField]
-	private float m_MaxSpeed;
+    [SerializeField]
+    private float m_MaxSpeed;
 
-	private float m_OriginalSpeed;
+    private float m_OriginalSpeed;
 
-	[SerializeField]
-	private List<Task> m_Tasks;
-	public List<Task> Tasks
-	{
-		get { return m_Tasks; }
-		set {
-			m_Tasks = value;
-		}
-	}
+    [SerializeField]
+    private List<Task> m_Tasks;
+    public List<Task> Tasks
+    {
+        get { return m_Tasks; }
+        set
+        {
+            m_Tasks = value;
+        }
+    }
 
-	[SerializeField]
-	private Clock m_Clock;
+    [SerializeField]
+    private Clock m_Clock;
 
-	[SerializeField]
-	private Icon m_Icon;
-	public Icon Icon
-	{
-		get { return m_Icon; }
-		set { m_Icon = value; }
-	}
+    [SerializeField]
+    private Icon m_Icon;
+    public Icon Icon
+    {
+        get { return m_Icon; }
+        set { m_Icon = value; }
+    }
 
-	[SerializeField]
-	private CharacterAnimation m_CharacterAnimation;
-	public CharacterAnimation CharacterAnimation
-	{
-		get { return m_CharacterAnimation; }
-		set { m_CharacterAnimation = value; }
-	}
+    [SerializeField]
+    private CharacterAnimation m_CharacterAnimation;
+    public CharacterAnimation CharacterAnimation
+    {
+        get { return m_CharacterAnimation; }
+        set { m_CharacterAnimation = value; }
+    }
 
-	private InputManager m_InputManager;
-	private InteractableObject m_CurrentInteractableObject;
-	private Vector3 m_OriginalPosition;
+    private InputManager m_InputManager;
+    private List<InteractableObject> m_CurrentInteractableObjects;
 
-	private Vehicle m_CurrentVehicle;
-	public Vehicle CurrentVehicle
-	{
-		get { return m_CurrentVehicle; }
-	}
+    private Vector3 m_OriginalPosition;
 
-	private bool m_IsOnScreen;
-	public bool IsOnScreen
-	{
-		get { return m_IsOnScreen; }
-	}
+    private Vehicle m_CurrentVehicle;
+    public Vehicle CurrentVehicle
+    {
+        get { return m_CurrentVehicle; }
+    }
 
-	private int m_TimeScreenLeft = 0; //When did we leave the screen?
-	public int TimeScreenLeft
-	{
-		get { return m_TimeScreenLeft; }
-	}
+    private bool m_IsOnScreen;
+    public bool IsOnScreen
+    {
+        get { return m_IsOnScreen; }
+    }
 
-	private Vector2 m_Velocity = Vector2.zero;
-	public Vector2 Velocity
-	{
-		get { return m_Velocity; }
-	}
+    private int m_TimeScreenLeft = 0; //When did we leave the screen?
+    public int TimeScreenLeft
+    {
+        get { return m_TimeScreenLeft; }
+    }
 
-	[SerializeField]
-	private TaskListUI m_assignedTaskList;
-	public TaskListUI AssignedTaskList
-	{
-		get
-		{
-			return m_assignedTaskList;
-		}
+    private Vector2 m_Velocity = Vector2.zero;
+    public Vector2 Velocity
+    {
+        get { return m_Velocity; }
+    }
 
-		set
-		{
-			m_assignedTaskList = value;
-		}
-	}
+    [SerializeField]
+    private TaskListUI m_assignedTaskList;
+    public TaskListUI AssignedTaskList
+    {
+        get
+        {
+            return m_assignedTaskList;
+        }
 
-	private AudioController m_PlayerAudio;
-	public AudioController PlayerAudio
-	{
-		get { return m_PlayerAudio; }
-	}
+        set
+        {
+            m_assignedTaskList = value;
+        }
+    }
 
-	//Events
-	private VoidDelegate m_TaskListUpdatedEvent;
+    private AudioController m_PlayerAudio;
+    public AudioController PlayerAudio
+    {
+        get { return m_PlayerAudio; }
+    }
+
+    //Events
+    private VoidDelegate m_TaskListUpdatedEvent;
     public VoidDelegate TaskListUpdatedEvent
     {
         get { return m_TaskListUpdatedEvent; }
-        set { m_TaskListUpdatedEvent = value;}
+        set { m_TaskListUpdatedEvent = value; }
     }
 
     private VoidDelegate m_LeftScreenEvent;
@@ -167,8 +173,8 @@ public class Player : MonoBehaviour
 
     }
 
-	//Functions
-	private void Start()
+    //Functions
+    private void Start()
     {
         GameManager.Instance.StartDayEvent += OnStartDay;
 
@@ -181,9 +187,11 @@ public class Player : MonoBehaviour
         InitializeControls();
 
         m_Icon.Initialize();
-	    m_CharacterAnimation.Initialize();
-		m_assignedTaskList.UpdateTaskList(m_Tasks);
-		m_PlayerAudio = GetComponentInChildren<AudioController>();
+        m_CharacterAnimation.Initialize();
+        m_assignedTaskList.UpdateTaskList(m_Tasks);
+        m_PlayerAudio = GetComponentInChildren<AudioController>();
+
+        m_CurrentInteractableObjects = new List<InteractableObject>();
     }
 
     private void OnDestroy()
@@ -206,14 +214,21 @@ public class Player : MonoBehaviour
 
         //Movement
 
-        //PC couldn't handle 4 controllers
+        //PC couldn't handle 4 controllers (super lame, no time)
+        if (m_PlayerID == 2)
+        {
+            m_InputManager.BindAxis("HorizontalAxis_" + m_PlayerID, KeyCode.D, KeyCode.A);
+            m_InputManager.BindAxis("VerticalAxis_" + m_PlayerID, KeyCode.W, KeyCode.S);
+            m_InputManager.BindButton("Action_" + m_PlayerID, KeyCode.LeftControl, InputManager.ButtonState.OnPress);
+        }
+
         if (m_PlayerID == 3)
         {
             m_InputManager.BindAxis("HorizontalAxis_" + m_PlayerID, KeyCode.RightArrow, KeyCode.LeftArrow);
             m_InputManager.BindAxis("VerticalAxis_" + m_PlayerID, KeyCode.UpArrow, KeyCode.DownArrow);
-            m_InputManager.BindButton("Action_" + m_PlayerID, KeyCode.Z, InputManager.ButtonState.OnPress);
+            m_InputManager.BindButton("Action_" + m_PlayerID, KeyCode.RightControl, InputManager.ButtonState.OnPress);
         }
-            
+
         m_InputManager.BindAxis("HorizontalAxis_" + m_PlayerID, m_PlayerID, ControllerButtonCode.Right, ControllerButtonCode.Left);
         m_InputManager.BindAxis("HorizontalAxis_" + m_PlayerID, m_PlayerID, ControllerAxisCode.LeftStickX);
 
@@ -231,6 +246,7 @@ public class Player : MonoBehaviour
 
         UpdateMovement();
         UpdateAction();
+        UpdateIcon();
 
         //If we're off screen, send an event!
         Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
@@ -260,31 +276,34 @@ public class Player : MonoBehaviour
     {
         bool didAction = m_InputManager.GetButton("Action_" + m_PlayerID);
 
-        if (didAction && m_CurrentInteractableObject != null)
+        if (didAction)
         {
-            if (m_CurrentInteractableObject.CanInteract(this))
-                m_CurrentInteractableObject.Interact(this);
+            foreach (InteractableObject obj in m_CurrentInteractableObjects)
+            {
+                if (obj.CanInteract(this))
+                    obj.Interact(this);
+            }
         }
     }
 
     public void UpdateTask(TaskDefinition taskDefinition)
     {
-        foreach(Task task in m_Tasks)
+        foreach (Task task in m_Tasks)
         {
             if (task.TaskDefinition == taskDefinition &&
                 task.IsDone == false)
             {
                 task.IsDone = true;
 
-				// Stop playing audio
-				m_PlayerAudio.Stop();
+                // Stop playing audio
+                m_PlayerAudio.Stop();
 
                 Debug.Log("Task: " + taskDefinition.Title + " completed!");
 
                 if (m_TaskListUpdatedEvent != null)
                     m_TaskListUpdatedEvent();
 
-				return;
+                return;
             }
         }
 
@@ -326,37 +345,57 @@ public class Player : MonoBehaviour
     private void OnCustomTriggerEnter(Collider2D other)
     {
         InteractableObject temp = other.gameObject.GetComponent<InteractableObject>();
-        Debug.Log(m_CurrentInteractableObject);
-
         if (temp == null)
             return;
 
-        if (temp.CanInteract(this))
+        if (temp.IsUnlocked())
         {
-            m_CurrentInteractableObject = temp;
-
-            m_Icon.Reset();
-            m_Icon.ShowSprite(m_Icon._properties._standardSprite);
+            m_CurrentInteractableObjects.Add(temp);
         }
     }
 
     private void OnCustomTriggerExit(Collider2D other)
     {
-        if (m_CurrentInteractableObject != null &&
-            m_CurrentInteractableObject.IsInteracting(this))
+        InteractableObject temp = other.gameObject.GetComponent<InteractableObject>();
+        if (temp == null)
+            return;
+
+        if (!temp.IsUnlocked())
+            return;
+
+        foreach (InteractableObject obj in m_CurrentInteractableObjects)
         {
-            m_CurrentInteractableObject.Interact(this);
+            if (obj.IsInteracting(this))
+            {
+                obj.CancelInteraction(this);
+                m_Icon.Fail(true);
+            }
         }
 
-        m_CurrentInteractableObject = null;
-        Debug.Log(m_CurrentInteractableObject);
-
-        if (m_Icon._progress < 1.0f)
-            m_Icon.Fail(true);
-        else
-            m_Icon.Hide();
+        m_CurrentInteractableObjects.Remove(temp);
     }
 
+    private void UpdateIcon()
+    {
+        if (m_CurrentInteractableObjects.Count == 0)
+        {
+            m_Icon.Hide();
+            return;
+        }
+
+        foreach (InteractableObject obj in m_CurrentInteractableObjects)
+        {
+            if (obj.CanInteract(this))
+            {
+                m_Icon.Reset();
+                m_Icon.ShowSprite(m_Icon._properties._standardSprite);
+                return;
+            }
+        }
+
+        if (m_Icon.IsUsingDefaultSprite())
+            m_Icon.Hide();
+    }
 
     private void OnStartDay()
     {
@@ -369,9 +408,9 @@ public class Player : MonoBehaviour
 
         m_IsOnScreen = true;
         m_TimeScreenLeft = 0;
-        m_CurrentInteractableObject = null;
+        m_CurrentInteractableObjects.Clear();
 
-        foreach(Task task in m_Tasks)
+        foreach (Task task in m_Tasks)
         {
             task.IsDone = false;
         }

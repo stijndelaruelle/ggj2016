@@ -50,6 +50,15 @@ public class CoffeeMachine : TaskObject
         GameManager.Instance.StartDayEvent -= OnDayStart;
     }
 
+    public override bool CanInteract(Player player)
+    {
+        //We can interact as long as we're not making coffee
+        if (m_RoutineHandle != null)
+            return false;
+
+        return base.CanInteract(player);
+    }
+
     public override void Interact(Player player)
     {
         if (IsInteracting(player))

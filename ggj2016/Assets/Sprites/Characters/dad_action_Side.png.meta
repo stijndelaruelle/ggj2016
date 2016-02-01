@@ -1,0 +1,427 @@
+fileFormatVersion: 2
+guid: 361fdba7f193a38458a77303e7f0bb06
+timeCreated: 1454243652
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: dad_action_Side_0
+    21300002: dad_action_Side_1
+    21300004: dad_action_Side_2
+    21300006: dad_action_Side_3
+    21300008: dad_action_Side_4
+    21300010: dad_action_Side_5
+    21300012: dad_action_Side_6
+    21300014: dad_action_Side_7
+    21300016: dad_action_Side_8
+    21300018: dad_action_Side_9
+    21300020: dad_action_Side_10
+    21300022: dad_action_Side_11
+    21300024: dad_action_Side_12
+    21300026: dad_action_Side_13
+    21300028: dad_action_Side_14
+    21300030: dad_action_Side_15
+    21300032: dad_action_Side_16
+    21300034: dad_action_Side_17
+    21300036: dad_action_Side_18
+    21300038: dad_action_Side_19
+    21300040: dad_action_Side_20
+    21300042: dad_action_Side_21
+    21300044: dad_action_Side_22
+    21300046: dad_action_Side_23
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: dad_action_Side_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 139
+        width: 118
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 132}
+        - {x: -19, y: 132}
+        - {x: -42, y: 121}
+        - {x: -59, y: 80}
+        - {x: -59, y: 33}
+        - {x: -41, y: 0}
+        - {x: 22, y: 0}
+        - {x: 44, y: 9}
+        - {x: 46, y: 33}
+        - {x: 46, y: 111}
+        - {x: 44, y: 126}
+    - name: dad_action_Side_1
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 139
+        width: 118
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: 131}
+        - {x: -6, y: 131}
+        - {x: -40, y: 121}
+        - {x: -43, y: 115}
+        - {x: -46, y: 103}
+        - {x: -59, y: 69}
+        - {x: -59, y: 58}
+        - {x: -58, y: 53}
+        - {x: -55, y: 52}
+        - {x: -40, y: 51}
+        - {x: -33, y: 27}
+        - {x: -22, y: 0}
+        - {x: 24, y: 0}
+        - {x: 46, y: 35}
+        - {x: 46, y: 119}
+        - {x: 25, y: 129}
+    - name: dad_action_Side_2
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 139
+        width: 118
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: 131}
+        - {x: -14, y: 131}
+        - {x: -41, y: 122}
+        - {x: -58, y: 65}
+        - {x: -59, y: 57}
+        - {x: -32, y: 0}
+        - {x: 8, y: 0}
+        - {x: 40, y: 14}
+        - {x: 46, y: 41}
+        - {x: 46, y: 109}
+        - {x: 45, y: 119}
+    - name: dad_action_Side_3
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 139
+        width: 118
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 130}
+        - {x: -41, y: 121}
+        - {x: -59, y: 75}
+        - {x: -59, y: 45}
+        - {x: -22, y: 0}
+        - {x: 10, y: 0}
+        - {x: 47, y: 55}
+        - {x: 47, y: 118}
+        - {x: 22, y: 130}
+    - name: dad_action_Side_4
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 139
+        width: 118
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 129}
+        - {x: -38, y: 119}
+        - {x: -42, y: 108}
+        - {x: -46, y: 88}
+        - {x: -58, y: 64}
+        - {x: -59, y: 60}
+        - {x: -59, y: 56}
+        - {x: -56, y: 51}
+        - {x: -28, y: 0}
+        - {x: 9, y: 0}
+        - {x: 31, y: 6}
+        - {x: 47, y: 42}
+        - {x: 47, y: 116}
+        - {x: 19, y: 129}
+    - name: dad_action_Side_5
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 139
+        width: 118
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 47, y: 124}
+        - {x: 34, y: 128}
+        - {x: -29, y: 128}
+        - {x: -42, y: 122}
+        - {x: -59, y: 70}
+        - {x: -59, y: 52}
+        - {x: -56, y: 50}
+        - {x: -48, y: 49}
+        - {x: -30, y: 18}
+        - {x: -20, y: 0}
+        - {x: 7, y: 0}
+        - {x: 12, y: 2}
+        - {x: 42, y: 16}
+        - {x: 47, y: 47}
+    - name: dad_action_Side_6
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 139
+        width: 118
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 127}
+        - {x: -37, y: 121}
+        - {x: -58, y: 65}
+        - {x: -59, y: 61}
+        - {x: -59, y: 54}
+        - {x: -53, y: 49}
+        - {x: -24, y: 0}
+        - {x: 19, y: 0}
+        - {x: 47, y: 36}
+        - {x: 47, y: 115}
+        - {x: 24, y: 127}
+    - name: dad_action_Side_7
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 139
+        width: 118
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 127}
+        - {x: -40, y: 115}
+        - {x: -59, y: 88}
+        - {x: -59, y: 24}
+        - {x: -29, y: 0}
+        - {x: 30, y: 0}
+        - {x: 47, y: 30}
+        - {x: 47, y: 110}
+        - {x: 41, y: 127}
+    - name: dad_action_Side_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 118
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38, y: 127}
+        - {x: -59, y: 83}
+        - {x: -59, y: 23}
+        - {x: -26, y: 0}
+        - {x: 26, y: 0}
+        - {x: 47, y: 25}
+        - {x: 47, y: 124}
+        - {x: 46, y: 127}
+    - name: dad_action_Side_9
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 0
+        width: 118
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45, y: 127}
+        - {x: -59, y: 92}
+        - {x: -59, y: 32}
+        - {x: -26, y: 0}
+        - {x: 17, y: 0}
+        - {x: 47, y: 34}
+        - {x: 47, y: 113}
+        - {x: 42, y: 127}
+    - name: dad_action_Side_10
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 0
+        width: 118
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25, y: 127}
+        - {x: -9, y: 127}
+        - {x: -19, y: 124}
+        - {x: -36, y: 118}
+        - {x: -59, y: 69}
+        - {x: -59, y: 48}
+        - {x: -24, y: 0}
+        - {x: 1, y: 0}
+        - {x: 31, y: 19}
+        - {x: 47, y: 54}
+        - {x: 47, y: 113}
+    - name: dad_action_Side_11
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 0
+        width: 118
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29, y: 128}
+        - {x: -24, y: 128}
+        - {x: -37, y: 121}
+        - {x: -57, y: 67}
+        - {x: -59, y: 58}
+        - {x: -54, y: 52}
+        - {x: -20, y: 0}
+        - {x: 9, y: 0}
+        - {x: 27, y: 13}
+        - {x: 47, y: 60}
+        - {x: 47, y: 119}
+    - name: dad_action_Side_12
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 0
+        width: 118
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 129}
+        - {x: -38, y: 121}
+        - {x: -59, y: 77}
+        - {x: -59, y: 50}
+        - {x: -29, y: 0}
+        - {x: 30, y: 0}
+        - {x: 47, y: 59}
+        - {x: 47, y: 120}
+        - {x: 33, y: 129}
+    - name: dad_action_Side_13
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 0
+        width: 118
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 130}
+        - {x: -38, y: 121}
+        - {x: -59, y: 67}
+        - {x: -59, y: 54}
+        - {x: -54, y: 52}
+        - {x: -22, y: 0}
+        - {x: 15, y: 0}
+        - {x: 47, y: 49}
+        - {x: 47, y: 117}
+        - {x: 24, y: 130}
+    - name: dad_action_Side_14
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 0
+        width: 118
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 131}
+        - {x: -39, y: 118}
+        - {x: -59, y: 73}
+        - {x: -59, y: 46}
+        - {x: -22, y: 0}
+        - {x: 11, y: 0}
+        - {x: 47, y: 57}
+        - {x: 47, y: 125}
+        - {x: 34, y: 131}
+    - name: dad_action_Side_15
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 0
+        width: 118
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 131}
+        - {x: -40, y: 123}
+        - {x: -59, y: 95}
+        - {x: -59, y: 36}
+        - {x: -38, y: 0}
+        - {x: 25, y: 0}
+        - {x: 46, y: 29}
+        - {x: 46, y: 119}
+        - {x: 23, y: 131}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

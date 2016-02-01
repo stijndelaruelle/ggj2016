@@ -1,0 +1,395 @@
+fileFormatVersion: 2
+guid: d837729c5aba1ca468ae34049f483970
+timeCreated: 1454243627
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: boy_action_Side_0
+    21300002: boy_action_Side_1
+    21300004: boy_action_Side_2
+    21300006: boy_action_Side_3
+    21300008: boy_action_Side_4
+    21300010: boy_action_Side_5
+    21300012: boy_action_Side_6
+    21300014: boy_action_Side_7
+    21300016: boy_action_Side_8
+    21300018: boy_action_Side_9
+    21300020: boy_action_Side_10
+    21300022: boy_action_Side_11
+    21300024: boy_action_Side_12
+    21300026: boy_action_Side_13
+    21300028: boy_action_Side_14
+    21300030: boy_action_Side_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: boy_action_Side_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 122
+        height: 144
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 132}
+        - {x: -5, y: 141}
+        - {x: -27, y: 141}
+        - {x: -52, y: 122}
+        - {x: -52, y: 26}
+        - {x: -44, y: 0}
+        - {x: 22, y: 0}
+        - {x: 53, y: 64}
+        - {x: 53, y: 113}
+        - {x: 34, y: 126}
+    - name: boy_action_Side_1
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 144
+        width: 122
+        height: 144
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 138}
+        - {x: 11, y: 141}
+        - {x: -25, y: 141}
+        - {x: -52, y: 109}
+        - {x: -52, y: 55}
+        - {x: -51, y: 48}
+        - {x: -22, y: 0}
+        - {x: 2, y: 0}
+        - {x: 28, y: 23}
+        - {x: 53, y: 69}
+        - {x: 53, y: 110}
+    - name: boy_action_Side_2
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 144
+        width: 122
+        height: 144
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: 140}
+        - {x: -34, y: 140}
+        - {x: -51, y: 134}
+        - {x: -51, y: 33}
+        - {x: -22, y: 0}
+        - {x: 7, y: 0}
+        - {x: 49, y: 57}
+        - {x: 54, y: 81}
+        - {x: 54, y: 110}
+    - name: boy_action_Side_3
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 144
+        width: 122
+        height: 144
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6, y: 139}
+        - {x: -26, y: 139}
+        - {x: -51, y: 129}
+        - {x: -51, y: 25}
+        - {x: -43, y: 0}
+        - {x: 8, y: 0}
+        - {x: 54, y: 65}
+        - {x: 54, y: 111}
+        - {x: 34, y: 128}
+    - name: boy_action_Side_4
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 144
+        width: 122
+        height: 144
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: 138}
+        - {x: -50, y: 124}
+        - {x: -50, y: 30}
+        - {x: -41, y: 0}
+        - {x: 17, y: 0}
+        - {x: 55, y: 59}
+        - {x: 55, y: 117}
+        - {x: -1, y: 138}
+    - name: boy_action_Side_5
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 144
+        width: 122
+        height: 144
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 138}
+        - {x: -35, y: 138}
+        - {x: -50, y: 124}
+        - {x: -50, y: 34}
+        - {x: -39, y: 0}
+        - {x: 12, y: 0}
+        - {x: 22, y: 5}
+        - {x: 55, y: 74}
+        - {x: 55, y: 105}
+    - name: boy_action_Side_6
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 144
+        width: 122
+        height: 144
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 137}
+        - {x: -50, y: 116}
+        - {x: -50, y: 20}
+        - {x: -45, y: 0}
+        - {x: 23, y: 0}
+        - {x: 43, y: 10}
+        - {x: 55, y: 53}
+        - {x: 55, y: 104}
+        - {x: 7, y: 137}
+    - name: boy_action_Side_7
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 144
+        width: 122
+        height: 144
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 137}
+        - {x: -50, y: 116}
+        - {x: -50, y: 17}
+        - {x: -33, y: 0}
+        - {x: 24, y: 0}
+        - {x: 56, y: 41}
+        - {x: 56, y: 109}
+        - {x: 32, y: 137}
+    - name: boy_action_Side_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 122
+        height: 144
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 137}
+        - {x: -50, y: 106}
+        - {x: -50, y: 42}
+        - {x: -35, y: 0}
+        - {x: 47, y: 0}
+        - {x: 56, y: 53}
+        - {x: 56, y: 131}
+        - {x: 34, y: 137}
+    - name: boy_action_Side_9
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 0
+        width: 122
+        height: 144
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 137}
+        - {x: -11, y: 137}
+        - {x: -32, y: 129}
+        - {x: -50, y: 100}
+        - {x: -50, y: 41}
+        - {x: -33, y: 0}
+        - {x: 10, y: 0}
+        - {x: 39, y: 10}
+        - {x: 57, y: 57}
+        - {x: 57, y: 102}
+        - {x: 35, y: 121}
+    - name: boy_action_Side_10
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 0
+        width: 122
+        height: 144
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 138}
+        - {x: -50, y: 102}
+        - {x: -50, y: 37}
+        - {x: -35, y: 0}
+        - {x: 9, y: 0}
+        - {x: 33, y: 11}
+        - {x: 56, y: 25}
+        - {x: 56, y: 115}
+        - {x: 49, y: 138}
+    - name: boy_action_Side_11
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 0
+        width: 122
+        height: 144
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 138}
+        - {x: -39, y: 125}
+        - {x: -50, y: 106}
+        - {x: -50, y: 39}
+        - {x: -39, y: 0}
+        - {x: 20, y: 0}
+        - {x: 56, y: 60}
+        - {x: 56, y: 113}
+        - {x: 18, y: 138}
+    - name: boy_action_Side_12
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 0
+        width: 122
+        height: 144
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 139}
+        - {x: -46, y: 129}
+        - {x: -50, y: 107}
+        - {x: -50, y: 47}
+        - {x: -23, y: 0}
+        - {x: 10, y: 0}
+        - {x: 55, y: 29}
+        - {x: 55, y: 132}
+        - {x: 54, y: 139}
+    - name: boy_action_Side_13
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 0
+        width: 122
+        height: 144
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 140}
+        - {x: -41, y: 123}
+        - {x: -50, y: 104}
+        - {x: -50, y: 45}
+        - {x: -26, y: 0}
+        - {x: 9, y: 0}
+        - {x: 55, y: 61}
+        - {x: 55, y: 110}
+        - {x: 16, y: 140}
+    - name: boy_action_Side_14
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 0
+        width: 122
+        height: 144
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5, y: 140}
+        - {x: -35, y: 140}
+        - {x: -51, y: 113}
+        - {x: -51, y: 45}
+        - {x: -22, y: 0}
+        - {x: 10, y: 0}
+        - {x: 54, y: 69}
+        - {x: 54, y: 113}
+        - {x: 38, y: 132}
+    - name: boy_action_Side_15
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 0
+        width: 122
+        height: 144
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 141}
+        - {x: -39, y: 134}
+        - {x: -51, y: 122}
+        - {x: -51, y: 40}
+        - {x: -38, y: 0}
+        - {x: 21, y: 0}
+        - {x: 54, y: 62}
+        - {x: 54, y: 117}
+        - {x: 20, y: 141}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

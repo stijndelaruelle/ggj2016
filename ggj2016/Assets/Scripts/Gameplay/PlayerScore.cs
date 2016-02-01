@@ -66,6 +66,14 @@ public class ScoreGroup
         m_LastTotalScore = m_TotalScore;
         m_TotalScore += value;
     }
+
+    public void Reset()
+    {
+        m_LastScore = Rating.None;
+        m_Score = Rating.None;
+        m_LastTotalScore = 0;
+        m_TotalScore = 0;
+    }
 }
 
 public class PlayerScore : MonoBehaviour
@@ -89,6 +97,8 @@ public class PlayerScore : MonoBehaviour
 
     private void Start()
     {
+        GameManager.Instance.StartGameEvent += OnGameStart;
+
         int num = Enum.GetNames(typeof(TaskCategoryType)).Length;
 
         m_ScoreGroups = new List<ScoreGroup>();
@@ -96,6 +106,14 @@ public class PlayerScore : MonoBehaviour
         {
             m_ScoreGroups.Add(new ScoreGroup());
         }
+    }
+
+    private void OnDestroy()
+    {
+        if (GameManager.Instance == null)
+            return;
+
+        GameManager.Instance.StartGameEvent -= OnGameStart;
     }
 
     public void Calculate()
@@ -120,7 +138,7 @@ public class PlayerScore : MonoBehaviour
             }
 
             //To lose, we need 1 stat at -3 or lower
-            if (m_ScoreGroups[i].TotalScore <= -10) //-3
+            if (m_ScoreGroups[i].TotalScore <= -3)
             {
                 if (m_EndGameEvent != null)
                     m_EndGameEvent(m_Player, (TaskCategoryType)i, false);
@@ -192,12 +210,8 @@ public class PlayerScore : MonoBehaviour
         }
 
         //We're VERY late!
-        if (timeLeft > -10)
-        {
-            scoreGroup.SetRating(Rating.VeryBad);
-            scoreGroup.AddToTotal(-2);
-            return;
-        }
+        scoreGroup.SetRating(Rating.VeryBad);
+        scoreGroup.AddToTotal(-2);
     }
 
     private void CalculateTaskScore()
@@ -232,5 +246,25 @@ public class PlayerScore : MonoBehaviour
     public ScoreGroup GetScoreGroup(TaskCategoryType type)
     {
         return m_ScoreGroups[(int)type];
+    }
+
+    private void OnGameStart()
+    {
+        foreach(ScoreGroup scoreGroup in m_ScoreGroups)
+        {
+            scoreGroup.Reset();
+        }
+    }
+
+    public bool AlmostWon()
+    {
+        //all above 1
+        for (int i = 0; i < m_ScoreGroups.Count; ++i)
+        {
+            if (m_ScoreGroups[i].TotalScore < 1)
+                return false;
+        }
+
+        return true;
     }
 }

@@ -1,0 +1,665 @@
+fileFormatVersion: 2
+guid: d7baaca281812024c8b467914ed4bd60
+timeCreated: 1454242489
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: mom_walk_Side_0
+    21300002: mom_walk_Side_1
+    21300004: mom_walk_Side_2
+    21300006: mom_walk_Side_3
+    21300008: mom_walk_Side_4
+    21300010: mom_walk_Side_5
+    21300012: mom_walk_Side_6
+    21300014: mom_walk_Side_7
+    21300016: mom_walk_Side_8
+    21300018: mom_walk_Side_9
+    21300020: mom_walk_Side_10
+    21300022: mom_walk_Side_11
+    21300024: mom_walk_Side_12
+    21300026: mom_walk_Side_13
+    21300028: mom_walk_Side_14
+    21300030: mom_walk_Side_15
+    21300032: mom_walk_Side_16
+    21300034: mom_walk_Side_17
+    21300036: mom_walk_Side_18
+    21300038: mom_walk_Side_19
+    21300040: mom_walk_Side_20
+    21300042: mom_walk_Side_21
+    21300044: mom_walk_Side_22
+    21300046: mom_walk_Side_23
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: mom_walk_Side_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 474
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 48, y: 37}
+        - {x: 59, y: 44}
+        - {x: 62, y: 57}
+        - {x: 62, y: 116}
+        - {x: 33, y: 154}
+        - {x: 27, y: 156}
+        - {x: -34, y: 156}
+        - {x: -57, y: 138}
+        - {x: -57, y: 38}
+        - {x: -7, y: 5}
+        - {x: 17, y: 5}
+        - {x: 21, y: 10}
+        - {x: 18, y: 15}
+        - {x: 16, y: 17}
+        - {x: 27, y: 24}
+      - - {x: 63, y: 82}
+        - {x: 66, y: 83}
+        - {x: 66, y: 86}
+        - {x: 63, y: 87}
+        - {x: 61, y: 85}
+    - name: mom_walk_Side_1
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 474
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9, y: 154}
+        - {x: -48, y: 154}
+        - {x: -57, y: 141}
+        - {x: -57, y: 50}
+        - {x: -29, y: 4}
+        - {x: 42, y: 4}
+        - {x: 61, y: 36}
+        - {x: 61, y: 133}
+        - {x: 44, y: 150}
+    - name: mom_walk_Side_2
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 474
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -58, y: 151}
+        - {x: -58, y: 48}
+        - {x: -11, y: 2}
+        - {x: 17, y: 2}
+        - {x: 60, y: 34}
+        - {x: 60, y: 126}
+        - {x: 46, y: 151}
+      - - {x: 62, y: 79}
+        - {x: 65, y: 80}
+        - {x: 65, y: 83}
+        - {x: 62, y: 84}
+        - {x: 60, y: 82}
+    - name: mom_walk_Side_3
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 474
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -43, y: 148}
+        - {x: -59, y: 126}
+        - {x: -59, y: 36}
+        - {x: -23, y: 1}
+        - {x: 31, y: 1}
+        - {x: 60, y: 18}
+        - {x: 60, y: 129}
+        - {x: 13, y: 148}
+      - - {x: 62, y: 77}
+        - {x: 65, y: 78}
+        - {x: 65, y: 81}
+        - {x: 62, y: 82}
+        - {x: 60, y: 80}
+    - name: mom_walk_Side_4
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 474
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -48, y: 146}
+        - {x: -60, y: 142}
+        - {x: -60, y: 32}
+        - {x: -17, y: 0}
+        - {x: 22, y: 0}
+        - {x: 59, y: 36}
+        - {x: 59, y: 129}
+        - {x: 51, y: 146}
+      - - {x: 61, y: 76}
+        - {x: 64, y: 77}
+        - {x: 64, y: 80}
+        - {x: 61, y: 81}
+        - {x: 59, y: 79}
+    - name: mom_walk_Side_5
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 474
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 35, y: 132}
+        - {x: 19, y: 143}
+        - {x: -44, y: 143}
+        - {x: -60, y: 133}
+        - {x: -60, y: 43}
+        - {x: -59, y: 37}
+        - {x: -8, y: 0}
+        - {x: 9, y: 0}
+        - {x: 57, y: 26}
+        - {x: 58, y: 33}
+        - {x: 58, y: 104}
+    - name: mom_walk_Side_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 316
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61, y: 141}
+        - {x: -61, y: 23}
+        - {x: -57, y: 7}
+        - {x: -34, y: 0}
+        - {x: 5, y: 0}
+        - {x: 57, y: 28}
+        - {x: 57, y: 117}
+        - {x: 12, y: 141}
+      - - {x: 60, y: 73}
+        - {x: 63, y: 74}
+        - {x: 63, y: 77}
+        - {x: 60, y: 78}
+        - {x: 58, y: 76}
+    - name: mom_walk_Side_7
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 316
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 141}
+        - {x: -40, y: 141}
+        - {x: -62, y: 133}
+        - {x: -62, y: 54}
+        - {x: -60, y: 37}
+        - {x: -53, y: 34}
+        - {x: -41, y: 28}
+        - {x: -20, y: 0}
+        - {x: 13, y: 0}
+        - {x: 56, y: 25}
+        - {x: 57, y: 29}
+        - {x: 57, y: 106}
+        - {x: 34, y: 131}
+      - - {x: 59, y: 74}
+        - {x: 62, y: 75}
+        - {x: 62, y: 78}
+        - {x: 59, y: 79}
+        - {x: 57, y: 77}
+    - name: mom_walk_Side_8
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 316
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -55, y: 143}
+        - {x: -62, y: 135}
+        - {x: -62, y: 33}
+        - {x: -33, y: 0}
+        - {x: 51, y: 0}
+        - {x: 56, y: 12}
+        - {x: 56, y: 128}
+        - {x: 33, y: 143}
+      - - {x: 59, y: 77}
+        - {x: 62, y: 78}
+        - {x: 62, y: 81}
+        - {x: 59, y: 82}
+        - {x: 57, y: 80}
+    - name: mom_walk_Side_9
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 316
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -63, y: 27}
+        - {x: -44, y: 2}
+        - {x: 32, y: 2}
+        - {x: 55, y: 12}
+        - {x: 55, y: 125}
+        - {x: 47, y: 145}
+        - {x: -46, y: 145}
+        - {x: -63, y: 141}
+      - - {x: 58, y: 81}
+        - {x: 61, y: 82}
+        - {x: 61, y: 85}
+        - {x: 58, y: 86}
+        - {x: 56, y: 84}
+    - name: mom_walk_Side_10
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 316
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 147}
+        - {x: -46, y: 147}
+        - {x: -65, y: 137}
+        - {x: -65, y: 45}
+        - {x: -63, y: 29}
+        - {x: -41, y: 6}
+        - {x: 26, y: 6}
+        - {x: 55, y: 23}
+        - {x: 55, y: 108}
+        - {x: 31, y: 138}
+    - name: mom_walk_Side_11
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 316
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 54, y: 117}
+        - {x: 19, y: 149}
+        - {x: -48, y: 149}
+        - {x: -66, y: 139}
+        - {x: -66, y: 33}
+        - {x: -36, y: 9}
+        - {x: 28, y: 9}
+        - {x: 29, y: 10}
+        - {x: 30, y: 25}
+        - {x: 54, y: 45}
+      - - {x: 55, y: 89}
+        - {x: 58, y: 90}
+        - {x: 58, y: 93}
+        - {x: 55, y: 94}
+        - {x: 53, y: 92}
+    - name: mom_walk_Side_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 158
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -62, y: 150}
+        - {x: -67, y: 129}
+        - {x: -67, y: 19}
+        - {x: -56, y: 12}
+        - {x: 28, y: 12}
+        - {x: 54, y: 43}
+        - {x: 54, y: 147}
+        - {x: 42, y: 150}
+    - name: mom_walk_Side_13
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 158
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -66, y: 151}
+        - {x: -68, y: 150}
+        - {x: -68, y: 51}
+        - {x: -55, y: 13}
+        - {x: 46, y: 13}
+        - {x: 54, y: 41}
+        - {x: 54, y: 108}
+        - {x: 35, y: 151}
+      - - {x: 53, y: 95}
+        - {x: 56, y: 96}
+        - {x: 56, y: 99}
+        - {x: 53, y: 100}
+        - {x: 51, y: 98}
+    - name: mom_walk_Side_14
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 158
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -64, y: 150}
+        - {x: -67, y: 146}
+        - {x: -67, y: 42}
+        - {x: -30, y: 10}
+        - {x: 40, y: 10}
+        - {x: 54, y: 26}
+        - {x: 54, y: 131}
+        - {x: 20, y: 150}
+      - - {x: 54, y: 92}
+        - {x: 57, y: 93}
+        - {x: 57, y: 96}
+        - {x: 54, y: 97}
+        - {x: 52, y: 95}
+    - name: mom_walk_Side_15
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 158
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -66, y: 149}
+        - {x: -66, y: 41}
+        - {x: -37, y: 8}
+        - {x: 48, y: 8}
+        - {x: 55, y: 40}
+        - {x: 55, y: 128}
+        - {x: 33, y: 149}
+      - - {x: 55, y: 90}
+        - {x: 58, y: 91}
+        - {x: 58, y: 94}
+        - {x: 55, y: 95}
+        - {x: 53, y: 93}
+    - name: mom_walk_Side_16
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 158
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56, y: 147}
+        - {x: -65, y: 137}
+        - {x: -65, y: 27}
+        - {x: -12, y: 6}
+        - {x: 39, y: 6}
+        - {x: 55, y: 31}
+        - {x: 55, y: 131}
+        - {x: 14, y: 147}
+      - - {x: 56, y: 87}
+        - {x: 59, y: 88}
+        - {x: 59, y: 91}
+        - {x: 56, y: 92}
+        - {x: 54, y: 90}
+    - name: mom_walk_Side_17
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 158
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -57, y: 146}
+        - {x: -64, y: 119}
+        - {x: -64, y: 49}
+        - {x: -56, y: 32}
+        - {x: -43, y: 32}
+        - {x: -25, y: 34}
+        - {x: -21, y: 5}
+        - {x: -20, y: 4}
+        - {x: 48, y: 4}
+        - {x: 55, y: 18}
+        - {x: 55, y: 133}
+        - {x: 38, y: 146}
+      - - {x: 57, y: 84}
+        - {x: 60, y: 85}
+        - {x: 60, y: 88}
+        - {x: 57, y: 89}
+        - {x: 55, y: 87}
+    - name: mom_walk_Side_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61, y: 145}
+        - {x: -63, y: 141}
+        - {x: -63, y: 21}
+        - {x: -52, y: 2}
+        - {x: 36, y: 2}
+        - {x: 56, y: 9}
+        - {x: 56, y: 121}
+        - {x: 17, y: 145}
+      - - {x: 58, y: 82}
+        - {x: 61, y: 83}
+        - {x: 61, y: 86}
+        - {x: 58, y: 87}
+        - {x: 56, y: 85}
+    - name: mom_walk_Side_19
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 0
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56, y: 145}
+        - {x: -62, y: 135}
+        - {x: -62, y: 28}
+        - {x: -41, y: 1}
+        - {x: 17, y: 1}
+        - {x: 56, y: 21}
+        - {x: 56, y: 111}
+        - {x: 24, y: 145}
+      - - {x: 59, y: 80}
+        - {x: 62, y: 81}
+        - {x: 62, y: 84}
+        - {x: 59, y: 85}
+        - {x: 57, y: 83}
+    - name: mom_walk_Side_20
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 0
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61, y: 147}
+        - {x: -61, y: 43}
+        - {x: -34, y: 1}
+        - {x: 26, y: 1}
+        - {x: 46, y: 11}
+        - {x: 57, y: 40}
+        - {x: 57, y: 140}
+        - {x: 53, y: 147}
+      - - {x: 60, y: 81}
+        - {x: 63, y: 82}
+        - {x: 63, y: 85}
+        - {x: 60, y: 86}
+        - {x: 58, y: 84}
+    - name: mom_walk_Side_21
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 0
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 149}
+        - {x: -47, y: 149}
+        - {x: -60, y: 140}
+        - {x: -60, y: 57}
+        - {x: -58, y: 46}
+        - {x: -13, y: 0}
+        - {x: 9, y: 0}
+        - {x: 33, y: 17}
+        - {x: 58, y: 37}
+        - {x: 58, y: 124}
+      - - {x: 61, y: 81}
+        - {x: 64, y: 82}
+        - {x: 64, y: 85}
+        - {x: 61, y: 86}
+        - {x: 59, y: 84}
+    - name: mom_walk_Side_22
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 0
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -59, y: 43}
+        - {x: -25, y: 0}
+        - {x: 22, y: 0}
+        - {x: 60, y: 36}
+        - {x: 60, y: 123}
+        - {x: 48, y: 147}
+        - {x: 35, y: 152}
+        - {x: -39, y: 152}
+        - {x: -59, y: 138}
+      - - {x: 62, y: 81}
+        - {x: 65, y: 82}
+        - {x: 65, y: 85}
+        - {x: 62, y: 86}
+        - {x: 60, y: 84}
+    - name: mom_walk_Side_23
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 0
+        width: 142
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47, y: 154}
+        - {x: -56, y: 131}
+        - {x: -58, y: 112}
+        - {x: -58, y: 42}
+        - {x: -4, y: 1}
+        - {x: 18, y: 1}
+        - {x: 61, y: 35}
+        - {x: 61, y: 100}
+        - {x: 58, y: 127}
+        - {x: 38, y: 151}
+        - {x: 16, y: 154}
+      - - {x: 63, y: 81}
+        - {x: 66, y: 82}
+        - {x: 66, y: 85}
+        - {x: 63, y: 86}
+        - {x: 61, y: 84}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

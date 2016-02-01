@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class EndOfGamePanel : MonoBehaviour, UIPanel
 {
     [SerializeField]
     private Text m_Text;
+
+    [SerializeField]
+    private List<RectTransform> m_Characters;
 
     public void Initialize()
     {
@@ -41,12 +45,14 @@ public class EndOfGamePanel : MonoBehaviour, UIPanel
         {
             if (player.PlayerType == PlayerType.Parent)
             {
-                sentence += " got a promotion! Your family has earned the respect of the neighbourhood.";
+                sentence += " got a promotion!";
             }
             else
             {
-                sentence += " got into the chess club! Your family has earned the respect of the neighbourhood.";
+                sentence += " got into the elite chess club!";
             }
+
+            sentence += "<br><br>Your family has finally earned the respect of the neighbourhood.";
         }
         else
         {
@@ -61,7 +67,7 @@ public class EndOfGamePanel : MonoBehaviour, UIPanel
                         break;
 
                     case TaskCategoryType.Productivity:
-                        sentence += heShe + " didn't process 4000 documents a day!";
+                        sentence += heShe + " didn't process the required 4000 documents a day!";
                         break;
 
                     case TaskCategoryType.Wardrobe:
@@ -73,7 +79,7 @@ public class EndOfGamePanel : MonoBehaviour, UIPanel
                         break;
 
                     case TaskCategoryType.Entertainment:
-                        sentence += heShe + " wasn't up to date!";
+                        sentence += heShe + " wasn't very entertaining!";
                         break;
 
                     default:
@@ -103,7 +109,7 @@ public class EndOfGamePanel : MonoBehaviour, UIPanel
                         break;
 
                     case TaskCategoryType.Entertainment:
-                        sentence += heShe + " din't know the names of all 151 pokémon!";
+                        sentence += heShe + " was very boring!";
                         break;
 
                     default:
@@ -111,10 +117,22 @@ public class EndOfGamePanel : MonoBehaviour, UIPanel
                 } 
             }
 
-            sentence += "<br>Your family has once again proven...";
+            sentence += "<br><br>Your family has once again shown what they are capable of...";
         }
 
         sentence = sentence.Replace("<br>", "\n");
         m_Text.text = sentence;
+
+        ScaleCharacter(player.PlayerID);
+    }
+
+    private void ScaleCharacter(int id)
+    {
+        for (int i = 0; i < m_Characters.Count; ++i)
+        {
+            m_Characters[i].localScale = new Vector3(1.5f, 1.5f, 1.5f);
+        }
+
+        m_Characters[id].localScale = new Vector3(2.25f, 2.25f, 2.25f);
     }
 }

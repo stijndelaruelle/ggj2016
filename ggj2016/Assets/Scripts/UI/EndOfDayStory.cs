@@ -13,7 +13,8 @@ public class EndOfDayStory : MonoBehaviour
     private string m_HeShe;
 	private string m_HeSheCap;
 	private string m_HisHer;
-	private string m_HimHer;
+    private string m_HisHerCap;
+    private string m_HimHer;
 	private string m_Royalty;
 	private string m_Gender;
 	private string m_GenderDesignation;
@@ -34,7 +35,8 @@ public class EndOfDayStory : MonoBehaviour
             m_HeShe = "he";
 			m_HeSheCap = "He";
 			m_HisHer = "his";
-			m_HimHer = "him";
+            m_HisHerCap = "His";
+            m_HimHer = "him";
 			m_Royalty = "King";
 			m_Gender = "man";
 			m_GenderDesignation = "Boy";
@@ -44,7 +46,8 @@ public class EndOfDayStory : MonoBehaviour
             m_HeShe = "she";
 			m_HeSheCap = "She";
 			m_HisHer = "her";
-			m_HimHer = "her";
+            m_HisHerCap = "Her";
+            m_HimHer = "her";
 			m_Royalty = "Queen";
 			m_Gender = "woman";
 			m_GenderDesignation = "Girl";
@@ -86,6 +89,23 @@ public class EndOfDayStory : MonoBehaviour
         sentence += CalculateSmellStory() + "<br>";
         sentence += CalculateEntertainmentStory() + "<br><br>";
 
+        //Compliment
+        if (m_PlayerScore.AlmostWon())
+        {
+            sentence += "Keep it up and " + m_HeShe + " might get ";
+
+            if (m_PlayerScore.Player.PlayerType == PlayerType.Parent)
+            {
+                sentence += "promoted!";
+            }
+            else
+            {
+                sentence += "invited into join the school's elite chess club!";
+            }
+
+        }
+
+
         sentence = sentence.Replace("<br>", "\n");
         m_Text.text = sentence;
     }
@@ -97,7 +117,7 @@ public class EndOfDayStory : MonoBehaviour
         Rating timeScore = scoreGroup.Score;
         Rating lastTimeScore = scoreGroup.LastScore;
 
-        string sentence = m_Name;
+        string sentence = "Today " + m_Name;
 
         if (timeScore == Rating.Terrible)
         {
@@ -137,20 +157,14 @@ public class EndOfDayStory : MonoBehaviour
             }
         }
 
-        if ((scoreGroup.TotalScore >= 2) &&
-            (scoreGroup.TotalScore > scoreGroup.LastTotalScore))
-        {
-            sentence += m_Name + " " + m_HisHer + " " + m_Collegue + " know they can count on " + m_HisHer +" schedule!";
-        }
-
         if (scoreGroup.TotalScore <= -2)
         {
-            sentence += m_Name + " still has one chance left or " + m_HeShe + " will be ";
+            sentence += " " + m_HeSheCap + " has one chance left to be on time or " + m_HeShe + " will be ";
 
             if (m_PlayerScore.Player.PlayerType == PlayerType.Parent)
                 sentence += "fired!";
             else
-                sentence += "kicked from school.";
+                sentence += "kicked from school!";
         }
 
         return sentence;
@@ -165,23 +179,29 @@ public class EndOfDayStory : MonoBehaviour
         Rating score = scoreGroup.Score;
         Rating lastScore = scoreGroup.LastScore;
 
+        sentence += m_HisHerCap + " " + m_Employer + " thought " + m_HeShe;
+
         switch (score)
         {
-            case Rating.VeryGood: sentence += m_Name + " is a real eager beaver!"; break;
-            case Rating.Good: sentence += m_Name + " almost broke a sweat today."; break;
-            case Rating.Normal: sentence += m_Name + " made no impression at all.";	break;
-            case Rating.Bad: sentence += m_Name + " is studying to be a La-Z-" + m_GenderDesignation + ".";	break;
-            case Rating.VeryBad: sentence += m_Name + " is a master slacker!"; break;
+            case Rating.VeryGood: sentence += " was a real eager beaver!"; break;
+            case Rating.Good: sentence += " did a fair amount of work."; break;
+            case Rating.Normal: sentence += " made no impression at all.";	break;
+            case Rating.Bad: sentence += " was studying to be a La-Z-" + m_GenderDesignation + ".";	break;
+            case Rating.VeryBad: sentence += " was a master slacker!"; break;
 
             default:
                 break;
         }
 
-        //if ((scoreGroup.TotalScore >= 2) &&
-        //    (scoreGroup.TotalScore > scoreGroup.LastTotalScore))
-        //{
-        //    sentence += " This is very much appreciated!";
-        //}
+        if (scoreGroup.TotalScore <= -2)
+        {
+            sentence += " " + m_HeSheCap + " has one chance left to be more productive or " + m_HeShe + " will be ";
+
+            if (m_PlayerScore.Player.PlayerType == PlayerType.Parent)
+                sentence += "fired!";
+            else
+                sentence += "kicked out of school!";
+        }
 
         return sentence;
     }
@@ -194,16 +214,28 @@ public class EndOfDayStory : MonoBehaviour
         Rating score = scoreGroup.Score;
         Rating lastScore = scoreGroup.LastScore;
 
+        sentence += "On top of that he ";
+
         switch (score)
         {
-            case Rating.VeryGood: sentence += m_Employer + " thinks " + m_Name + " is dressed like the " + m_Royalty + ", fabulous!"; break;
-            case Rating.Good: sentence += "Clothes make the " + m_Gender + " they say."; break;
-            case Rating.Normal: sentence += "Shirt & pants, check."; break;
-            case Rating.Bad: sentence += m_Employer + " thinks that even a starved moth wouldn't touch " + m_Name + " " + m_HisHer + " wardrobe."; break;
-            case Rating.VeryBad: sentence += m_Employer +  " says that the coalmines called, they want their clothes back!"; break;
+            case Rating.VeryGood: sentence += "thought that " + m_Name + " was dressed like the " + m_Royalty + ", fabulous!"; break;
+            case Rating.Good: sentence += "thought that " + m_Name + " was dressed like a real " + m_Gender + "."; break;
+            case Rating.Normal: sentence += "told " + m_Name + " should swap shirts every once in a while."; break;
+            case Rating.Bad: sentence += "told " + m_Name + " that even a starved moth wouldn't touch " + m_HisHer + " wardrobe."; break;
+            case Rating.VeryBad: sentence += "told " + m_Name + " that the coalmines called and they want their clothes back!"; break;
 
             default:
                 break;
+        }
+
+        if (scoreGroup.TotalScore <= -2)
+        {
+            sentence += " " + m_HeSheCap + " has one chance left to <b>dress propertly</b> or " + m_HeShe + " will be ";
+
+            if (m_PlayerScore.Player.PlayerType == PlayerType.Parent)
+                sentence += "fired!";
+            else
+                sentence += "kicked out of school!";
         }
 
         return sentence;
@@ -217,19 +249,32 @@ public class EndOfDayStory : MonoBehaviour
         Rating score = scoreGroup.Score;
         Rating lastScore = scoreGroup.LastScore;
 
+        sentence += m_HisHerCap + " " + m_Collegue + " on the other hand ";
+
         switch (score)
         {
             case Rating.VeryGood:
-				sentence += m_Name + " smells so great that " + m_HisHer + " " + m_Collegue + "want to sell " + m_HisHer + " sweat as a perfume!"; break;
+				sentence += "said that " + m_HeShe + " smelled so great that they want to sell " + m_HisHer + " sweat as a perfume!"; break;
             case Rating.Good:
-				sentence += "'" + m_HeSheCap + " smells like a flowery garden. - One of " + m_Name + "'s " + m_Collegue + "."; break;
-            case Rating.Normal: sentence += m_Name + " has a most ordinary scent."; break;
+				sentence += "said " + m_HeShe + " smelled like a flowery garden."; break;
+            case Rating.Normal:
+                sentence += "told " + m_HimHer + " " + m_HeShe + " has a most ordinary scent."; break;
             case Rating.Bad:
-				sentence += m_Name + " " + m_HisHer + " stench preceeds" + m_HimHer + "."; break;
-            case Rating.VeryBad: sentence += "'What's that smell? Dungbell!' " + m_Name + " has a new nickname."; break;
-
+                sentence += "gave " + m_HisHer + " the catchphrase: 'What's that smell? Dungbell!'"; break;
+            case Rating.VeryBad:
+                sentence += "knew when " + m_HeShe + " was around when when they heard the sound of a billion flies."; break;
             default:
                 break;
+        }
+
+        if (scoreGroup.TotalScore <= -2)
+        {
+            sentence += " " + m_HeSheCap + " has one chance left to stop smelling or " + m_HeShe + " will be ";
+
+            if (m_PlayerScore.Player.PlayerType == PlayerType.Parent)
+                sentence += "fired!";
+            else
+                sentence += "kicked out of school!";
         }
 
         return sentence;
@@ -243,16 +288,53 @@ public class EndOfDayStory : MonoBehaviour
         Rating score = scoreGroup.Score;
         Rating lastScore = scoreGroup.LastScore;
 
+        sentence += "They also ";
+
         switch (score)
         {
-            case Rating.VeryGood: sentence += "Excited! Excited! Excited!"; break;
-            case Rating.Good: sentence += "No day like a fun day."; break;
-            case Rating.Normal: sentence += m_Name + " is feeling neither bored, nor amused, meh."; break;
-            case Rating.Bad: sentence += "Such a dull " + m_Gender + "."; break;
-            case Rating.VeryBad: sentence += "All work and no play makes " + m_Name + " go *@#*€%#!"; break;
+            case Rating.VeryGood:
+                {
+                    sentence += "were very excited to hear about the lastest ";
+
+                    if (m_PlayerScore.Player.PlayerType == PlayerType.Parent)
+                    {
+                        if (m_PlayerScore.Player.Gender == GenderType.Male)
+                        {
+                            sentence += "soccer news!";
+                        }
+                        else
+                        {
+                            sentence += "drama in hollywood!";
+                        }
+                    }
+                    else
+                    {
+                        sentence += "episode of SUPER DINOBOTS!";
+                    }
+                    break;
+                }
+                
+            case Rating.Good:
+                sentence += "liked the joke " + m_HeShe + " told during lunch"; break;
+            case Rating.Normal:
+                sentence += "thought " + m_HeShe + " was very quiet today."; break;
+            case Rating.Bad:
+                sentence += "found " + m_HimHer + " quite boring today."; break;
+            case Rating.VeryBad:
+                sentence += "thought " + m_HeShe + " has been living under a rock for years!"; break;
 
             default:
                 break;
+        }
+
+        if (scoreGroup.TotalScore <= -2)
+        {
+            sentence += " " + m_HeSheCap + " has one chance left to know about the latest entertainment or " + m_HeShe + " will be ";
+
+            if (m_PlayerScore.Player.PlayerType == PlayerType.Parent)
+                sentence += "fired!";
+            else
+                sentence += "kicked out of school!";
         }
 
         return sentence;

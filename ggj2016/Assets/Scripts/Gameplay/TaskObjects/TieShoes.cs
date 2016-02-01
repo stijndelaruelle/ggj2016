@@ -35,8 +35,11 @@ public class TieShoes : TaskObject
 
     protected override void EndInteraction(bool finished)
     {
-        m_Owner.UpdateTask(m_TaskDefinition);
-        m_AreTied = true;
+        if (finished)
+        {
+            m_Owner.UpdateTask(m_TaskDefinition);
+            m_AreTied = true;
+        }
     }
 
     private void OnDayStart()
